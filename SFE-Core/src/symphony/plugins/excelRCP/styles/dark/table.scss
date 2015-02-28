@@ -1,0 +1,71 @@
+@import "theme.scss";
+.modal-content {
+  .excel-full-table {
+    display: block;
+    overflow: auto;
+    max-width: 500px;
+  }
+}
+.excel-table {
+  display: table;
+  overflow: auto;
+  table {
+    font-size: 12px;
+    margin: 0 auto;
+
+    thead {
+      background-color: #1b1f26;
+      color: #a9b1bf;
+    }
+    tbody {
+      background-color: #20242c;
+      color: #fff;
+    }
+    th, td {
+      padding: 5px;
+      border: 1px solid #2b313d;
+    }
+  }
+
+  .close {
+    background-color: rgba(0, 0, 0, 0.3);
+    &:hover {
+      background-color: rgba(0, 0, 0, 0.2);
+    }
+    &active {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+  }
+
+  span.delete {
+    cursor: pointer;
+    background: url('src\js\lib\symphony\plugins\excelRCP\images\dark\icon_unstructured_close.png') no-repeat;
+    background-position: center;
+    width: 7px;
+    height: 7px;
+    margin: 4px 4px 2px 4px;
+    float: left;
+
+    &:hover {
+      background-image: url('src\js\lib\symphony\plugins\excelRCP\images\dark\icon_unstructured_close_hover.png');
+    }
+    &:active {
+      background-image: url('src\js\lib\symphony\plugins\excelRCP\images\dark\icon_unstructured_close_active.png');
+    }
+  }
+}
+.richToken {
+  .excel-table {
+    table {
+      display: inline-table;
+    }
+  }
+}
+
+.modal-content {
+  .excel-full-table {
+    span {
+      display: inline;
+    }
+  }
+}

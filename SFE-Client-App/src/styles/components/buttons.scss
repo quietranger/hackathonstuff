@@ -1,0 +1,38 @@
+@import "../mixins/buttons.scss";
+@import "theme.scss";
+
+.button {
+  height: 30px;
+  line-height: 30px;
+  padding: 0 7px;
+  cursor: pointer;
+  border-radius: 2px;
+  font-size: 12px;
+  border: 0;
+
+  &.cancel {
+    background: transparent;
+
+
+    color: $cancel-button-text-color;
+
+    &:hover {
+      color: $cancel-button-hover-text-color;
+    }
+
+    &:active {
+      color: $cancel-button-active-text-color;
+    }
+  }
+
+  &.disabled {
+    background-color: $disabled-button-background-color;
+    color: $disabled-button-text-color;
+    box-shadow: $disabled-button-drop-shadow;
+    cursor: default;
+  }
+}
+
+@include button($positive-button);
+@include button($negative-button);
+@include button($action-button);

@@ -1,0 +1,24 @@
+<li class="rule-row">
+    <div class="select-wrap rule-type">
+        <select name="definitionType" {{isEditable editable}}>
+        <option {{selectItem definitionType 'KEYWORD'}} value="KEYWORD">Hashtag</option>
+        <option {{selectItem definitionType 'CASHTAG'}} value="CASHTAG">Cashtag</option>
+        <option {{selectItem definitionType 'USER_FOLLOW'}} value="USER_FOLLOW">User</option>
+        </select>
+    </div>
+
+    <input type="text" name="text" id="{{uuid}}" value="{{stripEntity text}}" placeholder="Enter Rule" class="rule-text mousetrap" {{isEditable editable}} />
+    <input class="rule-id" type="hidden" value="{{id}}" data-screenname="{{screenName}}"/>
+
+    <div class="select-wrap definition-type">
+        <select class="mousetrap" name="connectorId" {{isEditable editable}}>
+        {{#each connectors}}
+        <option value="{{id}}" {{selectItem ../connectorId id}}>{{name}}</option>
+        {{/each}}
+        </select>
+    </div>
+
+    {{#if editable}}
+    <a class="remove-rule">&times;</a>
+    {{/if}}
+</li>

@@ -1,0 +1,64 @@
+@import "global.scss";
+
+$named-tags: (
+    (
+        name twitter,
+        background-color #55acee,
+        text-color white
+    ),
+    (
+        name tag-twitter,
+        background-color #55acee,
+        text-color white
+    ),
+    (
+        name gs,
+        background-color #5386be,
+        text-color white
+    ),
+    (
+        name private-room,
+        background-color #6633cc,
+        text-color white
+    ),
+    (
+        name public-room,
+        background-color #2a384b,
+        text-color white
+    ),
+    (
+        name im,
+        background-color #fbce64,
+        text-color #8d702d
+    ),
+    (
+        name participants,
+        background-color #3366cc,
+        text-color #bacbed
+    ),
+    (
+        name filter,
+        background-color #fbce64,
+        text-color #8d702d
+    ),
+    (
+        name profile,
+        background-color #fbce64,
+        text-color #8d702d
+    ),
+    (
+        name tag-gs,
+        background-color #5386be,
+        text-color white
+    ),
+    (
+        name room-info,
+        background-color #b3c1d4,
+        text-color white
+    ),
+    (
+        name symphony,
+        background-color #7fc898,
+        text-color darken(saturate(#7fc898, 10%), 50%)
+    )
+);

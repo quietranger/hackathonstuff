@@ -1,0 +1,26 @@
+<div class="upload-stage"></div>
+
+<input type="file" class="file-input file-upload-input" multiple {{#unless isRunningInClientApp}} accept="{{supportedMimeTypes}}" {{/unless}}style="display: none">
+
+<div class="text-input-wrap">
+    <div {{#if disableInput}}contenteditable="false"{{else}}contenteditable="true"{{/if}} class="text-input-text no-focus mousetrap" {{#if disableInput}}disabled="disabled"{{/if}} placeholder="{{placeholderText}}" size={{maxLength}} tabindex="0"></div>
+
+    <div class="rte-actions">
+        <div class="expand-actions expand text-area-button"></div>
+        <div class="action-list">
+            {{#each rteActions}}
+            <div class="{{this}} text-area-button" data-popup="{{this}}"></div>
+            {{/each}}
+        </div>
+    </div>
+    <div class="actions-popup popup-attach hidden">
+        <div class="file-upload text-area-button"></div>
+        {{#if isRunningInClientApp}}<div class="screen-clip text-area-button"></div>{{/if}}
+    </div>
+    <div class="actions-popup popup-emoticons hidden">
+        {{#each emoticons}}
+            <img class="emoji" title=":{{this}}:" alt="{{this}}" src="./img/emoji/{{this}}.png" height="18">
+        {{/each}}
+    </div>
+</div>
+

@@ -1,0 +1,9 @@
+node_modules
+.sublime*
+.sass-cache
+*.sublime*
+test-results.xml
+dist
+atlassian-*
+.idea
+doc/*

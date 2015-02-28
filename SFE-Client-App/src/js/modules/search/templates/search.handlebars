@@ -1,0 +1,81 @@
+<div class="search-wrap">
+    <div role="group">
+        <div class="simple-search-fields">
+            <input class="query" type="text" placeholder="Add Rule..." value="{{query}}" />
+            <div class="dropdown-menu">
+                <select class="operator-dropdown" name="operator">
+                    <option value="ANY">Any</option>
+                    <option value="ALL">All</option>
+                </select>
+                <button class="operator" ><small>Match:</small> <span>Any</span></button>
+            </div>
+            <div class="dropdown-menu">
+                <select class="source-dropdown" name="connectorId">
+                    <option value="">Any</option>
+                    <option value="lc">Symphony</option>
+                    {{#each socialConnectors}}
+                        <option value="{{this.value}}">{{this.name}}</option>
+                    {{/each}}
+                </select>
+                <button class="source"><small>Source:</small> <span>Any</span></button>
+            </div>
+
+            <div class="dropdown-menu">
+                <select class="source-dropdown" name="showResults">
+                    <option value="">All</option>
+                    <option value="users">People</option>
+                    <option value="rooms">Rooms</option>
+                    <option value="messages">Messages</option>
+                </select>
+                <button class="source"><small>Show:</small> <span>All</span></button>
+            </div>
+            <a href="#" class="toggle-search-type">More Options</a>
+        </div>
+        <div class="advanced-search-fields condensed-people-search">
+            <div class="wrap calendar-wrap">
+                <button name="start" class="calendar"><small>Start:</small> <span></span><a class="clear"></a></button>
+            </div>
+            <div class="wrap calendar-wrap">
+                <button name="end" class="calendar"><small>End:</small> <span></span><a class="clear"></a></button>
+            </div>
+            <div class="wrap">
+                <input type="text" name="from" class="from" placeholder="From" />
+            </div>
+            <div class="wrap dropdown-menu">
+                <select name="in" class="in-dropdown">
+                    <option value="">Any</option>
+                    {{#each rooms}}
+                    <option value="{{threadId}}" {{#if selected}}selected="selected"{{/if}}>{{name}}</option>
+                    {{/each}}
+                    {{#if ims}}
+                    <option>Instant Messages</option>
+                    {{#each ims}}
+                    <option value="{{threadId}}" {{#if selected}}selected="selected"{{/if}}>{{name}}</option>
+                    {{/each}}
+                    {{/if}}
+                </select>
+                <button class="in"><small>In Room or IM:</small> <span>{{#if defaultSelectedRoomName}}{{defaultSelectedRoomName}}{{else}}Any{{/if}}</span></button>
+            </div>
+        </div>
+    </div>
+    <div class="results">
+        <div class="results-wrap">
+            <div class="left-results">
+                <div class="result-wrap messages" data-type="messages">
+                    <h3>Messages</h3>
+                    <section></section>
+                </div>
+            </div>
+            <div class="right-results">
+                <div class="result-wrap users" data-type="users">
+                    <h3>People</h3>
+                    <section></section>
+                </div>
+                <div class="result-wrap rooms" data-type="rooms">
+                    <h3>Rooms</h3>
+                    <section></section>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

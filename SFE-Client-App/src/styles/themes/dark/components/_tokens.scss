@@ -1,0 +1,11 @@
+@import "typography";
+
+$token-background-color: #20242c;
+$token-border-color: darken($token-background-color, 10%);
+$token-text-color: white;
+$token-clickable-text-color: $link-text-color;
+
+$token-error-background-color: #b5616a;
+$token-error-text-color: white;
+
+$download-token-icon-url: 'download.png';

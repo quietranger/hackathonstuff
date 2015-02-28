@@ -1,0 +1,195 @@
+@import "theme.scss";
+
+.token-input, .condensed-people-search {
+  .twitter-typeahead {
+    height: 26px;
+
+    .tt-dropdown-menu {
+      width: 100%;
+
+      .tt-suggestion {
+        background: $typeahead-item-background-color;
+
+        &.tt-cursor {
+          background: $typeahead-item-active-background-color;
+        }
+
+        &:hover {
+          background: $typeahead-item-hover-background-color;
+        }
+      }
+    }
+
+    .autocompletion {
+      padding: 0px 5px;
+      height: 28px;
+      cursor: pointer;
+
+      &.person {
+        .avatar-wrap {
+          margin: 5px 5px 0 0;
+          width: 18px;
+          height: 18px;
+          float: left;
+        }
+      }
+
+      p {
+        line-height: 28px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        color: $typeahead-title-text-color;
+
+        small {
+          color: $typeahead-information-text-color;
+          font-size: 12px;
+          margin-left: 2px;
+        }
+      }
+
+      &.room {
+        .name {
+          display: inline;
+          padding-left: 16px;
+          background: transparent url('icons/go_people_icon.png') left center no-repeat;
+        }
+
+        .member-count  {
+          display: inline;
+          font-size: 12px;
+          color: $typeahead-information-text-color;
+          margin: 0;
+        }
+
+        .room-status {
+          display: inline;
+          float: none;
+          margin: 8px 0 0 0;
+        }
+
+      }
+    }
+  }
+}
+
+.people-search {
+  .tt-dropdown-menu {
+    width: 100%;
+    min-width: 200px;
+    border-radius: 2px;
+    margin-top: 1px;
+
+    .person-row:first-child {
+      border-radius: 2px 2px 0px 0px;
+    }
+
+    .person-row:last-child {
+      border-radius: 0px 0px 2px 2px;
+      border-bottom: 0;
+    }
+
+    .tt-suggestion {
+      background: transparent;
+      padding: 0;
+      margin: 0;
+      display: block;
+
+
+      &.tt-cursor {
+        .person-row h3, &:nth-child(even) .person-row h3 {
+          //color: $colorscheme-green
+        }
+      }
+
+      .person-row {
+        border-radius: 0;
+        cursor: pointer;
+        background: $typeahead-item-background-color;
+
+        p {
+          display: block;
+          float: none;
+        }
+
+        span {
+          display: inline;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+}
+
+.people-search, #at-view-mentions .atwho-view-ul {
+  .cur .person-row {
+    background: $typeahead-item-active-background-color !important;
+  }
+
+  .person-row {
+    padding: 3px 8px 3px 3px;
+    overflow: hidden;
+    background: $typeahead-item-background-color;
+    min-height: 58px;
+
+    span.has-presence {
+      margin-right: 6px;
+      margin-top: 4px;
+      margin-left: 0;
+    }
+
+    .label {
+      color: $typeahead-information-text-color;
+      padding: 4px;
+      margin-right: 3px;
+
+      &.radius {
+        border-radius: 2px;
+      }
+    }
+
+    &:hover {
+      background-color: $typeahead-item-hover-background-color;
+    }
+
+    &:nth-child(even) {
+      background-color: $typeahead-item-even-background-color;
+    }
+
+    .avatar-wrap {
+      width: 44px;
+      height: 44px;
+      margin-right: 5px;
+      margin-left: 0;
+      overflow: hidden;
+      float: left;
+
+      &, img {
+        border-radius: 1px;
+      }
+    }
+
+    .identity {
+      float: left;
+      margin-top: 5px;
+
+      h3 {
+        font-size: 14px;
+        font-weight: 500;
+        margin-bottom: 5px;
+        color: $typeahead-title-text-color;
+      }
+
+      p {
+        font-size: 12px;
+        font-weight: 400;
+        margin-bottom: 0;
+        color: $typeahead-information-text-color;
+      }
+    }
+
+    .remove {
+      float: right;
+    }
+  }
+}

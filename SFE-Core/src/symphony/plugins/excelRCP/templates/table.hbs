@@ -1,0 +1,20 @@
+<span class="excel-table non-message" contenteditable="false">
+    <table>
+        <thead>
+        <tr>
+            {{#each heading}}
+            <th {{#if @last}}class="right-th"{{/if}}>{{this}}{{#if @last}}<span class="close"></span>{{/if}}</th>
+            {{/each}}
+        </tr>
+        </thead>
+        <tbody>
+        {{#each rows}}
+        <tr>
+            {{#each this}}
+            <td>{{this}}</td>
+            {{/each}}
+        </tr>
+        {{/each}}
+        </tbody>
+    </table>
+</span>

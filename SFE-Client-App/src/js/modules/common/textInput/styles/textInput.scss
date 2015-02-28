@@ -1,0 +1,535 @@
+@import '../../../../../styles/variables';
+@import "theme.scss";
+
+.textarea-input {
+  .text-area-button {
+    width: 27px;
+    height: 27px;
+    float: left;
+    margin:0 0 2px 2px;
+    background-color: $rte-button-background-color;
+    border-radius: 2px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    top: 32px;
+
+      &:hover {
+        background-color: $rte-button-hover-background-color;
+      }
+
+      &:active {
+        background-color: $rte-button-active-background-color;
+      }
+
+    &.disabled {
+      background-color: $rte-button-disabled-background-color;
+    }
+
+    @each $rte-button in $rte-buttons {
+      $name: map-get($rte-button, class-name);
+
+      &.#{unquote($name)} {
+        background-image: url(map-get($rte-button, background-image));
+
+        @each $state in (hover active disabled) {
+          $connector: ':';
+
+          @if $state == 'disabled' {
+            $connector: '.';
+          }
+
+          $selector: "#{$connector}#{$state}";
+
+          &#{$selector} {
+            $button-state: map-get($rte-button, $state);
+
+            background-image: url(map-get($button-state, background-image));
+
+            $bg-color: map-get($button-state, background-color);
+
+            @if $bg-color {
+              background-color: $bg-color;
+        }
+      }
+    }
+      }
+      }
+
+
+    &.file-upload {
+      top: 3px;
+      background-position: 8px 7px;
+    }
+
+    &.screen-clip {
+      top: 32px;
+      background-position: 7px 8px;
+      }
+
+    &.attach {
+      top: 32px;
+      background-position: 9px 6px;
+      }
+
+    &.disable {
+      top: 32px;
+      background-position: center 8px;
+    }
+
+    &.chime {
+      top: 32px;
+      background-position: 6px 7px;
+      }
+
+    &.emoticons {
+      top: 32px;
+      background-position: 6px 7px;
+    }
+
+    &.expand {
+      top: 32px;
+      background-position: 8px 9px;
+      }
+
+    &.expanded {
+      top: 32px;
+      background-position: 11px 10px;
+      background-image: url('icons/rte_icon_expanded.png');
+
+      &:hover {
+        background-image: url('icons/rte_icon_expanded_hover.png');
+      }
+
+      &:active {
+        background-image: url('icons/rte_icon_expanded_active.png');
+      }
+    }
+  }
+
+  .actions-popup {
+    position: absolute;
+    z-index: 10; //on top of resize dotted line
+    background: $popover-background-color;
+    padding: 2px 2px 0 0;
+    border: $popover-border-style;
+    box-shadow: $popover-drop-shadow;
+  }
+
+  .actions-popup:after, .actions-popup:before {
+    top: 100%;
+    right: 10px;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    pointer-events: none;
+  }
+
+  .actions-popup:after {
+    border-color: rgba(50, 55, 65, 0);
+    border-top-color: $popover-background-color;
+    border-width: 5px;
+    margin-left: -5px;
+  }
+  .actions-popup:before {
+    border-color: rgba(28, 31, 38, 0);
+    border-top-color: darken($popover-background-color, 10%);
+    border-width: 6px;
+    margin-left: -6px;
+  }
+
+  .popup-emoticons {
+    width: 255px;
+
+    .emoji {
+      width: 23px;
+      height: 23px;
+      float: left;
+      margin: 0 0 2px 2px;
+
+      border-radius: 3px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $typeahead-item-hover-background-color;
+      }
+
+      &:active {
+        background-color: $typeahead-item-active-background-color;
+      }
+    }
+  }
+
+
+
+  .upload-stage {
+    float: left;
+    width: 100%;
+    padding: 2px 2px 0 2px;
+    font-size: 12px;
+    color: black  ;
+
+    .right-action {
+      position: absolute;
+      top:0;
+      right: 5px;
+      font-size: 11px;
+      cursor: pointer;
+
+      .toggle {
+        float: left;
+        background: url('icons/list_icon_dark.png') no-repeat center left;
+        padding: 4px 5px 4px 13px;
+
+        &:hover {
+          background: url('icons/list_icon_hover_dark.png') no-repeat center left;
+        }
+        &:active {
+          background: url('icons/list_icon_active_dark.png') no-repeat center left;
+        }
+
+        &.expanded {
+          background: url('icons/close_icon_dark.png') no-repeat center left;
+
+          &:hover {
+            background: url('icons/close_icon_hover_dark.png') no-repeat center left;
+          }
+          &:active {
+            background: url('icons/close_icon_active_dark.png') no-repeat center left;
+          }
+        }
+      }
+
+      .delete {
+        float: left;
+        cursor: pointer;
+        width: 20px;
+        height: 20px;
+        background: url('icons/trash_icon.png') no-repeat center center;
+
+        &:hover {
+          background: url('icons/trash_icon_hover.png') no-repeat center center;
+        }
+        &:active {
+          background: url('icons/trash_icon_active.png') no-repeat center center;
+        }
+      }
+
+    }
+
+    .details {
+      width: 100%;
+      float: left;
+
+      .upload-items {
+        float: left;
+        width: 100%;
+        max-height: 96px;
+        overflow-y: auto;
+      }
+
+      .upload-item {
+        position: relative;
+      }
+
+      .collapse {
+        width: 100%;
+        float: left;
+        border-radius: 3px;
+        height: 24px;
+        background: #363a43;
+        text-align: center;
+        color: #696f7c;
+        padding: 5px 0 0 0;
+        cursor: pointer;
+        margin: 0 0 4px 0;
+
+        &:hover {
+          background: lighten(#363a43, 5%);
+        }
+        &:active {
+          background: darken(#363a43, 5%);
+        }
+      }
+    }
+
+    .summary {
+      float: left;
+      width: 100%;
+      position: relative;
+    }
+
+    .progress-container {
+      width: 100%;
+      border-radius: 3px;
+      background: #757a84;
+      overflow: hidden;
+      margin: 0 0 4px 0;
+
+      .failed-remove {
+        display: none;
+        height: 20px;
+        width: 55px;
+        cursor: pointer;
+      }
+
+      .file-name {
+        position: absolute;
+        top: 4px;
+        left: 60px;
+        font-size: 11px;
+
+      }
+
+      .status {
+        width:55px;
+        height: 20px;
+        padding: 3px 0 0 4px;
+        float: left;
+      }
+
+      &.processing {
+        .status {
+          background: #ebab58;
+        }
+      }
+
+      &.failed {
+        .status {
+          background: #b5616a;
+          padding: 0;
+
+          .icon-status {
+            display: none;
+          }
+
+          .percent-status {
+            display: none;
+          }
+
+          .failed-remove {
+            display: block;
+            background: url('icons/close_icon_dark.png') no-repeat center center;
+
+            &:hover {
+              background: url('icons/close_icon_hover_dark.png') no-repeat center center;
+            }
+            &:active {
+              background: url('icons/close_icon_active_dark.png') no-repeat center center;
+            }
+          }
+        }
+
+         .file-name {
+          color: #989a9f;
+        }
+
+         .upload-progress[value]::-webkit-progress-bar {
+            background-color: #60646c;
+          }
+
+          .upload-progress[value]::-webkit-progress-value {
+            background: #60646c;
+          }
+
+      }
+
+      &.success {
+          .status {
+            background: #91bb4c;
+          }
+
+        .icon-status {
+          background: url('icons/Spin-check-greenbg.gif');
+        }
+      }
+
+      .icon-status {
+        width: 15px;
+        height: 16px;
+        background: url('icons/arrow_icon_white.png') no-repeat center center;
+        float: left;
+      }
+
+      .percent-status {
+        float: left;
+        font-size: 10px;
+        color: #fff;
+        margin: 2px 0 0 3px;
+      }
+
+      .upload-progress {
+        width: calc(100% - 55px);
+        border: 0 none;
+        height: 20px;
+        float: left;
+      }
+
+      .upload-progress[value]::-webkit-progress-bar {
+        background-color: #757a84;
+      }
+
+      .upload-progress[value]::-webkit-progress-value {
+        background: #989a9f;
+      }
+    }
+
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  .text-input-wrap {
+    position: relative;
+    padding: 2px;
+    float: left;
+    width: 100%;
+    height: 38px; //default height for text input
+
+    .rte-actions {
+      padding: 2px 1px 0 0;
+      float: none;
+      height: 100%;
+      background: $input-background-color;
+      width: auto;
+      overflow: hidden;
+      border: 1px solid $input-border-color;
+      border-left: 0 none;
+    }
+
+    .action-list {
+      position: absolute;
+
+      &.expanded {
+        position: absolute;
+        z-index: 100;
+        top: 4px;
+        right: 33px;
+
+        &.uploading {
+          top: 24px
+        }
+      }
+    }
+
+    .text-input-text {
+      word-break: break-word;
+      float: left;
+      height: 100%;
+      border: 1px solid $input-border-color;
+      word-wrap: break-word;
+      line-height: 18px;
+      background: $input-background-color;
+      color: $input-text-color;
+      cursor: text;
+      font-size: 13px;
+      font-weight: 400;
+      margin: 0;
+      overflow-y: auto;
+      resize: none;
+      padding: 7px 5px 5px 5px;
+
+      &[disabled] {
+        overflow: hidden;
+        cursor: not-allowed;
+      }
+
+      &[contenteditable="true"]:empty:before, &[contenteditable="false"]:empty:before {
+        content: attr(placeholder);
+        color: #999999;
+      }
+
+      .emoji img {
+        height: 25px;
+      }
+
+      .entity {
+        background-color: $token-background-color;
+        padding: 1px 4px 1px 4px;
+        font-size: 11px;
+        color: $token-clickable-text-color;
+        border-radius: 3px;
+        position: relative;
+        font-weight: 500;
+        left: 1px;
+        display: inline-block;
+        border: 1px solid darken($token-background-color, 3%);
+        cursor: pointer;
+        height: 22px;
+
+        &:hover {
+          background-color: lighten($token-background-color, 5%);
+        }
+
+        &.selected {
+          background-color: darken($token-background-color, 5%);
+        }
+
+        .cancel {
+          color: $status-offline-color;
+          margin-left: 5px;
+
+          &:hover {
+            color: $status-busy-color;
+          }
+
+          &::after {
+            content: "x";
+          }
+        }
+
+        input {
+          display: block;
+          width: 5px;
+          height: 10px;
+          margin: 0;
+          padding: 0;
+          opacity: 0;
+          position: absolute;
+        }
+
+        .button {
+            line-height: 1;
+            padding: 0;
+      }
+      }
+
+      &.sending {
+        background-image: url('icons/sending-message-loader.gif');
+        background-position: right 8px bottom 8px;
+        background-repeat: no-repeat;
+      }
+
+      &.error {
+        border: 1px solid $colorscheme-red !important;
+      }
+    }
+
+    .join-room {
+      position: absolute;
+      left: 290px;
+      z-index: 1;
+      width: 110px;
+      font-size: 12px;
+      padding: 5px;
+      top: 8px;
+    }
+  }
+}
+
+.module.focus-active, .module:hover {
+  .rte-actions {
+    border-left: 0 none;
+  }
+
+  .text-input-text {
+    border-right:  0 none;
+    outline: 0 none;
+
+    &:focus, &:focus + .rte-actions {
+      background: $input-focus-background-color;
+    }
+  }
+}

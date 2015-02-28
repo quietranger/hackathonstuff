@@ -1,0 +1,167 @@
+@import "../../../../../styles/variables.scss";
+@import "../../../../../styles/mixins/inputs.scss";
+@import "theme.scss";
+
+#general-static-filter-settings {
+  font-size: 14px;
+
+  span {
+    margin-left: 4px;
+  }
+
+  .add-entity {
+    margin-bottom: 20px;
+
+    span {
+      display: inline-block;
+    }
+
+    .select-wrap, span.user {
+      @include input();
+
+      display: inline-block;
+      height: 30px;
+    }
+
+    .prefix {
+      height: 32px;
+      position: relative;
+      bottom: -12px;
+
+      &.keywords {
+        overflow: hidden;
+
+        #entity-input {
+          width: 200px;
+        }
+    }
+
+    .select-wrap {
+        padding-top: 3px;
+
+        select {
+          padding-right: 20px;
+        }
+      }
+
+      span {
+        float: left;
+      }
+
+      span.user {
+        padding: 5px 5px 0 5px;
+      }
+      }
+
+    .twitter-typeahead {
+      margin: 0;
+    }
+
+    .twitter-typeahead input, #entity-input {
+      @include input();
+      height: 30px;
+      width: 241px;
+      font-size: 12px;
+    }
+
+    #entity-input, .twitter-typeahead input {
+      border-radius: 0;
+      -webkit-border-top-right-radius: 2px;
+      -webkit-border-bottom-right-radius: 2px;
+      -moz-border-radius-topright: 2px;
+      -moz-border-radius-bottomright: 2px;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+    }
+
+    #connector-id {
+      display: inline-block;
+      width: 100px;
+      height: 30px;
+    }
+
+    .add {
+      display: inline-block;
+      margin: 0;
+      position: relative;
+      top: -1px;
+    }
+  }
+
+  .rules {
+    margin-top: 10px;
+    margin-bottom: 10px;
+
+    h4 {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      clear: both;
+    }
+
+    h3 {
+      margin-bottom: 10px;
+    }
+
+    ul.lc, ul.tw {
+      border-radius: 2px;
+      padding: 3px;
+      min-height: 50px;
+      overflow: hidden;
+      list-style: none;
+
+      &.empty:before {
+        display: block;
+        content: 'Delegates will appear here.';
+        line-height: 50px;
+        color: $text-default-discreet-color;
+        font-size: 11px;
+        text-align: center;
+        width: 100%;
+      }
+    }
+
+    .entity {
+      border: 1px solid $token-border-color;
+      float: left;
+      margin: 2px;
+      padding: 2px 3px;
+      background: $token-background-color;
+      color: $token-text-color;
+      font-size: 11px;
+      border-radius: 2px;
+
+      p {
+        margin-bottom: 0;
+        display: inline-block;
+        float: left;
+      }
+
+      span.delete {
+        cursor: pointer;
+        background: url('icons/icon_close.png') no-repeat;
+        background-position: center;
+        width: 7px;
+        height: 7px;
+        margin: 4px 4px 2px 4px;
+        float: left;
+
+        &:hover {
+          background-image: url('icons/icon_close_active.png');
+        }
+        &:active {
+          background-image: url('icons/icon_close_active.png');
+        }
+        }
+      }
+    }
+
+  select {
+    background-image: none;
+  }
+
+  .tt-dropdown-menu {
+    width: 350px;
+    top: 29px !important;
+    left: -30px !important;
+  }
+}

@@ -1,0 +1,19 @@
+<header class="module-header gs-draggable">
+    <h2 class="text-selectable">{{moduleTitle}}</h2>
+    <div class="module-actions">
+        <a class="pin-view square-button {{#if isPinned}}pinned{{/if}}" data-tooltip="{{#if isPinned}}Module Pinned{{else}}Pin Module to Grid{{/if}}" data-tooltip-position="top right">
+            Pin
+        </a>
+        <a class="remove square-button" data-tooltip="Close" data-tooltip-position="top right">
+            Close
+        </a>
+    </div>
+</header>
+<section class="module-content trending-module module-scrollable">
+    <dl class="select-trending-type tabs">
+        <!--<dd><a data-trending-type="KEYWORD" href="#"><i class="fa fa-tag"></i> Keywords</a></dd>-->
+        <dd><a data-trending-type="USER" href="#"><i class="fa fa-user"></i> Users</a></dd>
+        <dd><a data-trending-type="ROOM" href="#"><i class="fa fa-cube"></i> Rooms</a></dd>
+        {{!-- <dd><a data-trending-type="Posts" href="#" >Posts</a></dd> --}}
+    </dl>
+</section>

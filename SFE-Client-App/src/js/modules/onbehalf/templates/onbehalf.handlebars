@@ -1,0 +1,17 @@
+<div id="post-onbehalf-errormessage"></div>
+<p>
+    Post the following on behalf of <span>{{ person.prettyName }}</span>:
+</p>
+<div class="obo-compose textarea-input"></div>
+<p>To:</p>
+<div class="post-onbehalf-target-instruction">
+    <select class="post-onbehalf-target" multiple>
+    <option value="{{ person.myCurrentThreadId }}" selected>{{ person.prettyName }}'s ME Page</option>
+    {{#each privateChannels}}
+    <option value="{{ threadId }}">{{ name }}</option>
+    {{/each}}
+    </select>
+<div class="buttons">
+    <a class="cancel button post-onbehalf-close" href="#">Cancel</a>
+    <a class="submit post-onbehalf-submit button positive" href="#">Submit</a>
+</div>

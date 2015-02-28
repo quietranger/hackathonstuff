@@ -1,0 +1,97 @@
+@import "../components/typography";
+
+$header-background-color: #f3f3f3;
+$header-border-bottom-color: #c4c4c4;
+$header-box-shadow: none;
+
+$header-search-background-color: white;
+$header-search-hover-background-color: #f9f9f9;
+$header-search-focus-background-color: white;
+$header-search-border: 0;
+$header-search-box-shadow: 0 1px 2px rgba(90,92,95,0.16);
+$header-search-placeholder-text-color: #bababa;
+$header-search-text-color: #5a5c5f;
+
+$header-button-background-color: #6f97cb;
+$header-button-hover-background-color: lighten($header-button-background-color, 5%);
+$header-button-active-background-color: darken($header-button-background-color, 5%);
+$header-button-text-color: white;
+$header-button-hover-text-color: white;
+$header-button-active-text-color: darken($header-button-text-color, 5%);
+
+$header-create-new-icon-background-image: 'header/create-new.png';
+$header-create-new-icon-background-image-hover: 'header/create-new-hover.png';
+$header-easy-post-icon-background-image: 'header/compose.png';
+$header-easy-post-icon-background-image-hover: 'header/compose-hover.png';
+
+$header-easy-post-background-color: #F5F5F5;
+$header-easy-post-border-color: #ACAEB1;
+$header-easy-post-header-color: #848A8C;
+$header-easy-post-button-background-color: #8CC58C;
+$header-easy-post-button-background-color-hover: lighten($header-easy-post-button-background-color, 5%);
+$header-easy-post-button-background-color-active: darken($header-easy-post-button-background-color, 5%);
+$header-easy-post-submit-color: white;
+$header-easy-post-submit-color-hover: white;
+$header-easy-post-submit-color-active: darken($header-easy-post-submit-color, 5%);
+$header-easy-post-cancel-color: #BCBCBC;
+$header-easy-post-cancel-color-hover: lighten($header-easy-post-cancel-color, 5%);
+$header-easy-post-cancel-color-active: darken($header-easy-post-cancel-color, 5%);
+
+$header-action-background-color: #eaeaea;
+$header-action-border-color: #e2e2e2;
+
+$header-user-name-text-color: #5d5d5d;
+$header-user-name-hover-text-color: lighten($header-user-name-text-color, 5%);
+$header-user-name-active-text-color: darken($header-user-name-text-color, 5%);
+
+$header-account-text-color: #676b72;
+$header-account-hover-text-color: lighten($header-account-text-color, 5%);
+$header-account-active-text-color: darken($header-account-text-color, 5%);
+
+$header-search-icon-url: 'search-white.png';
+
+$options-icons: (
+  changelog (
+    icon-url 'header/changelog.png',
+    hover-icon-url 'header/changelog-hover.png'
+  ),
+  contact (
+    icon-url 'header/contact.png',
+    hover-icon-url 'header/contact-hover.png'
+  ),
+  help (
+    icon-url 'header/help.png',
+    hover-icon-url 'header/help-hover.png'
+  ),
+  settings (
+    icon-url 'header/settings.png',
+    hover-icon-url 'header/settings-hover.png'
+  ),
+  tour (
+    icon-url 'header/tour.png',
+    hover-icon-url 'header/tour-hover.png'
+  ),
+  log-out (
+    icon-url 'header/logout.png',
+    hover-icon-url 'header/logout-hover.png'
+  ),
+  update-avatar (
+    icon-url 'header/update-avatar.png',
+    hover-icon-url 'header/update-avatar-hover.png'
+  )
+);
+
+$header-button: (
+        name profile,
+        background-color #ddd,
+        drop-shadow "none",
+        text-color #6f97cb,
+        hover (
+                background-color lighten(#ddd, 5%),
+                text-color lighten(#6f97cb, 5%)
+        ),
+        active (
+                background-color darken(#ddd, 5%),
+                text-color darken(#6f97cb, 5%)
+        ),
+);

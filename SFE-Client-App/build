@@ -1,0 +1,98 @@
+#!/usr/bin/env python
+
+from subprocess import check_call
+from subprocess import CalledProcessError
+from subprocess import STDOUT
+
+import os
+
+FNULL = open(os.devnull, 'w');
+
+buildable = True
+
+print """
+ ____                        _
+/ ___| _   _ _ __ ___  _ __ | |__   ___  _ __  _   _
+\___ \| | | | '_ ` _ \| '_ \| '_ \ / _ \| '_ \| | | |
+ ___) | |_| | | | | | | |_) | | | | (_) | | | | |_| |
+|____/ \__, |_| |_| |_| .__/|_| |_|\___/|_| |_|\__, |
+       |___/          |_|                      |___/
+
+
+Welcome. This script will build the Symphony front-end with the correct backend
+API URLs and provide the deployable files as a tarball.
+"""
+
+print "Checking for node..."
+
+try:
+    check_call(["which", "node"], stdout=FNULL, stderr=STDOUT)
+    print "OK\n"
+except CalledProcessError:
+    print "Node installation not found. Please install.\n"
+    buildable = False
+
+
+print "Checking for npm..."
+
+try:
+    check_call(["which", "npm"], stdout=FNULL, stderr=STDOUT)
+    print "OK\n"
+except CalledProcessError:
+    print "NPM installation not found. Please install.\n"
+    buildable = False
+
+if not buildable:
+    print "Please fix above errors to continue.\n"
+    exit()
+
+print "Installing node modules..."
+
+try:
+    check_call(["npm", "install"], stdout=FNULL, stderr=STDOUT)
+    print "OK"
+except CalledProcessError as e:
+    print "Cannot install node modules. Stack trace:\n"
+    print e.strerror
+    exit()
+
+print """
+Please enter the backend API URLs at the prompts. Make sure to enter the hostname,
+protocol, and path without a trailing slash.
+"""
+
+webcontroller_url = raw_input("WebController URL: ")
+relay_url = raw_input("Relay URL: ")
+
+print "\nRunning gulp build..."
+
+env = os.environ.copy()
+
+env['WEBCONTROLLER_URL'] = webcontroller_url
+env['RELAY_URL'] = relay_url
+
+try:
+    check_call(["npm", "run", "build"], env=env, stdout=FNULL, stderr=STDOUT)
+    print "OK\n"
+except CalledProcessError as e:
+    print "Gulp build failed. Stack trace:\n"
+    print e.strerror
+    exit()
+
+print "Archiving build products..."
+
+try:
+    check_call(["tar", "-cvvf", "dist.tar.gz", "dist"], stdout=FNULL, stderr=STDOUT)
+    print "OK"
+except CalledProcessError as e:
+    print "Failed to archive build. Stack trace:\n"
+    print e.strerror
+    exit()
+
+print """
+Build complete. Please copy the dist.tar.gz file in this directory to the
+client/ folder inside the corresponding S3 repository. Build information:
+
+Webcontroller URL: %s
+Relay URL: %s
+""" % (webcontroller_url, relay_url)

@@ -1,0 +1,212 @@
+@import "../../../../../styles/variables.scss";
+@import "../../../../../styles/mixins.scss";
+@import "../../../../../styles/mixins/inputs.scss";
+
+#filter-settings {
+  * {
+    font-size: 12px;
+  }
+
+  select {
+    margin: 0;
+    @include full-width-input();
+
+    &:focus {
+      outline: 0;
+    }
+  }
+
+  .select-wrap {
+    position: relative;
+    height: 32px;
+
+    &:before {
+      position: absolute;
+      color: $text-default-discreet-color;
+      font-size: 12px;
+      left: 5px;
+      top: 50%;
+      line-height: 1;
+      margin-top: -6px;
+      display: block;
+      font-weight: 500;
+    }
+
+    &:after {
+      display: block;
+      right: 5px;
+      top: 50%;
+      margin-top: -1px;
+      @include triangle(3px, #757e8e, 'down');
+    }
+  }
+
+  #filter-name {
+    margin-bottom: 10px;
+    @include full-width-input();
+  }
+
+  .operator {
+    margin-bottom: 10px;
+    float: left;
+    width: 100%;
+
+    label {
+      line-height: 32px;
+    }
+
+    .select-wrap {
+      float: left;
+      margin-right: 10px;
+
+      &:before {
+        content: 'Match:';
+      }
+    }
+
+    select {
+      width: 81px;
+      padding-left: 42px;
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: block;
+      margin-bottom: 10px;
+      position: relative;
+      float: left;
+      width: 100%;
+
+      .rule-type {
+        width: 81px;
+        float: left;
+        margin-right: 12px;
+
+        select {
+          padding-left: 16px;
+        }
+
+        &.keyword:before {
+          content: '#';
+          margin-left: 3px;
+        }
+
+        &.cashtag:before {
+          content: '$';
+          margin-left: 3px;
+        }
+
+        &.user_follow:before {
+          content: '@';
+          margin-top: -8px;
+          margin-left: 2px;
+        }
+      }
+
+      input {
+        float: left;
+        margin-right: 10px;
+        @include full-width-input(265px);
+
+        &:hover {
+            background-color: $input-hover-background-color !important;
+        }
+
+        &:focus {
+            background-color: $input-focus-background-color !important;
+        }
+      }
+
+      .definition-type {
+        float: right;
+
+        &:before {
+          content: 'On:';
+        }
+
+        select {
+          width: 110px;
+          padding-left: 22px;
+        }
+      }
+
+      .remove-rule {
+        position: absolute;
+        right: -18px;
+        width: 7px;
+        height: 7px;
+        text-indent: -9999px;
+        background: transparent url($edit-filter-remove-rule-icon-url) no-repeat center center;
+        top: 50%;
+        margin-top: -3px;
+
+        &:hover {
+            background-image: url($edit-filter-remove-rule-hover-icon-url);
+      }
+
+        &:active {
+          background-image: url($edit-filter-remove-rule-active-icon-url)
+        }
+      }
+
+      &:first-child {
+        .remove-rule {
+          display: none;
+        }
+      }
+    }
+  }
+
+  a.add-rule {
+    text-decoration: none;
+    color: $link-text-color;
+    display: block;
+  }
+
+  .twitter-typeahead {
+    float: left;
+  }
+
+  .tt-dropdown-menu {
+    width: 265px; //
+    border-radius: 2px;
+    margin-top: 1px;
+
+    .tt-suggestions {
+      float: none;
+      display: block;
+    }
+
+    .tt-suggestion {
+      width: 100%;
+
+      &.tt-cursor {
+        p.typeahead-result, &:nth-child(even) p.typeahead-result {
+          background: $accepted-color;
+          color: darken($accepted-color, 60%);
+        }
+      }
+
+      p.typeahead-result {
+        cursor: pointer;
+        display: block;
+        background: #22252d;
+        border-bottom: 1px solid #1b1e24;
+        color: $white;
+        border-radius: 0;
+        margin: 0;
+        float: none;
+        padding: 5px 3px;
+      }
+
+      &:nth-child(even) p.typeahead-result {
+        background: #20242c;
+        color: $white;
+      }
+    }
+  }
+}

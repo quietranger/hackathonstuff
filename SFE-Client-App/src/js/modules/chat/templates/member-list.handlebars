@@ -1,0 +1,44 @@
+<div id="member-table-wrap">
+    {{#if context.memberCount}}
+    <div id="member-table">
+        <table class="symphony">
+            <thead>
+                <tr>
+                    <th class="name">Name</th>
+                    {{#unless context.isIm}}
+                    <th class="date">Join Date</th>
+                    <th class="status">Status</th>
+                    {{/unless}}
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    {{/if}}
+    {{#if context.showPager}}
+    <div class="pagination-centered">
+        {{#pagination context.currentPage context.pageCount 5}}
+        <ul class="pagination">
+            {{#unless isFirstPage}}
+            <li class="arrow prev"><a href="#">&laquo;</a></li>
+            {{/unless}}
+
+            {{#each pages}}
+            {{#if isCurrent}}
+            <li class="current"><a href="#">{{page}}</a></li>
+            {{else}}
+            <li data-page="{{page}}" class="page"><a href="#">{{page}}</a></li>
+            {{/if}}
+            {{/each}}
+
+            {{#unless isLastPage}}
+            <li class="arrow next"><a href="#">&raquo;</a></li>
+            {{/unless}}
+        </ul>
+        {{/pagination}}
+    </div>
+    {{/if}}
+</div>

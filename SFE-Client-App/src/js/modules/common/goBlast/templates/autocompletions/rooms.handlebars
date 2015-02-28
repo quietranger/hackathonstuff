@@ -1,0 +1,9 @@
+<div class="room autocompletion">
+    <p class="name">{{name}}</p>
+    <p class="member-count">{{memberCount}} Members</p>
+    {{#if publicRoom}}
+    <div class="tag tag-green room-status">Public</div>
+    {{else}}
+    <div class="tag tag-purple room-status">Private</div>
+    {{/if}}
+</div>

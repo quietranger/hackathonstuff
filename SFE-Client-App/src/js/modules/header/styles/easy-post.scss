@@ -1,0 +1,118 @@
+@import "theme.scss";
+
+#easy-post {
+  position: absolute;
+  top: calc(100% + 4px);
+  z-index: 100;
+
+  .easy-post-triangle {
+    position: relative;
+    top: 1px;
+    margin-left: 18px;
+    height: 8px;
+
+    &:before, &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+    }
+
+    &:before {
+      border-width: 0 7px 8px 7px;
+      border-color: transparent transparent $header-easy-post-background-color transparent;
+      z-index: 2;
+    }
+
+    &:after {
+      border-width: 0 8px 9px 8px;
+      border-color: transparent transparent $header-easy-post-border-color transparent;
+      left: -1px;
+      top: -1px;
+    }
+
+  }
+
+  .easy-post-content {
+    background-color: $header-easy-post-background-color;
+    border: 1px solid $header-easy-post-border-color;
+    border-radius: 2px;
+    text-align: left;
+    padding: 8px;
+    box-shadow: 0 0 6px $header-easy-post-border-color;
+    display: flex;
+    flex-flow: column nowrap;
+    line-height: 12px;
+    width: 300px;
+
+    h4 {
+      color: $header-easy-post-header-color;
+      font-size: 14px;
+      line-height: 14px;
+      margin-bottom: 8px;
+    }
+
+    .easy-post-editor {
+      margin-bottom: 8px;
+
+      .text-input-wrap {
+        padding: 0;
+
+        &, .text-input-text {
+          height: 80px;
+          font-size: 12px;
+          font-weight: 500;
+        }
+
+        // FIXME in textInputView css directly: temporary fix: makes the actions appear left
+        .actions-popup:after, .actions-popup:before {
+          left: 112%;
+          top: 10px;
+          border: solid transparent;
+          content: " ";
+          height: 0;
+          width: 0;
+          position: absolute;
+          pointer-events: none;
+        }
+
+        .actions-popup:after {
+          border-color: rgba(50, 55, 65, 0);
+          border-left: $popover-border-style;
+          border-width: 5px;
+          margin-left: -5px;
+        }
+        
+        .actions-popup:before {
+          border-color: rgba(28, 31, 38, 0);
+          border-left: $popover-border-style;
+          border-width: 7px;
+          margin-left: -6px;
+          margin-top: -2px;
+        }
+      }
+      // END FIXME
+
+      [contenteditable=true] {
+        &, &:focus, &:active {
+          outline: none;
+        }
+      }
+    }
+
+    .easy-post-buttons {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: flex-end;
+      align-items: center;
+
+      #easy-post-submit {
+        font-size: 13px;
+        font-weight: 500 !important;
+        width: auto;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<div class="person {{person.screenName}}">
+    {{wrappedAvatar person}}
+    <span class="details profile">
+        <span class="name">{{person.prettyName}}</span>
+        {{#unless isCurrentUser}}
+            <div class="start-chat button positive">Chat</div>
+        {{/unless}}
+        <span class="legal-title">{{person.title}}</span>
+        <span class="divisionAndDepartment">
+          <span class="division">{{person.division}} {{person.deptName}} {{person.location}}</span>
+        </span>
+      </span>
+</div>

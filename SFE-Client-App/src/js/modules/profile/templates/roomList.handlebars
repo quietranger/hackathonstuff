@@ -1,0 +1,51 @@
+<p>{{profileInfo.person.prettyName}} is a member of {{roomCount}} rooms:</p>
+<div class="room-list-wrap">
+<div class="room-list">
+    {{#each result}}
+    <div class="room_info">
+        <div class="name" threadtype="{{roomType}}" threadid="{{threadId}}">
+            <span>{{name}}</span>
+            {{#if publicRoom}}
+                    <span class="tag public-room">Public</span>
+            {{else}}
+                    <span class="tag private-room">Private</span>
+            {{/if}}
+        </div>
+        <div class="room_actions">
+          {{#if publicRoom}}
+            {{#unless isMember}}
+                    <a class="join-room button action" data-threadid="{{threadId}}">Join Room</a>
+            {{/unless}}
+          {{/if}}
+          {{#if isMember}}
+                    <a class="open-room button action" data-threadid="{{threadId}}">Open Room</a>
+          {{/if}}
+        </div>
+        <div class="creator">
+            <span>Created by</span>
+            <a class="room-sr-creator-user user_link" data-userid="{{creator}}">
+                {{creatorPrettyName}}
+            </a>
+            <span>on</span>
+            <span class="creatondate">
+                {{parseDate creationDate}}
+            </span>
+         </div>
+         <div class="membership">
+            {{#if isMember}}
+                You are a member of this room.
+            {{/if}}
+        </div>
+    </div>
+    {{else}}
+     {{#if isEmpty}}
+        <div class="loading">No results to show.</div>
+        {{else}}
+        <div class="loading">Loading...</div>
+        {{/if}}
+    {{/each}}
+</div>
+</div>
+<div class="buttons">
+    <button class="button close positive">Done</button>
+</div>

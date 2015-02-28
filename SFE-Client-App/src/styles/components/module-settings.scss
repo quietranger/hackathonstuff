@@ -1,0 +1,46 @@
+@import "../mixins/inputs.scss";
+@import "theme.scss";
+
+.module-settings {
+  ul {
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: block;
+      margin: 0 0 5px 0;
+      padding: 0;
+    }
+
+    input[type="text"] {
+      @include full-width-input();
+    }
+
+    .sp-replacer {
+      @include input();
+    }
+  }
+
+  label, h4 {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: normal;
+    color: $section-header-text-color;
+  }
+
+  .checkbox {
+    float: left;
+  }
+
+  span.checkbox + label {
+    margin-left: 22px;
+
+    p:not(.title) {
+      color: $default-text-color;
+    }
+
+    p.title {
+        color: $section-item-header-text-color;
+    }
+  }
+}

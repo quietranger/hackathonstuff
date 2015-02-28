@@ -1,0 +1,14 @@
+.read-receipt-modal {
+  table.symphony {
+    margin-bottom: 10px;
+
+    tbody {
+      max-height: 150px;
+      overflow-y: auto;
+
+      td {
+        width: 240px;
+      }
+    }
+  }
+}

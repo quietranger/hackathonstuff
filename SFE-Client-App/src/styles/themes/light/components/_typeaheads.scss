@@ -1,0 +1,9 @@
+$typeahead-title-text-color: #82888a;
+$typeahead-information-text-color: #a7a7a7;
+
+$typeahead-item-background-color: #fafafa;
+$typeahead-item-even-background-color: #eaeaea;
+$typeahead-item-hover-background-color: lighten($typeahead-item-background-color, 5%);
+$typeahead-item-active-background-color: darken($typeahead-item-background-color, 8%);
+
+$typeahead-room-icon-url: 'room.png';

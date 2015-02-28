@@ -1,0 +1,30 @@
+<div class="content">
+    <div class="fields alias">
+        <label for="alias">Alias</label>
+        <div class="input {{#if hasAlias}}resettable{{/if}}">
+            <input type="text" class="alias-input mousetrap" name="alias" value="{{alias}}" />
+            <a class="reset" href="#">Reset</a>
+            <a class="save {{#unless hasAlias}}disabled{{/unless}}" href="#">Save</a>
+        </div>
+    </div>
+    <div class="fields colors">
+        <label for="color">Color</label>
+        <div class="input">
+            <input name="color" type="radio" class="color-selector" value="" {{#unless color}}checked="checked"{{/unless}} />
+            <span class="default-color"></span>
+            {{#for 0 9}}
+            <input name="color" type="radio" class="color-selector" value="{{i}}" {{checked i ../color}} />
+            <span class="user-selected-color-{{i}}" />
+            {{/for}}
+        </div>
+    </div>
+    <div class="fields input background">
+        <span class="checkbox">
+            <input type="checkbox" class="enable-background" {{checked showBackgroundColor true}} />
+            <span></span>
+        </span>
+        <label for="enable-background">
+            Apply to background
+        </label>
+    </div>
+</div>

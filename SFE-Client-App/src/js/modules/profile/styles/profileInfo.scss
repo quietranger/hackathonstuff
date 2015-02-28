@@ -1,0 +1,296 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/user-colors';
+@import "../../../../styles/mixins/buttons";
+@import "theme.scss";
+
+@include button($header-button);
+
+.profile-module {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  .module-content > .content, .module-content > .content > div {
+    height: 100%;
+  }
+
+  .profile-wrap {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-content: stretch;
+  }
+
+  .social-messages {
+    background: $profile-messages-background-color;
+
+    .new-message-indicator {
+      z-index: 1;
+      right: 14px;
+      top: 98px;
+    }
+
+    .quick-move-button {
+      z-index: 1;
+      left: 100%;
+      margin-left: -37px;
+      right: auto;
+      top: 10px;
+      position: absolute;
+    }
+  }
+
+  .profile-post {
+    .actions-popup:after, .actions-popup:before {
+      left: 112%;
+      top: 10px;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+
+    .actions-popup:after {
+      border-color: rgba(50, 55, 65, 0);
+      border-left-color: #323741;
+      border-width: 5px;
+      margin-left: -5px;
+    }
+    .actions-popup:before {
+      border-color: rgba(28, 31, 38, 0);
+      border-left-color: #1c1f26;
+      border-width: 7px;
+      margin-left: -6px;
+      margin-top: -2px;
+    }
+  }
+
+  .textarea-input {
+    min-height: 68px;
+
+    .text-input-wrap {
+      height: 72px;
+    }
+  }
+
+  .load-more {
+    color: $discreet-text-color;
+    font-size: 11px;
+    font-weight: 400;
+    text-align: center;
+    width: 100%;
+    }
+
+  .profile-messages {
+    flex: 1 1 auto;
+    align-self: stretch;
+    position: relative;
+  }
+
+  div.profile-info {
+    flex: 0 1 auto;
+
+    .person-wrap {
+      margin-bottom: 10px;
+    }
+
+    .border-wrap {
+      border-bottom: 1px solid $profile-messages-border-color;
+      padding: 10px 8px 5px 8px;
+    }
+
+    .avatar-wrap {
+      margin: 0 10px 2px 2px;
+      float: left;
+      border-radius: 2px;
+      z-index: 1;
+    }
+
+    .followsyou {
+        font-size: 11px;
+      width: 70px;
+      position: absolute;
+      top: 3px;
+      right: 4px;
+      text-align: right;
+      color: $default-text-color;
+      font-weight: 800;
+    }
+
+    .infosection {
+      display: table-cell;
+      vertical-align: top;
+
+      div:first-of-type {
+        margin: 0 70px 0 0;
+      }
+
+      div {
+        margin: 0px 0px 3px 0px;
+        float: left;
+        display: inline;
+        clear: left;
+        font-size: 13px;
+        font-weight: 500;
+        color: $profile-info-text-color;
+
+        * {
+          float: left;
+          display: inline;
+          margin-right: 3px;
+          margin-bottom: 3px;
+        }
+
+        .profile-location {
+          margin-right: 6px;
+        }
+
+        .presence-indicator {
+          margin-left: 0px;
+          margin-top: 3px;
+        }
+
+        .alias-color-button {
+          background: $profile-alias-color-picker-background-color;
+          width: 17px;
+          height: 8px;
+          display: inline-block;
+          float: none;
+          margin-left: 6px;
+          cursor: pointer;
+          position: relative;
+          -webkit-border-top-right-radius: 2px;
+          -webkit-border-bottom-right-radius: 2px;
+          -moz-border-radius-topright: 2px;
+          -moz-border-radius-bottomright: 2px;
+          border-top-right-radius: 2px;
+          border-bottom-right-radius: 2px;
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+
+          $i: 0;
+          @each $color in $colors {
+            &.user-selected-color-#{$i} {
+              background: $color;
+
+              &:after {
+                border-right-color: $color;
+              }
+            }
+
+            $i: $i + 1;
+          }
+
+          &:after {
+            content: ' ';
+            height: 0;
+            width: 0;
+            position: absolute;
+            border: 4px solid transparent;
+            border-right-color: $profile-alias-color-picker-background-color;
+            right: 100%;
+            top: 0;
+          }
+        }
+      }
+    }
+
+    .actions {
+      overflow: auto;
+      clear: left;
+      padding-bottom: 5px;
+
+      .action_btn_clear {
+        float: left;
+      }
+
+      @include button($profile-button);
+
+      .button {
+        float: left;
+        margin: auto 5px 10px auto;
+        font-size: 11px !important;
+        height: 25px;
+        line-height: 25px;
+        font-weight: 500;
+
+        &.action_btn_following {
+          * {
+            float: left;
+            display: inline;
+        }
+
+          .tag {
+            height: 13px;
+            line-height: 10px;
+        }
+        }
+
+        .tag {
+          margin: 6px 0px 0px 4px;
+        }
+
+        span {
+          margin-left: 4px;
+    }
+  }
+  }
+      }
+
+  .profile-post {
+    flex: 0 0 auto;
+
+    &:empty {
+      display: none;
+    }
+  }
+
+  .post-compose {
+    position: relative;
+    height: 72px;
+    width: 100%;
+  }
+
+    div.messages-scroll {
+      position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: auto;
+
+    .social-message:first-child {
+      padding-top: 5px;
+    }
+  }
+
+  .post-compose {
+    .mentions-input-box {
+      background: transparent;
+    }
+
+  }
+
+  header a.square-button:last-child {
+    margin-right: 0
+  }
+
+  header .has-presence.presence-indicator {
+    margin-left: 3px;
+    margin-right: 0px;
+    margin-top: 2px;
+  }
+}
+
+.simple-jack-tiny .profile-module .module-content .profile-info {
+  .action_section .action_button {
+    padding: 7px 5px;
+    font-size: 9px;
+    margin-right: 1px;
+    .tag {
+      margin: -2px 0px 0px 3px;
+    }
+  }
+}

@@ -1,0 +1,131 @@
+$nav-background-color: #22252d;
+$nav-border-right-color: #1c2128;
+$nav-drag-token-color: #58c6ff;
+
+$nav-title-text-color: #757a84;
+$nav-title-background-color: $nav-background-color;
+
+$nav-item-text-color: #cacaca;
+$nav-item-hover-text-color: $nav-item-text-color;
+$nav-item-active-text-color: #b5616a;
+$nav-item-selected-text-color: #a3be77;
+$nav-item-blink-on-text-color: white;
+
+$nav-notification-background-color: #e23030;
+$nav-notification-blink-on-background-color: white;
+$nav-notification-text-color: $nav-notification-blink-on-background-color;
+$nav-notification-blink-on-text-color: $nav-notification-background-color;
+
+$nav-item-background-color: transparent;
+$nav-item-hover-background-color: lighten($nav-background-color, 3%);
+$nav-item-active-background-color: darken($nav-background-color, 3%);
+$nav-item-focused-background-color: #323741;
+$nav-item-open-background-color: #323741;
+$nav-item-hover-border-color: #cacaca;
+$nav-item-active-border-color: transparent;
+$nav-item-focused-border-color: #a3be77;
+$nav-item-open-border-color: #b5616a;
+$nav-item-hover-text-color: $nav-item-hover-border-color;
+$nav-item-active-text-color: white;
+$nav-item-focused-text-color: $nav-item-focused-border-color;
+$nav-item-open-text-color: $nav-item-open-border-color;
+
+$nav-expander-drag-blur-color: #323741;
+$nav-expander-guide-color: #58c6ff;
+
+$nav-collapsed-blur-color: rgba(43,48,59,0.4);
+$nav-collapsed-hover-blur-color: lighten($nav-collapsed-blur-color, 5%);
+$nav-collapsed-active-blur-color: darken($nav-collapsed-blur-color, 5%);
+
+$nav-group-name-text-color: #cacaca;
+$nav-group-name-blink-text-color: white;
+$nav-group-name-background-color: $nav-background-color;
+$nav-group-border-color: #323640;
+
+$nav-group-input-background-color: #323741;
+$nav-group-input-hover-background-color: lighten($nav-group-input-background-color, 3%);
+$nav-group-input-active-background-color: darken($nav-group-input-background-color, 3%);
+$nav-group-input-drop-shadow: 0 1px 1px rgba(black, 0.23);
+
+$nav-group-creation-indicator-background-color: rgba(212,219,237,0.18);
+
+$nav-group-action-button-background-color: #1c1f26;
+$nav-group-action-button-hover-background-color: lighten($nav-group-action-button-background-color, 5%);
+$nav-group-action-button-active-background-color: darken($nav-group-action-button-background-color, 5%);
+
+$nav-create-button-background-color: #1c1f26;
+
+
+$nav-img-section-collapse: url("nav/section-collapsed.png");
+$nav-img-section-collapse-hover: url("nav/section-collapsed-hover.png");
+$nav-img-section-collapse-active: url("nav/section-collapsed-active.png");
+
+
+$nav-icons: (
+    profile (
+        icon-url 'nav/profile.png',
+        hover-icon-url 'nav/profile-white.png',
+        blink-on-icon-url 'nav/profile-white.png',
+        active-icon-url 'nav/profile.png',
+        focused-icon-url 'nav/profile-white.png',
+        position-x 15px,
+        position-y 8px
+    ),
+    following (
+        icon-url 'nav/following.png',
+        hover-icon-url 'nav/following-white.png',
+        blink-on-icon-url 'nav/following-white.png',
+        active-icon-url 'nav/following.png',
+        focused-icon-url 'nav/following-white.png',
+        position-x 14px,
+        position-y 8px
+    ),
+    keywords (
+        icon-url 'nav/keywords.png',
+        hover-icon-url 'nav/keywords-white.png',
+        blink-on-icon-url 'nav/keywords-white.png',
+        active-icon-url 'nav/keywords.png',
+        focused-icon-url 'nav/keywords-white.png',
+        position-x 16px,
+        position-y 8px
+    ),
+    mentions (
+        icon-url 'nav/mentions.png',
+        hover-icon-url 'nav/mentions-white.png',
+        blink-on-icon-url 'nav/mentions-white.png',
+        active-icon-url 'nav/mentions.png',
+        focused-icon-url 'nav/mentions-white.png',
+        position-x 16px,
+        position-y 8px
+    ),
+    accept (
+        icon-url 'nav/accept.png',
+        hover-icon-url 'nav/accept-hover.png',
+        active-icon-url 'nav/accept-active.png'
+    ),
+    reject (
+        icon-url 'nav/reject.png'
+    ),
+    edit (
+        icon-url 'nav/edit.png'
+    ),
+    add (
+        icon-url 'nav/add.png'
+    ),
+    list (
+        icon-url 'nav/list.png',
+        hover-icon-url 'nav/list-hover.png'
+    ),
+    list-expanded (
+        icon-url 'nav/list-expanded.png',
+        hover-icon-url 'nav/list-expanded-hover.png'
+    ),
+    close (
+        icon-url 'nav/close.png',
+        hover-icon-url 'nav/close-hover.png',
+        active-icon-url 'nav/close-active.png'
+    )
+);
+
+$nav-bell-icon-url: 'nav/bell.png';
+$nav-bell-blink-on-icon-url: 'nav/bell-white.png';

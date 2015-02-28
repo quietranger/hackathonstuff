@@ -1,0 +1,43 @@
+@import "theme.scss";
+
+#infobarrier-alert {
+  .exception-request {
+    width: 100%;
+    border-bottom: 1px solid $modal-entity-list-border-color;
+    margin: 20px 0 10px 0;
+    padding: 0 0 10px 0;
+  }
+  .exception-text {
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .status-box {
+    width: 100%;
+    padding: 5px;
+    margin: 5px 0 0 0;
+    border-radius: 2px;
+
+    &.success {
+      background: #a3be77;
+    }
+    &.fail {
+      background: #ec6464;
+    }
+  }
+
+  .spinner {
+    width: 30px;
+    height: 30px;
+    float: right;
+    .spinner {
+      top: 15px;
+      left: 15px;
+    }
+  }
+  .button {
+    display: block;
+    float: right;
+    margin: 0 0 0 10px;
+  }
+}

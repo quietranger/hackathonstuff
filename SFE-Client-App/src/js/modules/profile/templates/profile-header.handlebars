@@ -1,0 +1,15 @@
+<h2 class="colorable aliasable" data-userid="{{person.id}}">{{person.prettyName}}</h2>
+<div class="tag profile">Profile</div>
+<div class="module-actions">
+    <a class="show-more square-button" data-dropdown="{{dropdownId}}-more-options" data-tooltip="More" data-tooltip-position="top right">
+        Show More Options
+    </a>
+
+    <a class="pin-view square-button {{#if isPinned}}pinned{{/if}}" href="#" data-tooltip-position="top right" data-tooltip="{{#if isPinned}}Module Pinned{{else}}Pin Module to Grid{{/if}}">
+        Pin
+    </a>
+
+    <a class="remove square-button" href="#" data-tooltip="Close" data-tooltip-position="top right">
+        Close
+    </a>
+</div>

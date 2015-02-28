@@ -1,0 +1,11 @@
+@import "theme.scss";
+
+@for $i from 0 through 8 {
+  .user-selected-color-#{$i} {
+    color: nth($colors, ($i + 1));
+  }
+
+  .user-selected-background-color-#{$i} {
+    background-color: lighten(nth($colors, ($i + 1)), 10%);
+  }
+}

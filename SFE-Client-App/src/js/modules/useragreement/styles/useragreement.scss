@@ -1,0 +1,12 @@
+@import '../../../../styles/variables';
+@import "theme.scss";
+
+.legal-notice-text {
+    color: $default-text-color;
+  line-height: 1.2;
+
+    a {
+      color: $link-text-color;
+      text-decoration: none;
+    }
+}

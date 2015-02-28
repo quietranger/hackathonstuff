@@ -1,0 +1,57 @@
+@import '../../../../styles/variables';
+.tw.profile-module {
+  .person-wrap {
+    width: 100%;
+  }
+  div.profile-info {
+    .infosection {
+      padding: 2px 0 0 10px;
+
+      div:first-of-type {
+        margin: 0 10px 0 0;
+      }
+    }
+    div.tag.twitter{
+      clear: none;
+      margin-left: 4px;
+      margin-top: -2px;
+    }
+    div.profile-image {
+      width: 50px;
+
+      img {
+        margin-left: 8px;
+      }
+    }
+    div.action_section {
+      display: table-cell;
+      vertical-align: top;
+      float: none;
+      clear: none;
+      padding: 10px 5px 0 0;
+
+      .action_button {
+        float: right;
+        display: inline;
+        margin-right: 8px;
+        background: $divider-line-light;
+        border: 1px $divider-line-dark solid;
+        border-width: 1px 1px 2px 1px;
+        padding: 5px 5px;
+        border-radius: 2px;
+        color: $colorscheme-yellow;
+        font-size: 11px;
+        font-weight: 500;
+        height: 25px;
+        cursor: pointer;
+
+        &:hover {
+          background: #323844;
+        }
+        &:active {
+          background: $divider-line-light;
+        }
+      }
+    }
+  }
+}

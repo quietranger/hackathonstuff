@@ -1,0 +1,44 @@
+<div class="appsettings-permissions">
+
+    <div class="row permissions-own-account">
+        <h5>Post on My Behalf</h5>
+
+        <div class="row">
+            <div class="field field-own-account-add-delegates">
+                <button class="button action">Add People</button>
+            </div>
+            <div class="field field-own-account-add-delegates-input hidden">
+                <input type="text" placeholder="Search for users...">
+            </div>
+        </div>
+        <div class="field field-own-account-delegates-list">
+            {{!-- insert list view here --}}
+        </div>
+    </div>
+
+    {{#if showSharedAccounts}}
+    <div class="row permissions-shared-account">
+        <h5>Shared Accounts</h5>
+
+        <div class="row">
+            <div class="field field-shared-accounts">
+                <select>
+                    {{#each sharedAccounts}}
+                    <option value="{{this.userId}}">{{this.prettyName}}</option>
+                    {{/each}}
+                </select>
+            </div>
+            <div class="field field-shared-account-add-delegates">
+                <button class="button action">Add People</button>
+            </div>
+            <div class="field field-shared-account-add-delegates-input hidden">
+                <input type="text" placeholder="Search for users...">
+            </div>
+        </div>
+        <div class="field field-shared-account-delegates-list">
+            {{!-- insert list view here --}}
+        </div>
+    </div>
+    {{/if}}
+
+</div>

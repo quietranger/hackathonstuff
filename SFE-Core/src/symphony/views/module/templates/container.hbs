@@ -1,0 +1,24 @@
+<header class="module-header gs-draggable">
+    {{{moduleHeader}}}
+    <div class="module-actions">
+        {{#if moduleMenu}}
+        <a class="show-more square-button" data-tooltip="More" data-tooltip-position="top right">
+            More
+        </a>
+        {{/if}}
+        <a class="pin-view square-button {{#if isPinned}}pinned{{/if}}" href="#" data-tooltip="{{#if isPinned}}Module Pinned{{else}}Pin Module to Grid{{/if}}" data-tooltip-position="top right">
+            Pin
+        </a>
+        <a class="remove square-button" href="#" data-tooltip="Close" data-tooltip-position="top right">
+            Close
+        </a>
+    </div>
+</header>
+<section class="module-content">
+    {{#if moduleMenu}}
+    <div class="module-options">
+        {{{moduleMenu}}}
+    </div>
+    {{/if}}
+    <div class="content"></div>
+</section>

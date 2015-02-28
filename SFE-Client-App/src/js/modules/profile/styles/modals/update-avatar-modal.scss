@@ -1,0 +1,57 @@
+@import "theme.scss";
+
+.update-avatar-modal {
+  .spinner {
+    top: 20px;
+    left: 50%;
+    position: absolute;
+  }
+
+  .buttons + .spinner {
+    bottom: 30px;
+    right: 150px;
+    top: auto;
+    left: auto;
+  }
+
+  .avatar {
+    width: 100%;
+    height: auto;
+    border-top: 1px solid $modal-entity-list-border-color;
+    border-bottom: 1px solid $modal-entity-list-border-color;
+    padding: 20px 0;
+    margin: 0 auto;
+    float: none;
+    position: relative;
+    border-radius: 2px;
+
+    img {
+      margin: 0 auto;
+      display: block;
+      width: 100%;
+    }
+
+    .buttons {
+      width: 100%;
+      position: absolute;
+      bottom: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    button {
+      width: 80px;
+      text-align: center;
+      background: rgba(0,0,0,0.50);
+      border-radius: 2px;
+      border: 0;
+      font-size: 12px;
+      box-shadow: none;
+
+      &:last-child {
+        margin-left: 10px;
+      }
+    }
+  }
+}

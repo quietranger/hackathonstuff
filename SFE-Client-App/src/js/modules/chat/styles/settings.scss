@@ -1,0 +1,22 @@
+@import "../../../../styles/variables.scss";
+@import "../../../../styles/mixins/inputs.scss";
+@import "theme.scss";
+
+.chatroom-settings {
+    .try-notification {
+        padding: 7px;
+        display: inline-block;
+    }
+
+    .sp-replacer {
+        margin-top: -1px;
+    }
+
+    input[type="text"] {
+        margin-bottom: 10px;
+
+        &.error {
+            border: 1px solid red;
+        }
+    }
+}

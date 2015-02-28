@@ -1,0 +1,38 @@
+                {{#if read}}
+<h3>Read by</h3>
+<table width="100%" id="read-table" class="symphony">
+    <tbody>
+                {{#each read}}
+        <tr>
+            <td>{{this.prettyName}}</td>
+            <td>{{timestamp this.timestamp "MMMM Do YYYY h:mm:ss a"}}</td>
+        </tr>
+                {{/each}}
+    </tbody>
+</table>
+                {{/if}}
+                {{#if delivered}}
+<h3>Delivered to</h3>
+<table width="100%" id="delivered-table" class="symphony">
+    <tbody>
+                {{#each delivered}}
+    <tr>
+        <td>{{this.prettyName}}</td>
+        <td>{{timestamp this.timestamp "h:mm:ss a"}}</td>
+    </tr>
+                {{/each}}
+    </tbody>
+</table>
+                {{/if}}
+                {{#if sent}}
+<h3>Sent to</h3>
+<table width="100%" id="sent-table" class="symphony">
+    <tbody>
+                {{#each sent}}
+    <tr>
+        <td>{{this.prettyName}}</td>
+    </tr>
+                {{/each}}
+    </tbody>
+</table>
+                {{/if}}

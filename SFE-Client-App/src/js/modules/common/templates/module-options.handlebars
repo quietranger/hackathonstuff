@@ -1,0 +1,129 @@
+<div class="module-options">
+    {{#if isChatroom}}
+    <ul class="with-title">
+        {{#if userIsOwner}}
+            <li><a class="show-deactivation-confirmation" href="#">Deactivate</a></li>
+        {{else}}
+            <li><a href="#" class="leave-room">Leave Room</a></li>
+        {{/if}}
+        <li><a href="#" class="search">Search This Room</a></li>
+        <li class="float_pop_out"><a href="#" class="float-view">Pop-Out</a></li>
+        <li class="float_pop_in"><a href="#" class="unfloat-view">Pop-In</a></li>
+        <li>
+                {{#if userIsOwner}}
+                    <a class="show-manage-membership" href="#">Manage Members</a>
+                {{else}}
+                    <a class="show-manage-membership" href="#">Members</a>
+                {{/if}}
+        </li>
+        <li><a href="#" class="show-settings">Settings</a></li>
+    </ul>
+    <ul class="without-title">
+        {{#if userIsOwner}}
+        <li><a class="show-deactivation-confirmation" href="#" data-tooltip="Deactivate" data-tooltip-position="bottom right"></a></li>
+        {{else}}
+        <li><a class="leave-room" href="#" data-tooltip="Leave Room" data-tooltip-position="bottom right"></a></li>
+        {{/if}}
+        <li><a href="#" class="search" data-tooltip="Search This Room" data-tooltip-position="bottom right"></a></li>
+        <li class="float_pop_out"><a href="#" class="float-view" data-tooltip="Pop-Out" data-tooltip-position="bottom right"></a></li>
+        <li class="float_pop_in"><a href="#" class="unfloat-view" data-tooltip="Pop-In" data-tooltip-position="bottom right"></a></li>
+        <li>
+            {{#if userIsOwner}}
+            <a class="show-manage-membership" href="#" data-tooltip="Manage Members" data-tooltip-position="bottom right"></a>
+            {{else}}
+            <a class="show-manage-membership" href="#" data-tooltip="Members" data-tooltip-position="bottom right"></a>
+            {{/if}}
+        </li>
+        <li><a href="#" class="show-settings" data-tooltip="Settings" data-tooltip-position="bottom right"></a></li>
+    </ul>
+    {{/if}}
+
+    {{#if isIM}}
+    <ul class="with-title">
+        {{#if userIsOwner}}
+        <li><a class="show-deactivation-confirmation" href="#">Deactivate</a></li>
+        {{/if}}
+        <li><a href="#" class="search">Search This IM</a></li>
+        <li class="float_pop_out"><a href="#" class="float-view">Pop-Out</a></li>
+        <li class="float_pop_in"><a href="#" class="unfloat-view">Pop-In</a></li>
+        <li>
+            {{#if isIM}}
+            <a class="show-manage-membership" href="#">Members</a>
+            {{/if}}
+        </li>
+        <li><a href="#" class="show-settings">Settings</a></li>
+    </ul>
+    <ul class="without-title">
+        {{#if userIsOwner}}
+        <li><a class="show-deactivation-confirmation" href="#" data-tooltip="Deactivate" data-tooltip-position="bottom right"></a></li>
+        {{/if}}
+        <li><a href="#" class="search" data-tooltip="Search This IM" data-tooltip-position="bottom right"></a></li>
+        <li class="float_pop_out"><a href="#" class="float-view" data-tooltip="Pop-Out" data-tooltip-position="bottom right"></a></li>
+        <li class="float_pop_in"><a href="#" class="unfloat-view" data-tooltip="Pop-In" data-tooltip-position="bottom right"></a></li>
+        <li>
+            {{#if isIM}}
+            <a class="show-manage-membership" href="#" data-tooltip="Members" data-tooltip-position="bottom right"></a>
+            {{/if}}
+        </li>
+        <li><a href="#" class="show-settings" data-tooltip="Settings" data-tooltip-position="bottom right"></a></li>
+    </ul>
+    {{/if}}
+
+    {{#if isSearch}}
+    <ul class="with-title">
+        <li class="float_pop_out"><a href="#" class="float-view">Pop-Out</a></li>
+        <li class="float_pop_in"><a href="#" class="unfloat-view">Pop-In</a></li>
+    </ul>
+    <ul class="without-title">
+        <li class="float_pop_out"><a href="#" class="float-view" data-tooltip="Pop-Out" data-tooltip-position="bottom right"></a></li>
+        <li class="float_pop_in"><a href="#" class="unfloat-view" data-tooltip="Pop-In" data-tooltip-position="bottom right"></a></li>
+    </ul>
+    {{/if}}
+
+    {{#if isProfile}}
+    <ul class="with-title">
+        <li class="float_pop_out"><a href="#" class="float-view">Pop-Out</a></li>
+        <li class="float_pop_in"><a href="#" class="unfloat-view">Pop-In</a></li>
+    </ul>
+    <ul class="without-title">
+        <li class="float_pop_out"><a href="#" class="float-view" data-tooltip="Pop-Out" data-tooltip-position="bottom right"></a></li>
+        <li class="float_pop_in"><a href="#" class="unfloat-view" data-tooltip="Pop-In" data-tooltip-position="bottom right"></a></li>
+    </ul>
+    {{/if}}
+
+    {{#if isTagContext}}
+    <ul class="with-title">
+        <li class="float_pop_out"><a href="#" class="float-view">Pop-Out</a></li>
+        <li class="float_pop_in"><a href="#" class="unfloat-view">Pop-In</a></li>
+    </ul>
+    <ul class="without-title">
+        <li class="float_pop_out"><a href="#" class="float-view" data-tooltip="Pop-Out" data-tooltip-position="bottom right"></a></li>
+        <li class="float_pop_in"><a href="#" class="unfloat-view" data-tooltip="Pop-In" data-tooltip-position="bottom right"></a></li>
+    </ul>
+    {{/if}}
+
+    {{#if isFilter}}
+    <ul class="with-title">
+        {{#if isNormalFilter}}
+        <li><a class="show-deactivation-confirmation" href="#">Delete</a></li>
+        {{/if}}
+        <li class="float_pop_out"><a href="#" class="float-view">Pop-Out</a></li>
+        <li class="float_pop_in"><a href="#" class="unfloat-view">Pop-In</a></li>
+        {{#if showEditButton}}
+        <li><a href="#" class="edit-rules">Edit</a></li>
+        {{/if}}
+        <li><a href="#" class="show-settings">Settings</a></li>
+    </ul>
+    <ul class="without-title">
+        {{#if isNormalFilter}}
+        <li><a class="show-deactivation-confirmation" href="#" data-tooltip="Delete" data-tooltip-position="bottom right"></a></li>
+        {{/if}}
+        <li class="float_pop_out"><a href="#" class="float-view" data-tooltip="Pop-Out" data-tooltip-position="bottom right"></a></li>
+        <li class="float_pop_in"><a href="#" class="unfloat-view" data-tooltip="Pop-In" data-tooltip-position="bottom right"></a></li>
+        {{#if showEditButton}}
+        <li><a href="#" class="edit" data-tooltip="Edit" data-tooltip-position="bottom right"></a></li>
+        {{/if}}
+        <li><a href="#" class="show-settings" data-tooltip="Settings" data-tooltip-position="bottom right"></a></li>
+    </ul>
+    {{/if}}
+</div>

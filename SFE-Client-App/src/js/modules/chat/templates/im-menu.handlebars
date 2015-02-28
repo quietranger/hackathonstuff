@@ -1,0 +1,33 @@
+<div class="module-options">
+    <ul class="with-title">
+        {{#if userIsOwner}}
+        <li><a class="show-deactivation-confirmation" href="#">Deactivate</a></li>
+        {{/if}}
+        <li><a href="#" class="search">Search This IM</a></li>
+        <li class="float_pop_out"><a href="#" class="float-view">Pop-Out</a></li>
+        <li class="float_pop_in"><a href="#" class="unfloat-view">Pop-In</a></li>
+        <li>
+            {{#if isIM}}
+            <a class="show-manage-membership" href="#">Members</a>
+            {{/if}}
+        </li>
+        <li><a href="#" class="show-settings">Settings</a></li>
+    </ul>
+    <ul class="without-title">
+        {{#if userIsOwner}}
+        <li><a class="show-deactivation-confirmation" href="#" data-tooltip="Deactivate"
+               data-tooltip-position="bottom right"></a></li>
+        {{/if}}
+        <li><a href="#" class="search" data-tooltip="Search This IM" data-tooltip-position="bottom right"></a></li>
+        <li class="float_pop_out"><a href="#" class="float-view" data-tooltip="Pop-Out"
+                                     data-tooltip-position="bottom right"></a></li>
+        <li class="float_pop_in"><a href="#" class="unfloat-view" data-tooltip="Pop-In"
+                                    data-tooltip-position="bottom right"></a></li>
+        <li>
+            {{#if isIM}}
+            <a class="show-manage-membership" href="#" data-tooltip="Members" data-tooltip-position="bottom right"></a>
+            {{/if}}
+        </li>
+        <li><a href="#" class="show-settings" data-tooltip="Settings" data-tooltip-position="bottom right"></a></li>
+    </ul>
+</div>

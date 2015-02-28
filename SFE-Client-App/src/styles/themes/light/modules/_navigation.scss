@@ -1,0 +1,136 @@
+$nav-background-color: #f5f5f5;
+$nav-border-right-color: #c1c1c1;
+$nav-drag-token-color: #58c6ff;
+
+$nav-title-text-color: #757a84;
+$nav-title-background-color: #f5f5f5;
+
+$nav-notification-background-color: #ec6464;
+$nav-notification-blink-on-background-color: white;
+$nav-notification-text-color: $nav-notification-blink-on-background-color;
+$nav-notification-blink-on-text-color: $nav-notification-background-color;
+
+$nav-item-text-color: #5d5d5d;
+$nav-item-background-color: transparent;
+
+$nav-item-hover-background-color: #d5d7da;
+$nav-item-hover-border-color: transparent;
+$nav-item-hover-text-color: $nav-item-text-color;
+
+$nav-item-active-background-color: #e2e2e2;
+$nav-item-active-border-color: transparent;
+$nav-item-active-text-color: $nav-item-active-border-color;
+
+$nav-item-open-background-color: #e2e2e2;
+$nav-item-open-border-color: transparent;
+$nav-item-open-text-color: $nav-item-text-color;
+
+$nav-item-focused-background-color: #6f97cb;
+$nav-item-focused-border-color: transparent;
+$nav-item-focused-text-color: white;
+
+$nav-expander-drag-blur-color: rgba(white, 0.6);
+$nav-expander-guide-color: #6f97cb;
+
+$nav-collapsed-blur-color: rgba(white, 0.2);
+$nav-collapsed-hover-blur-color: rgba(white, 0.1);
+$nav-collapsed-active-blur-color: rgba(white, 0.3);
+
+$nav-group-name-text-color: #82888a;
+$nav-group-name-blink-text-color: white;
+$nav-group-name-background-color: $nav-background-color;
+$nav-group-border-color: #d0d0d0;
+
+$nav-group-input-background-color: white;
+$nav-group-input-hover-background-color: #f9f9f9;
+$nav-group-input-active-background-color: white;
+$nav-group-input-drop-shadow: 0 1px 2px rgba(black, 0.1);
+
+$nav-group-creation-indicator-background-color: white;
+
+$nav-group-action-button-background-color: white;
+$nav-group-action-button-hover-background-color: white;
+$nav-group-action-button-active-background-color: darken($nav-group-action-button-background-color, 5%);
+
+$nav-create-button-background-color: white;
+
+$nav-img-section-collapse: url("nav/section-collapsed.png");
+$nav-img-section-collapse-hover: url("nav/section-collapsed-hover.png");
+$nav-img-section-collapse-active: url("nav/section-collapsed-active.png");
+
+$nav-icons: (
+    profile (
+        icon-url 'nav/profile.png',
+        hover-icon-url 'nav/profile-white.png',
+        blink-on-icon-url 'nav/profile-white.png',
+        active-icon-url 'nav/profile.png',
+        focused-icon-url 'nav/profile-white.png',
+        position-x 15px,
+        position-y 8px
+    ),
+    following (
+        icon-url 'nav/following.png',
+        hover-icon-url 'nav/following-white.png',
+        blink-on-icon-url 'nav/following-white.png',
+        active-icon-url 'nav/following.png',
+        focused-icon-url 'nav/following-white.png',
+        position-x 14px,
+        position-y 8px
+    ),
+    keywords (
+        icon-url 'nav/keywords.png',
+        hover-icon-url 'nav/keywords-white.png',
+        blink-on-icon-url 'nav/keywords-white.png',
+        active-icon-url 'nav/keywords.png',
+        focused-icon-url 'nav/keywords-white.png',
+        position-x 14px,
+        position-y 8px
+    ),
+    mentions (
+        icon-url 'nav/mentions.png',
+        hover-icon-url 'nav/mentions-white.png',
+        blink-on-icon-url 'nav/mentions-white.png',
+        active-icon-url 'nav/mentions.png',
+        focused-icon-url 'nav/mentions-white.png',
+        position-x 16px,
+        position-y 8px
+    ),
+    accept (
+        icon-url 'nav/accept.png',
+        hover-icon-url 'nav/accept-hover.png',
+        active-icon-url 'nav/accept-active.png'
+    ),
+    reject (
+        icon-url 'nav/reject.png',
+        hover-icon-url 'nav/reject-hover.png',
+        active-icon-url 'nav/reject-active.png'
+    ),
+    edit (
+        icon-url 'nav/edit.png',
+        hover-icon-url 'nav/edit-hover.png',
+        active-icon-url 'nav/edit-active.png'
+    ),
+    add (
+        icon-url 'nav/add.png',
+        hover-icon-url 'nav/add-hover.png',
+        active-icon-url 'nav/add-active.png'
+    ),
+    list (
+        icon-url 'nav/list.png',
+        hover-icon-url 'nav/list-hover.png',
+        active-icon-url 'nav/list-active.png'
+    ),
+    list-expanded (
+        icon-url 'nav/list-expanded.png',
+        hover-icon-url 'nav/list-expanded-hover.png',
+        active-icon-url 'nav/list-expanded-active.png'
+    ),
+    close (
+        icon-url 'nav/close.png',
+        hover-icon-url 'nav/close-hover.png',
+        active-icon-url 'nav/close-active.png'
+    )
+);
+
+$nav-bell-icon-url: 'nav/bell.png';
+$nav-bell-blink-on-icon-url: 'nav/bell-white.png';

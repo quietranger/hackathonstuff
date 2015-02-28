@@ -1,0 +1,22 @@
+@import "../../../../../styles/variables.scss";
+@import "theme.scss";
+
+.container {
+  padding-top: 15px;
+  margin-left: 14px;
+  padding-bottom: 15px;
+
+  border-top: 1px solid $modal-content-separator-color;
+  border-bottom: 1px solid $modal-content-separator-color;
+
+  img {
+    margin: 0 0 0.5em 0;
+    max-width: 466px;
+    display:block;
+    margin:auto;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

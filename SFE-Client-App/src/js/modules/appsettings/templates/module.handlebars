@@ -1,0 +1,16 @@
+<ul class="tabs master">
+    <li class="active tabs-tab" data-tab="{{tabs.general}}">General</li>
+    <li class="tabs-tab" data-tab="{{tabs.alerts}}">Alerts</li>
+    {{#if showPermissionsTab}}
+    <li class="tabs-tab" data-tab="{{tabs.permissions}}">Permissions</li>
+    {{/if}}
+    {{#if enableApplications}}
+        <li class="tabs-tab" data-tab="{{tabs.applications}}">Applications</li>
+    {{/if}}
+    <li class="tabs-tab" data-tab="{{tabs.themes}}">Themes</li>
+</ul>
+<div class="active-tab-container"></div>
+<div class="buttons">
+    <div class="appsettings-spinner"></div>
+    <button id="done" class="button positive">Done</button>
+</div>

@@ -1,0 +1,59 @@
+@import "sass-list-maps";
+
+$named-tags: (
+    (
+        name twitter,
+        background-color #55acee,
+        text-color white
+    ),
+    (
+        name tag-twitter,
+        background-color #55acee,
+        text-color white
+    ),
+    (
+        name gs,
+        background-color #5386be,
+        text-color white
+    ),
+    (
+        name private-room,
+        background-color #ab8ead,
+        text-color #3f2a40
+    ),
+    (
+        name public-room,
+        background-color #a3be77,
+        text-color #394d19
+    ),
+    (
+        name im,
+        background-color #ebc875,
+        text-color #3f2a40
+    ),
+    (
+        name participants,
+        background-color #f5a345,
+        text-color #593e1c
+    ),
+    (
+        name filter,
+        background-color #ebc875,
+        text-color #635431
+    ),
+    (
+        name profile,
+        background-color #ebc875,
+        text-color #635431
+    ),
+    (
+        name tag-gs,
+        background-color #5386be,
+        text-color white
+    ),
+    (
+        name symphony,
+        background-color #7fc898,
+        text-color darken(saturate(#7fc898, 10%), 50%)
+    )
+);

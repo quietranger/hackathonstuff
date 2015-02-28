@@ -1,0 +1,37 @@
+<ul class="filter-rules {{#if collapsed}}collapsed{{/if}}">
+</ul>
+{{#if showSourcesDropdown}}
+    <ul class="options {{#if collapsed}}collapsed{{/if}}">
+        {{#if showEditButton}}
+            <li class="edit-rules button filter-edit"></li>
+        {{/if}}
+        <li class="edit-sources dropdown-menu">
+            <button class="button filter-edit">
+                <span class="source-title">Source:</span> <span class="sources">{{socialConnectorsCount socialConnectors}}</span>
+            </button>
+        </li>
+    </ul>
+{{/if}}
+
+<div class="sources-dropdown hidden">
+    <ul>
+        {{#each socialConnectors}}
+            <li data-connector-id="{{id}}" class="social-connector">
+                <span class="checkbox"><input type="checkbox" id="{{id}}-source-{{../dropdownId}}" {{#if active}}checked{{/if}} /><span></span></span>
+                <label class="social-connector" data-connector-id="{{id}}" for="{{id}}-source-{{../dropdownId}}">{{labelSocialConnectors id}}</label>
+            </li>
+        {{/each}}
+    </ul>
+</div>
+
+{{#if showSourcesDropdown}}
+    <span class="header-toggle {{#if collapsed}}collapsed{{/if}}"></span>
+{{/if}}
+
+<div class="container {{#if collapsed}}collapsed{{/if}}">
+    {{#if isEmpty}}
+        <div class="loading">No messages to show.</div>
+    {{else}}
+        <div class="loading">Loading...</div>
+    {{/if}}
+</div>

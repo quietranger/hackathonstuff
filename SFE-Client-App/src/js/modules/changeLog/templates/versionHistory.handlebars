@@ -1,0 +1,24 @@
+{{#each versionHistory}}
+<div class="version-container">
+    <h4 class="version-title">Symphony v.{{version}} release notes <time>{{timestamp date 'MM/DD/YYYY' }}</time></h4>
+    <div class="version-details">
+        <p>{{description}}</p>
+        {{#if changeLog.feature}}
+            <label>New Features:</label>
+            <ul>
+                {{#each changeLog.feature}}
+                    <li>{{this.description}}</li>
+                {{/each}}
+            </ul>
+        {{/if}}
+        {{#if changeLog.bug}}
+            <label>Bug Fixes:</label>
+            <ul>
+                {{#each changeLog.bug}}
+                    <li>{{this.description}}</li>
+                {{/each}}
+            </ul>
+        {{/if}}
+    </div>
+</div>
+{{/each}}

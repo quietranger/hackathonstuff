@@ -1,0 +1,64 @@
+<div class="message-wrap">
+    {{#if attributes.retweetedUser}}
+        <div class="message-reshare retweet">
+            <div class="retweet-icon"></div>
+            <span>Retweeted by</span>
+            <a href="#" class="person" data-userid="{{from.id}}" data-usertype="{{from.userType}}">{{from.prettyName}} (@{{from.screenName}})</a>
+            <time class="tw-timestamp" data-timestamp="{{ingestionDate}}" data-tooltip="{{timestamp ingestionDate  'MMMM Do, YYYY h:mm:ss a'}}" data-tooltip-position="left center">{{#if absoluteTime}}{{timestamp ingestionDate  'MMMM Do, YYYY' }}{{else}}{{fromNow ingestionDate}}{{/if}}</time>
+        </div>
+    {{/if}}
+    {{#if attributes.retweetedUser}}
+        {{wrappedAvatar attributes.retweetedUser}}
+    {{else}}
+        {{wrappedAvatar from}}
+    {{/if}}
+    <div class="message-wrap-inner">
+        <div class="message-meta">
+            {{#if attributes.retweetedUser}}
+                <div class="identity">
+                    <a href="#" class="tw-name profile-link person" data-userid="{{attributes.retweetedUser.id}}" data-usertype="{{attributes.retweetedUser.userType}}">{{attributes.retweetedUser.prettyName}}</a>
+                    <span class="tw-handle">@{{attributes.retweetedUser.screenName}}</span>
+                </div>
+                <!-- No original post date available -->
+            {{else}}
+                <div class="identity">
+                    <a href="#" class="tw-name profile-link person" data-userid="{{from.id}}" data-usertype="{{from.userType}}">{{from.prettyName}}</a>
+                    <span class="tw-handle">@{{from.screenName}}{{#if share}} shared the following{{/if}}</span>
+                </div>
+                <time class="tw-timestamp" data-timestamp="{{ingestionDate}}" data-tooltip="{{timestamp ingestionDate  'MMMM Do, YYYY h:mm:ss a'}}" data-tooltip-position="left center">{{#if absoluteTime}}{{timestamp ingestionDate  'MMMM Do, YYYY' }}{{else}}{{fromNow ingestionDate}}{{/if}}</time>
+            {{/if}}
+       </div>
+        <div class="message-text">
+            {{#if attributes.retweetedUser}}
+                {{#if share}}
+                    <blockquote class="shared">
+                        <span class="share-identity">
+                            {{wrappedAvatar share.message.from}}
+                            {{userTypeImage share.message.from.userType}}
+                            <span class="has-presence presence-unknown" data-userid="{{share.message.from.id}}" />
+                            <span>{{share.message.from.prettyName}}</span>:
+                            {{parseEntities share.message.text share.message.entities}}
+                        </span>
+                    </blockquote>
+                {{else}}
+                    {{parseEntities text entities}}
+                {{/if}}
+            {{else}}
+                {{#if share}}
+                    <blockquote class="shared">
+                        <span class="share-identity">
+                            {{wrappedAvatar share.message.from}}
+                            {{userTypeImage share.message.from.userType}}
+                            <span class="has-presence presence-unknown" data-userid="{{share.message.from.id}}" />
+                            <span>{{share.message.from.prettyName}}</span>:
+                            {{parseEntities share.message.text share.message.entities}}
+                        </span>
+                    </blockquote>
+                {{else}}
+                    {{parseEntities text entities}}
+                {{/if}}
+            {{/if}}
+        </div>
+    </div>
+    <hr>
+</div>

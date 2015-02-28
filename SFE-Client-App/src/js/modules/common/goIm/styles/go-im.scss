@@ -1,0 +1,25 @@
+@import "../../../../../styles/variables.scss";
+
+.go-im {
+  h3{
+    margin-top: 4px;
+  }
+
+  .add-person{
+    background-color: $module-blue-background !important;
+  }
+
+  .tip p {
+    font-size: 12px;
+    color: $dark-grey;
+    margin-top: 15px;
+    margin-bottom: 0px;
+  }
+  span.has-presence.presence-text {
+    font-size: 12px;
+  }
+
+  span.has-presence.presence-indicator {
+    margin-top: 6px;
+  }
+}

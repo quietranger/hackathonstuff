@@ -1,0 +1,31 @@
+@import "../../../../../styles/variables.scss";
+@import "theme.scss";
+
+.messages-scroll {
+  display: block;
+  overflow-y: auto;
+  background: transparent;
+}
+
+.msg-entity {
+  color: $link-text-color;
+  cursor: pointer;
+  white-space: normal;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.msg-entity.link {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+span.invisible-text {
+  opacity: 0;
+  font-size: 0;
+}

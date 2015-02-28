@@ -1,0 +1,27 @@
+<div class="appsettings-alerts">
+    {{#if isDesktopClient}}
+    <div class="row alerts-desktop">
+        <h5>Desktop alerts</h5>
+
+        <div class="field field-notifications-on">
+            <span class="checkbox">
+                <input type="checkbox" {{#unless notificationsOn}}checked{{/unless}}>
+                <span></span>
+            </span>
+            Mute pop-up alerts on my desktop
+        </div>
+        <div class="field field-configure-desktop-alerts">
+            <button class="button action">Configure desktop alert positions</button>
+        </div>
+    </div>
+    {{/if}}
+
+    <div class="row alerts-categories">
+        <ul class="categories-breadcrumbs">
+            {{!-- insert breadcrumbs view here --}}
+        </ul>
+        <div class="categories-container">
+            {{!-- insert list of category views here--}}
+        </div>
+    </div>
+</div>

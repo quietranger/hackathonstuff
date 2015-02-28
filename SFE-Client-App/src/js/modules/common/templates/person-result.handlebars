@@ -1,0 +1,14 @@
+<div class="person-row">
+    {{wrappedAvatar person}}
+    <div class="identity">
+        <h3>{{person.prettyName}}</h3>
+        <p>{{person.deptName}}{{#if person.location}}, {{person.location}}{{/if}}</p>
+        <span class="has-presence presence-indicator presence-unknown" data-userid="{{person.id}}"></span>
+        <span class="has-presence presence-text presence-unknown" data-userid="{{person.id}}" >Locating...</span>
+    </div>
+    {{#if isRemovable}}
+    <div class="remove-button">
+        <a class="remove square-button" href="#">Remove</a>
+    </div>
+    {{/if}}
+</div>

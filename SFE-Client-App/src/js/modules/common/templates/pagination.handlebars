@@ -1,0 +1,23 @@
+{{#if pageCount}}
+<div class="pagination-centered">
+    {{#pagination currentPage pageCount 5}}
+    <ul class="pagination">
+        {{#unless isFirstPage}}
+        <li class="arrow prev"><a href="#">&laquo;</a></li>
+        {{/unless}}
+
+        {{#each pages}}
+        {{#if isCurrent}}
+        <li class="current"><a href="#">{{page}}</a></li>
+        {{else}}
+        <li data-page="{{page}}" class="page"><a href="#">{{page}}</a></li>
+        {{/if}}
+        {{/each}}
+
+        {{#unless isLastPage}}
+        <li class="arrow next"><a href="#">&raquo;</a></li>
+        {{/unless}}
+    </ul>
+    {{/pagination}}
+</div>
+{{/if}}

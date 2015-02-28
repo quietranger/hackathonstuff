@@ -1,0 +1,104 @@
+@import "theme.scss";
+
+.token-input {
+  position: relative;
+  padding: 2px;
+  min-height: 30px;
+  border-radius: 2px;
+  cursor: text;
+  width: 100%;
+  background: $input-background-color;
+  box-shadow: $input-drop-shadow;
+
+  input[type="text"] {
+    border: 0;
+    box-shadow: none;
+    color: $input-text-color;
+    width: 200px;
+    font-size: 12px;
+    padding: 6px 4px;
+    height: 26px;
+    background: transparent;
+    margin-bottom: 0;
+
+    &:focus {
+      box-shadow: none;
+      background: transparent;
+      border: 0;
+    }
+  }
+
+  .twitter-typeahead {
+    position: static !important;
+  }
+
+  ul {
+    li {
+      background-color: $token-background-color;
+      color: $token-text-color;
+      display: inline-block;
+      height: 26px;
+      line-height: 26px;
+      padding: 0 18px 0 6px;
+      border-radius: 2px;
+      margin: 0 2px 2px 0;
+      font-size: 12px;
+      overflow: hidden;
+      position: relative;
+      float: left;
+      background-repeat: no-repeat;
+      cursor: default;
+
+      &.disabled {
+        opacity: 0.22;
+      }
+
+      &.error {
+        color: $token-error-text-color;
+        background-color:  $token-error-background-color;
+
+        .remove {
+          background-image: url('icons/go_errormessage_close_btn.png');
+        }
+
+        &[data-type="room"] {
+          background-image: url('icons/go_errormessage_people_icon.png');
+        }
+      }
+
+      .avatar-wrap {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin-bottom: -4px;
+
+        img {
+          vertical-align: top;
+        }
+      }
+
+      .remove {
+        float: right;
+        width: 9px;
+        height: 9px;
+        display: block;
+        padding: 2px;
+        position: absolute;
+        right: 6px;
+        top: 50%;
+        margin-top: -4px;
+        background-image: url('icons/go_tag_close_btn.png');
+        background-repeat: no-repeat;
+        background-position: center center;
+
+        &:hover {
+          background-image: url('icons/go_tag_close_btn_hover.png');
+        }
+
+        &:active {
+          background-image: url('icons/go_tag_close_btn_active.png');
+        }
+      }
+    }
+  }
+}

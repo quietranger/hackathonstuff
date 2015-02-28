@@ -1,0 +1,15 @@
+<div class="border-wrap">
+    <h4>
+        {{#if roomName}}
+        {{roomName}}
+        {{else}}
+        Instant Message
+        {{/if}}
+    </h4>
+    <time class="match-time">{{timestamp matchTimestamp 'MMMM Do, YYYY' }}</time>
+    <div class="messages">
+    </div>
+    {{# if showContextLink}}
+    <a class="show-context" href="#">Context</a>
+    {{/if}}
+</div>

@@ -1,0 +1,223 @@
+$module-pin-button: (
+    name pin-view,
+    inactive-module (
+        background-color #474d5b,
+        icon 'modules/pin-active-module.png',
+
+        hover (
+            background-color lighten(#474d5b, 5%),
+            icon 'modules/pin-active-module.png'
+        ),
+
+        active (
+            background-color darken(#474d5b, 5%),
+            icon 'modules/pin-active-module.png'
+        )
+    ),
+    active-module (
+        background-color #adc585,
+        icon 'modules/pin-active-module.png',
+
+        hover (
+            background-color lighten(#adc585, 5%),
+            icon 'modules/pin-active-module.png'
+        ),
+
+        active (
+            background-color darken(#adc585, 5%),
+            icon 'modules/pin-active-module.png'
+        )
+    )
+);
+
+$module-close-button: (
+    name 'close-view, .module-header .remove',
+    inactive-module (
+        background-color #474d5b,
+        icon 'modules/close-module.png',
+
+        hover (
+            background-color lighten(#474d5b, 5%),
+            icon 'modules/close-module.png'
+        ),
+
+        active (
+            background-color darken(#474d5b, 5%),
+            icon 'modules/close-module.png'
+        )
+    ),
+    active-module (
+        background-color #bc6d76,
+        icon 'modules/close-active-module.png',
+
+        hover (
+            background-color lighten(#bc6d76, 5%),
+            icon 'modules/close-active-module.png'
+        ),
+
+        active (
+            background-color darken(#bc6d76, 5%),
+            icon 'modules/close-active-module.png'
+        )
+    )
+);
+
+$module-pinned-button: (
+    name 'pin-view.pinned',
+    inactive-module (
+        background-color #363b47,
+        icon 'modules/pinned-active-module.png',
+
+        hover (
+            background-color #363b47,
+            icon 'modules/pinned-active-module.png'
+        ),
+
+        active (
+            background-color #363b47,
+            icon 'modules/pinned--activemodule.png'
+        )
+    ),
+    active-module (
+        background-color #474d5b,
+        icon 'modules/pinned-active-module.png',
+
+        hover (
+            background-color lighten(#474d5b, 5%),
+            icon 'modules/pinned-active-module.png'
+        ),
+
+        active (
+            background-color darken(#474d5b, 5%),
+            icon 'modules/pinned-active-module.png'
+        )
+    )
+);
+
+$module-show-more-button: (
+    name show-more,
+    inactive-module (
+        background-color #474d5b,
+
+        hover (
+            background-color lighten(#474d5b, 5%)
+        ),
+
+        active (
+            background-color darken(#474d5b, 5%)
+        )
+    ),
+    active-module (
+        background-color #ecb369,
+        hover (
+            background-color lighten(#ecb369, 5%)
+        ),
+
+        active (
+            background-color darken(#ecb369, 5%)
+        )
+    )
+);
+
+$module-action-buttons: (
+  (
+    name show-deactivation-confirmation,
+    icon-url 'modules/deactivate.png',
+    hover-icon-url 'modules/deactivate-hover.png',
+    active-icon-url 'modules/deactivate-active.png'
+  ),
+  (
+    name float-view,
+    icon-url 'modules/popout.png',
+    hover-icon-url 'modules/popout-hover.png',
+    active-icon-url 'modules/popout-active.png'
+  ),
+  (
+    name unfloat-view,
+    icon-url 'modules/popin.png',
+    hover-icon-url 'modules/popin-hover.png',
+    active-icon-url 'modules/popin-active.png'
+  ),
+  (
+    name leave-room,
+    icon-url 'modules/leave.png',
+    hover-icon-url 'modules/leave-hover.png',
+    active-icon-url 'modules/leave-active.png'
+  ),
+  (
+    name show-manage-membership,
+    icon-url 'modules/members.png',
+    hover-icon-url 'modules/members-hover.png',
+    active-icon-url 'modules/members-active.png'
+  ),
+  (
+    name show-settings,
+    icon-url 'modules/settings.png',
+    hover-icon-url 'modules/settings-hover.png',
+    active-icon-url 'modules/settings-active.png'
+  ),
+  (
+    name search,
+    icon-url 'modules/search.png',
+    hover-icon-url  'modules/search-hover.png',
+    active-icon-url 'modules/search-active.png'
+  ),
+  (
+    name edit-rules,
+    icon-url 'modules/edit.png',
+    hover-icon-url 'modules/edit-hover.png',
+    active-icon-url 'modules/edit-active.png'
+  )
+);
+
+$module-show-more-button-active-module-caret-color: #4c3419;
+$module-show-more-button-inactive-module-caret-color: #181b1f;
+
+$module-more-options-button-background-color: #f6ad4e;
+$module-more-options-button-hover-background-color: lighten($module-more-options-button-background-color, 5%);
+$module-more-options-button-active-background-color: darken($module-more-options-button-background-color, 5%);
+$module-more-options-button-opened-background-color: #ebab58;
+$module-more-options-button-caret-closed-background-color: #16181c;
+$module-more-options-button-caret-opened-background-color: #16181c;
+$module-more-options-button-caret-inactive-background-color: #16181c;
+
+$module-pin-button-background-color: #a3be77;
+$module-pin-button-hover-background-color: lighten($module-pin-button-background-color, 5%);
+$module-pin-button-active-background-color: #3e4451;
+
+$module-close-button-background-color: #b5616a;
+$module-close-button-hover-background-color: lighten($module-close-button-background-color, 5%);
+$module-close-button-active-background-color: darken($module-close-button-background-color, 5%);
+
+$module-member-tag-background-color: #f6ad4e;
+$module-member-tag-hover-background-color: lighten($module-member-tag-background-color, 5%);
+$module-member-tag-active-background-color: darken($module-member-tag-background-color, 5%);
+$module-member-tag-text-color: #593e1c;
+
+$module-active-header-text-color: white;
+$module-active-background-color: #232830;
+$module-active-header-background-color: #1c1f26;
+$module-active-subheader-background-color: rgba(28,31,38,0.90);
+$module-active-drop-shadow: 0 0 4px #242831;
+$module-active-border-color: #5b6953;
+
+$module-inactive-background-color: $module-active-background-color;
+$module-inactive-header-background-color: $module-active-header-background-color;
+$module-inactive-subheader-background-color: rgba(28,31,38,0.90);
+$module-inactive-drop-shadow: none;
+$module-inactive-border-color: #1c1f26;
+$module-inactive-button-background-color: #3e4451;
+$module-inactive-header-text-color: white;
+
+$module-inactive-subheader-text-color: white;
+$module-active-subheader-text-color: white;
+
+$module-pin-button-active-icon-url: 'pin-green.png';
+$module-pin-button-inactive-icon-url: 'pin-black.png';
+$module-pin-button-hover-icon-url: $module-pin-button-inactive-icon-url;
+
+$module-close-button-active-icon-url: 'close.png';
+$module-close-button-inactive-icon-url: $module-close-button-active-icon-url;
+$module-close-button-hover-icon-url: $module-close-button-active-icon-url;
+
+$module-border-radius: 0px;

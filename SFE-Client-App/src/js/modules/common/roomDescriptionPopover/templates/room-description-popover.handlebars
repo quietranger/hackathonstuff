@@ -1,0 +1,18 @@
+<div class="title">
+    <h4>
+        {{ room.name }}
+        {{#if room.publicRoom }}
+        <span class="tag public-room">Public</span>
+        {{else}}
+        <span class="tag private-room">Private</span>
+        {{/if}}
+    </h4>
+</div>
+<div class="meta-data">
+    <p><span class="members">{{ membersLength }}</span>Created by <span class="owner" data-userid="{{ room.creator }}">{{ room.creatorPrettyName }}</span></p>
+</div>
+{{#if room.description}}
+<div class="description">
+    <p>{{ room.description }}</p>
+</div>
+{{/if}}

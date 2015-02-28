@@ -1,0 +1,36 @@
+@import "../components/typography";
+
+$modal-blur-color: rgba(40,40,40,0.92);
+$modal-background-color: #f5f5f5;
+$modal-drop-shadow: none;
+
+$modal-header-text-color: #6f97cb;
+
+$modal-sub-header-text-color: $default-text-color;
+
+$modal-content-separator-color: #e7e7e7;
+
+$modal-content-header-text-color: #b5616a;
+$modal-content-body-text-color: white;
+
+$modal-button-background-color: #272b34;
+$modal-button-hover-background-color: #313640;
+$modal-button-active-background-color: #22272f;
+$modal-button-background-color-disabled-background-color: #272b34;
+$modal-button-negative-background-color: #272b34;
+$modal-button-negative-hover-background-color: #313640;
+$modal-button-negative-active-background-color: #22272f;
+$modal-button-disabled-text-color: #4f4f4f;
+$modal-button-positive-text-color: #91bb4c;
+$modal-button-positive-hover-text-color: lighten($modal-button-positive-text-color, 3%);
+$modal-button-positive-active-text-color: darken($modal-button-positive-text-color, 3%);
+$modal-button-negative-text-color: #b5616a;
+$modal-button-negative-hover-text-color: lighten($modal-button-negative-text-color, 3%);
+$modal-button-negative-active-text-color: darken($modal-button-negative-text-color, 3%);
+
+$modal-cancel-text-color: #494c52;
+$modal-cancel-hover-text-color: #b5616a;
+$modal-cancel-active-text-color: #8e4850;
+
+$modal-entity-list-border-color: #e0e0e0;
+$modal-entity-list-header-text-color: #e25252;

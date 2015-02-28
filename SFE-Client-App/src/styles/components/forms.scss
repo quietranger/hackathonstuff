@@ -1,0 +1,152 @@
+@import "../mixins/triangles.scss";
+@import "theme.scss";
+
+label.label {
+  color: $input-label-text-color;
+}
+
+input:focus, select:focus, [contenteditable] {
+  outline: 0;
+}
+
+span.checkbox {
+  position: relative;
+  width: 14px;
+  height: 14px;
+  display: inline-block;
+
+  input, span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 14px;
+    height: 14px;
+    display: block;
+  }
+
+  span {
+    background-color: $input-background-color;
+    background-position: center center;
+    background-repeat: no-repeat;
+    z-index: 90;
+    box-shadow: $input-drop-shadow;
+  }
+
+  input {
+    z-index: 100;
+    cursor: pointer;
+    opacity: 0;
+
+    &[disabled] {
+      cursor: default;
+    }
+  }
+
+  input[type="radio"] + span {
+    border-radius: 14px;
+    border: 3px solid $input-background-color;
+  }
+
+  input[type="radio"]:checked + span {
+    background: $checked-status-background-color;
+  }
+
+  input[type="checkbox"] {
+    &:not([disabled]):not(:checked):hover + span {
+      background-image: url($checkbox-hover-icon-url);
+    }
+
+    &:checked + span {
+      background-image: url($checkbox-icon-url);
+    }
+
+    &.partially-checked:checked, &.partially-checked {
+      & + span:before {
+        display: block;
+        position: absolute;
+        width: 8px;
+        height: 3px;
+        background-color: $checked-status-background-color;
+        content: "";
+        top: 6px;
+        left: 3px;
+      }
+    }
+
+    & + span {
+      border-radius: 2px;
+    }
+  }
+}
+
+select {
+  border: 0;
+
+  option {
+    background: $input-background-color;
+    color: $input-text-color;
+  }
+}
+
+button {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: left;
+}
+
+.dropdown-menu {
+  position: relative;
+
+  button {
+    &:after {
+      $border: 3px solid;
+
+      content: '';
+      display: block;
+      position: absolute;
+      right: 6px;
+      top: 50%;
+      margin-top: -1px;
+      border-left : $border transparent;
+      border-right: $border transparent;
+      border-top: $border $dropdown-menu-triangle-background-color;
+    }
+  }
+
+  select {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    height: auto;
+  }
+}
+
+select {
+  -webkit-appearance: none;
+  line-height: normal;
+}
+
+.select-wrap {
+  position: relative;
+
+  select {
+    width: 100%;
+    background: transparent;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    margin-top: -2px;
+
+    @include css-triangle(3px, $dropdown-menu-triangle-background-color, top);
+  }
+}

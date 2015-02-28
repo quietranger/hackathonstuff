@@ -1,0 +1,59 @@
+{{#if id}}
+    <div class="inline-user-profile {{#unless profileIsNotCurrentUser}}current-user  {{#if location}}has-location{{/if}}{{/unless}}"
+         data-userid="{{id}}">
+    <div class="topsection">
+        <div class="imagesection">
+            {{wrappedAvatar this}}
+            {{#if profileIsNotCurrentUser}}
+                {{#if requestorFollowingUser}}
+                    <div class="following button"><span>Following</span></div>
+                {{else}}
+                    <div class="follow button"><span>Follow</span></div>
+                {{/if}}
+            {{/if}}
+        </div>
+        <div class="followsyou hidden">
+            {{#if userFollowingRequestor}}
+                Follows You
+            {{/if}}
+        </div>
+        <div class="infosection">
+                <div class="inline-profile-row inline-profile-name" data-userid="{{id}}">{{prettyName}},
+                    (@{{screenName}})
+                </div>
+
+                {{#unless isTwitter}}
+            <div class="inline-profile-row">
+                <span class="has-presence presence-indicator presence-unknown" data-userid="{{id}}"></span>
+                        <span class="has-presence presence-text presence-unknown"
+                              data-userid="{{id}}">Locating...</span>
+            </div>
+                    <div class="inline-profile-row">{{title}}{{#if title}}{{#if deptName}}
+                        ,{{/if}}{{/if}} {{deptName}}</div>
+            <div class="inline-profile-row">
+                {{#if location}}
+                    <div class="inline-profile-location">{{location}}</div>
+                {{/if}}
+            </div>
+                {{/unless}}
+
+                 <div class="action_section">
+                    {{#if shouldShowIm }}
+                <div class="action button action_btn_im">IM</div>
+                    {{/if}}
+                    {{#if canCall}}
+                <div class="action button action_btn_call"> Call</div>
+                    {{/if}}
+            </div>
+        </div>
+    </div>
+</div>
+{{else}}
+<div class="inline-user-profile loading">
+    {{#if error}}
+        <p>An error occurred.</p>
+    {{else}}
+    <p>Loading...</p>
+    {{/if}}
+</div>
+{{/if}}

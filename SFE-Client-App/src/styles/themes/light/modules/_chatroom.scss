@@ -1,0 +1,38 @@
+@import "./global";
+
+$chatroom-divider-color: #dadada;
+
+$chatroom-date-group-text-color: #46606d;
+$chatroom-date-group-divider-color: $chatroom-divider-color;
+
+$chatroom-maestro-message-group-background-color: #f1f1f1;
+$chatroom-maestro-message-group-border: #ebebeb;
+$chatroom-maestro-message-group-expanded-background-color: #f1f1f1;
+$chatroom-maestro-message-group-title-text-color: #82888a;
+$chatroom-maestro-message-group-title-link-text-color: #0c8ed2;
+$chatroom-maestro-message-group-title-link-hover-text-color: lighten($chatroom-maestro-message-group-title-link-text-color, 5%);
+$chatroom-maestro-message-group-title-link-active-text-color: darken($chatroom-maestro-message-group-title-link-text-color, 5%);
+$chatroom-maestro-message-text-color: #676b72;
+$chatroom-maestro-message-hover-text-color: #0c8ed2;
+$chatroom-maestro-message-active-text-color: darken($chatroom-maestro-message-hover-text-color, 5%);
+
+$chatroom-load-more-button-background-color: darken($module-inactive-background-color, 5%);
+
+$chatroom-participants-icon-url: 'membership.png';
+
+$create-chatroom-divider: #dadada;
+
+$chatroom-load-more-button: (
+    name load-more-available,
+    background-color #6f97cb,
+    drop-shadow "none",
+    text-color white,
+    hover (
+        background-color lighten(#6f97cb, 5%),
+        text-color white
+    ),
+    active (
+        background-color darken(#6f97cb, 5%),
+        text-color white
+    )
+);

@@ -1,0 +1,57 @@
+@import '../../../../styles/variables';
+@import "../../../../styles/mixins/inputs";
+@import "theme.scss";
+
+.post-onbehalf-target {
+  width: auto;
+  height: auto;
+  background-image: none;
+}
+
+.onbehalfView{
+  p {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    margin-top: 1px;
+    }
+
+  .textarea-input {
+    height: 72px;
+      position: relative;
+    margin-bottom: 5px;
+
+    .text-input-wrap {
+      border-radius: 2px;
+      @include input();
+
+        &:hover {
+        background-color: $input-background-color;
+      }
+      }
+    }
+
+  select {
+    @include input();
+    width: 100%;
+
+    option {
+      width: 100%;
+        }
+      }
+
+  .post-onbehalf-footer{
+    height: 43px;
+    .cancel{
+      color: $text-title-color;
+      background: none;
+      font-size: 14px;
+      margin: 0px;
+      &:hover{
+        color: $warning-color;
+        background: none;
+      }
+    }
+  }
+
+}

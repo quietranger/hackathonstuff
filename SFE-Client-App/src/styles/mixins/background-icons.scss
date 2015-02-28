@@ -1,0 +1,20 @@
+@mixin background-icons($icon) {
+  .#{map-get($icon, name)} {
+    background-image: url(map-get($icon, icon-url));
+
+    $hover: map-get($icon, hover-icon-url);
+    $active: map-get($icon, active-icon-url);
+
+    @if $hover {
+      &:hover {
+        background-image: url($hover);
+      }
+    }
+
+    @if $active {
+      &:active {
+        background-image: url($active);
+      }
+    }
+  }
+}

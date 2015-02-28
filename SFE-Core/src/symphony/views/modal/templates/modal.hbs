@@ -1,0 +1,20 @@
+<div class="modal-sheet {{#if isFlat}}flat{{/if}} {{modalName}}">
+    <div class="modal-container">
+        <header>
+            <h2>{{title}}</h2>
+            {{#if subtitle}}
+                <h3>{{subtitle}}</h3>
+            {{/if}}
+            {{#unless isFlat}}
+            <div class="modal-actions">
+                {{#if closable}}
+                <a class="close-view square-button" href="#">
+                        Close
+                </a>
+                {{/if}}
+            </div>
+            {{/unless}}
+        </header>
+        <div class="modal-content"></div>
+    </div>
+</div>

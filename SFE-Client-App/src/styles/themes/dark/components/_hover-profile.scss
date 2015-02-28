@@ -1,0 +1,29 @@
+$hover-profile-follow-button: (
+    name follow,
+    background-color #181c23,
+    drop-shadow "none",
+    text-color #96ba59,
+    hover (
+        background-color lighten(#181c23, 5%),
+        text-color #96ba59
+    ),
+    active (
+        background-color darken(#181c23, 5%),
+        text-color #96ba59
+    ),
+);
+
+$hover-profile-following-button: (
+    name following,
+    background-color #9cc15c,
+    drop-shadow "none",
+    text-color #40551b,
+    hover (
+        background-color lighten(#9cc15c, 5%),
+        text-color #40551b
+    ),
+    active (
+        background-color darken(#9cc15c, 5%),
+        text-color #40551b
+    ),
+);

@@ -1,0 +1,25 @@
+<h4>
+    <a class="room-name" href="#">{{name}}</a>
+    {{#if publicRoom}}
+    <div class="tag tag-green">Public</div>
+    {{else}}
+    <div class="tag tag-purple">Private</div>
+    {{/if}}
+    {{#if readonly}}
+    <div class="tag tag-red">Read Only</div>
+    {{/if}}
+</h4>
+
+<p>Created by <a class="profile-link room-result-profile-link has-hover-profile" data-userid="{{creator.userId}}" data-usertype="lc">{{creator.userName}}</a> on {{timestamp creationDate 'MMM D, YYYY'}}</p>
+
+<div class="actions">
+    <a class="show-membership" href="#">{{pluralize 'Member' memberCount}}</a>
+    {{#if publicRoom}}
+        {{#unless isMember}}
+            <a class="join-room" href="#">Join Room</a>
+        {{/unless}}
+    {{/if}}
+    {{#if isMember}}
+        <a class="open-room" href="#">Open Room</a>
+    {{/if}}
+</div>

@@ -1,0 +1,40 @@
+<td class="name clickable-user-name" data-userid="{{attributes.userId}}">
+    {{wrappedAvatar attributes}}
+
+    {{attributes.prettyName}}
+</td>
+{{#unless isIm}}
+<td class="date">{{timestamp attributes.joinDate 'MM/DD/YYYY h:mm'}}</td>
+<td class="status">
+    {{#if attributes.owner}}
+    {{#if userIsOwner}}
+    <a class="button demote negative" href="#">Owner <i class="fa fa-arrow-circle-o-down"></i></a>
+    {{else}}
+    Owner
+    {{/if}}
+    {{else}}
+    {{#if userIsOwner}}
+    <a class="button positive promote" href="#">Make Owner</a>
+    {{/if}}
+    {{/if}}
+</td>
+{{/unless}}
+<td class="leave">
+    {{#if isIm}}
+        {{#if canRemove}}
+            {{#unless modelIsCurrentUser}}
+                <a class="button negative remove" href="#">Remove</a>
+            {{/unless}}
+        {{/if}}
+    {{/if}}
+
+    {{#if isChatroom}}
+        {{#if userIsOwner}}
+        <a class="button negative remove" href="#">Remove</a>
+        {{else}}
+            {{#if modelIsCurrentUser}}
+            <a class="button negative remove" href="#">Remove</a>
+            {{/if}}
+        {{/if}}
+    {{/if}}
+</td>

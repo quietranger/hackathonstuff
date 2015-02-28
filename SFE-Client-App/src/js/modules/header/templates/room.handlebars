@@ -1,0 +1,18 @@
+<div class="room">
+    <h4 class="suggestion-detail room-name">
+        <span class="name">{{name}}</span>
+        <span class="tag">
+            {{#if publicRoom}}
+                Public
+            {{else}}
+                Private
+             {{/if}}
+        </span>
+        {{#if readonly}}
+        <span class="tag">
+                Read Only
+        </span>
+        {{/if}}
+    </h4>
+    <p>Created by {{ creator.userName }}</p>
+</div>

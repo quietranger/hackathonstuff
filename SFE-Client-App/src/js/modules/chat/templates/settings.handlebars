@@ -1,0 +1,134 @@
+<form>
+    <ul {{#unless isIM}}class="room-options"{{/unless}}>
+        {{#unless isIM}}
+        <li>
+            <label>Room Name</label>
+            <input id="room-name" class="mousetrap" type="text" {{#unless roomData.userIsOwner}}disabled{{/unless}} />
+        </li>
+        <li>
+            <label>Description</label>
+            <input id="room-description" class="mousetrap" maxlength="140" type="text" value="{{ roomData.description }}" {{#unless roomData.userIsOwner}}disabled{{/unless}} />
+        </li>
+        <li>
+           {{#if roomData.publicRoom}}
+               <h4>Public Room</h4><p>This is a public room. Anyone may join the room, and messages are viewable and searchable by all. Room members can view messages posted to the room before they joined.</p>
+           {{else}}
+               <h4>Private Room</h4><p>This is a private room. Messages posted here are viewable only by members of the room at the time of posting.</p>
+           {{/if}}
+        </li>
+        <li>
+             {{#if roomData.copyDisabled}}
+                <h4>Copy Disabled</h4><p>Content in this room cannot be copied.</p>
+            {{else}}
+                <h4>Copy Enabled</h4><p>Content in this room can be copied.</p>
+            {{/if}}
+        </li>
+        <li>
+            {{#if roomData.readOnly}}
+            <h4>Read Only</h4><p>Only the room owner can send messages.</p>
+            {{else}}
+            <h4>Read Writable</h4><p>Everyone in this room can send messages.</p>
+            {{/if}}
+        </li>
+        {{#unless roomData.publicRoom}}
+        <li>
+            <span class="checkbox">
+                <input id="membership-invite" type="checkbox" {{#if roomData.memberAddUserEnabled}}checked="checked"{{/if}} {{#unless roomData.userIsOwner}}disabled{{/unless}} />
+                <span></span>
+            </span>
+            <label>
+                <p class="title">Member Invitations</p>
+                <p>Allow members to invite other into the room.</p>
+                {{#if roomData.memberAddUserEnabled}}
+                <p>Currently, room members may invite others to the room.</p>
+                {{else}}
+                <p>Currently, room members may not invite others to the room.</p>
+                {{/if}}
+            </label>
+        </li>
+        <li>
+            <span class="checkbox">
+                <input id="room-searchable" type="checkbox" {{#if roomData.discoverable}}checked="checked"{{/if}} {{#unless roomData.userIsOwner}}disabled{{/unless}}/>
+                <span></span>
+            </span>
+            <label>
+                <p class="title">Search</p>
+                <p>Allow the name of this room to appear in search results.</p>
+            </label>
+        </li>
+        {{/unless}}
+        <!--end of unless isIM-->
+        {{/unless}}
+        <li>
+            <span class="checkbox">
+                <input id="disable-input" type="checkbox" {{#if config.disableInput}}checked="checked"{{/if}}/>
+                <span></span>
+            </span>
+            <label>
+                <p class="title">Input Settings</label>
+                <p>Block me from sending messages.</p>
+            </label>
+        </li>
+        <li>
+            <span class="checkbox">
+                <input id="stream-alerts" type="checkbox" {{#if config.showStreamAlerts}}checked="checked"{{/if}}/>
+                <span></span>
+            </span>
+            <label>
+                <p class="title">Left Navigation Blinking</p>
+                <p>If checked, your new messages will blink in the navigation to the left.</p>
+            </label>
+        </li>
+        <li>
+            <span class="checkbox">
+                <input id="show-notification" type="checkbox" {{#if config.showNotification}}checked="checked"{{/if}}/>
+                <span></span>
+            </span>
+            <label>
+                <p class="title">Alerts</p>
+                <p>Display desktop alerts for new messages.</p>
+                <p>
+                    Alert color:
+                    <input type="text" id="notification-color" />
+                    {{#if isRunningInClientApp}}
+                    <a class="try-notification action button">See Sample</a>
+                    {{/if}}
+                </p>
+            </label>
+        </li>
+        <li>
+            <span class="checkbox">
+                <input id="blinking-notification" type="checkbox" {{#if config.blink}}checked="checked"{{/if}}/>
+                <span></span>
+            </span>
+            <label>
+                <p class="title">Blink Alerts</p>
+                <p>If checked, your desktop alerts will blink.</p>
+            </label>
+        </li>
+        <li>
+            <span class="checkbox">
+                <input type="checkbox" id="play-sound" {{#if config.playSound}}checked="checked"{{/if}} />
+                <span></span>
+            </span>
+            <label>
+                <p class="title">Play Alert Sound</p>
+                <p>Play a sound when new messages are received.</p>
+            </label>
+        </li>
+        <li>
+            <span class="checkbox">
+                <input id="persistent-notification" type="checkbox" {{#if config.persist}}checked="checked"{{/if}}/>
+                <span></span>
+            </span>
+            <label>
+                <p class="title">Persist Notifications</p>
+                <p>Keep alerts on-screen until clicked.</p>
+            </label>
+        </li>
+    </ul>
+</form>
+<div class="buttons">
+    <a class="cancel button" href="#">Cancel</a>
+    <a class="button positive save-settings" href="#">Done</a>
+</div>

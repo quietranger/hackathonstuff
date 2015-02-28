@@ -1,0 +1,372 @@
+@import "variables.scss";
+@import "./mixins/buttons.scss";
+@import "./mixins/background-icons.scss";
+@import "theme.scss";
+
+#modal .module:hover {
+  box-shadow: none;
+}
+
+.module {
+  position: relative;
+  min-width: 300px;
+
+  .no-more  {
+    margin-right: 4px;
+  }
+
+  $header-buttons: ($module-pin-button, $module-close-button, $module-pinned-button,
+    $module-show-more-button);
+
+  @mixin module-action-bg-styles($map) {
+    $image: map-get($map, icon);
+
+    @if ($image) {
+      background-image: url($image);
+    }
+
+    background-color: map-get($map, background-color);
+  }
+
+  @mixin module-action-bg($map) {
+    @include module-action-bg-styles($map);
+
+    &:hover {
+      $map: map-get($map, hover);
+
+
+      @include module-action-bg-styles($map);
+    }
+
+    &:active {
+      $map: map-get($map, active);
+
+      @include module-action-bg-styles($map);
+    }
+  }
+
+  @each $button in $header-buttons {
+    $name: unquote(map-get($button, name));
+
+    .module-header .#{$name} {
+      $map: map-get($button, inactive-module);
+
+      @include module-action-bg($map);
+    }
+
+    &.focus-active, &:hover {
+      .module-header .#{$name} {
+        $map: map-get($button, active-module);
+
+        @include module-action-bg($map);
+      }
+    }
+  }
+
+  &.focus-active, &:hover {
+    section.module-content {
+      border: 1px solid $module-active-border-color;
+      border-top: 0;
+    }
+
+    header.module-header {
+      border: 1px solid $module-active-border-color;
+      border-bottom: 0;
+      padding: 6px 2px 0 7px;
+    }
+
+    .module-actions {
+      .show-more:after {
+        border-top-color: $module-show-more-button-active-module-caret-color;
+
+        &.opened {
+          border-bottom-color: $module-show-more-button-active-module-caret-color;
+        }
+      }
+    }
+
+    .module-options {
+      ul {
+        li {
+          @each $icon in $module-action-buttons {
+            @include background-icons($icon);
+          }
+
+          a {
+            color: $module-active-subheader-text-color;
+          }
+        }
+      }
+    }
+  }
+
+  &.focus-active {
+    box-shadow: $module-active-drop-shadow;
+
+    header.module-header {
+      background: $module-active-header-background-color;
+
+      a:not(.tag), h2 {
+        color: $module-active-header-text-color;
+      }
+
+      .module-actions {
+        background: $module-active-header-background-color;
+      }
+    }
+
+    section.module-content {
+      background: $module-active-background-color;
+
+      .module-options {
+        background: $module-active-subheader-background-color;
+      }
+    }
+  }
+
+  .module-actions {
+    a {
+      display: inline-block;
+      margin: 0 4px 0 0;
+
+      &:not(.main-action) {
+        width: 13px;
+        height: 13px;
+        border-radius: 14px;
+        text-indent: -9999px;
+        background-repeat: no-repeat;
+        background-position: center center;
+        margin-left: 5px;
+      }
+
+      &.show-more {
+        position: relative;
+
+        &:after {
+          position: absolute;
+          width: 0;
+          height: 0;
+          border-style: solid;
+          border-width: 3px 3px 0 3px;
+          border-color: $module-show-more-button-inactive-module-caret-color transparent transparent transparent;
+          content: '';
+          top: 6px;
+          left: 50%;
+          margin-left: -4px;
+        }
+
+        &:active {
+          background-color: $module-show-more-button-inactive-module-caret-color;
+        }
+
+        &:hover {
+          background-image: $module-show-more-button-inactive-module-caret-color;
+        }
+
+        &.opened {
+          &:after {
+            border-width: 0 3px 3px 3px;
+            border-color: transparent transparent $module-show-more-button-inactive-module-caret-color transparent;
+            top: 5px
+          }
+        }
+      }
+    }
+  }
+
+  header.module-header {
+    height: 26px;
+    padding: 7px 3px 0 8px;
+    background: $module-inactive-header-background-color;
+    overflow: hidden;
+    border-radius: $module-border-radius $module-border-radius 0 0;
+
+    span.has-presence.presence-indicator {
+      margin-top: 2px;
+    }
+
+    @include button($main-action-button);
+
+    .main-action {
+      height: 15px;
+      line-height: 15px;
+      font-size: 11px;
+      display: inline-block;
+      float: left;
+      margin-left: 10px;
+      margin-top: -2px;
+    }
+
+    h2 {
+      color: $module-inactive-header-text-color;
+      float: left;
+      cursor: text;
+      font-size: 13px;
+      font-weight: 500;
+      margin-top: -1px;
+      margin-bottom: 10px;
+      height: 14px;
+      overflow: hidden;
+    }
+
+    a:not(.tag) {
+      color: $module-inactive-header-text-color;
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .module-actions {
+      position: absolute;
+      right: 5px;
+      background: $module-inactive-header-background-color;
+      margin-top: -1px;
+
+      a {
+        float: left;
+        display: block;
+        margin-right: 0;
+      }
+    }
+  }
+
+  section.module-content {
+    position: absolute;
+    border: 1px solid $module-inactive-border-color;
+    border-top: 0;
+    top: 25px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $module-inactive-background-color;
+
+    .module-options {
+      background-color: $module-inactive-subheader-background-color;
+      height: 25px;
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      right: 0;
+      display: none;
+      ul {
+        list-style: none;
+        float: right;
+        margin-top: 3px;
+        &.with-title {
+          display: block;
+          margin-right: 8px;
+        }
+        &.without-title {
+          display: none;
+          margin-right: 2px;
+        }
+        li {
+          display: inline-block;
+          margin-left: 15px;
+          &.float_pop_out {
+            display: inline-block;
+          }
+          &.float_pop_in {
+            display: none;
+          }
+          a {
+            background-repeat: no-repeat;
+            background-position: left center;
+            padding-left: 17px;
+            color: $module-inactive-subheader-text-color;
+            text-decoration: none;
+            font-size: 12px;
+          }
+        }
+      }
+    }
+  }
+
+  label[for="notification-color"] {
+    display: inline-block;
+  }
+}
+
+#atwho-container {
+  #at-view-mentions {
+    border: 0;
+
+    ul {
+      li {
+        display: block;
+        padding: 0;
+        border: 0;
+        height: 58px;
+      }
+    }
+  }
+
+  #at-view-emoji {
+    min-width: 0;
+    border: $popover-border-style;
+
+    ul {
+      li {
+        background: $typeahead-item-background-color;
+        padding: 3px;
+        border: 0;
+
+        &.cur {
+          background: $typeahead-item-active-background-color;
+        }
+
+        img.emoji {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+}
+
+.simple-jack-tiny, .simple-jack-small, .simple-jack-medium {
+  .chat-module {
+    .module-options {
+      ul {
+        margin-right: 2px;
+        &.with-title {
+          display: none !important;
+        }
+        &.without-title {
+          display: block !important;
+        }
+        li {
+          margin-left: -1px !important;
+        }
+      }
+    }
+  }
+}
+.floater {
+  .module {
+    header.module-header {
+      .module-actions {
+        a.pin-view {
+          display: none;
+        }
+      }
+    }
+    section.module-content {
+      .module-options {
+        ul {
+          li {
+            &.float_pop_out {
+              display: none;
+            }
+            &.float_pop_in {
+              display: inline-block;
+            }
+          }
+        }
+      }
+    }
+  }
+}

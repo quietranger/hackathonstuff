@@ -1,0 +1,29 @@
+@import "theme.scss";
+
+@each $color in $colors {
+    $i: index($colors, $color);
+
+    .tag:nth-of-type(#{$i}n) {
+        background-color: $color;
+
+        @if $i == 9 {
+            color: white;
+        }
+    }
+}
+
+
+@each $tag in $named-tags {
+    .tag.#{map-get($tag, name)} {
+        background-color: map-get($tag, background-color);
+        color: map-get($tag, text-color);
+    }
+}
+
+.tag.tag-twitter, .tag.twitter {
+    width: 18px;
+    background-image: url('icons/twitter.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    padding: 0;
+}

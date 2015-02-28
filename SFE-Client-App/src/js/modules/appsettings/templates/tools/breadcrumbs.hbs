@@ -1,0 +1,9 @@
+{{#each breadcrumbs}}
+  <li class="breadcrumb">
+    {{#if link}}
+      <a href="#" data-index="{{@index}}">{{name}}</a>
+    {{else}}
+      {{name}}
+    {{/if}}
+  </li>
+{{/each}}

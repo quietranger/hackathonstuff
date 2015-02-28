@@ -1,0 +1,546 @@
+@import "../../../../../styles/variables.scss";
+@import "../../../../../styles/mixins/inputs.scss";
+@import "theme.scss";
+
+.social-messages {
+  .message-wrap {
+    display: table;
+    width: 100%;
+  }
+  .new-message-indicator {
+    background-image: url('icons/backtoicon_top_wnote.png');
+    position: absolute;
+    width: 42px;
+    height: 21px;
+    right: 24px;
+    top: 50px;
+    cursor: pointer;
+    z-index: 1;
+    &:hover {
+      background-image: url('icons/backtoicon_top_wnote_hover.png');
+    }
+  }
+
+  .quick-move-button{
+    background-image: url('icons/backtoicon_top.png');
+    position: absolute;
+    right: 24px;
+    cursor: pointer;
+    z-index: 1;
+    width: 22px;
+    height: 21px;
+    top: 50px;
+    &:hover {
+      background-image: url('icons/backtoicon_top_hover.png');
+    }
+  }
+
+  div.message.unread {
+    div.text{
+      /*TODO: Pending linus's style. Don't show yellow color now*/
+      /*color: $colorscheme-yellow;*/
+    }
+  }
+
+  .load-more {
+    height: 30px;
+    text-align: center;
+    font-weight: 400;
+
+    span {
+      line-height: 30px;
+    }
+
+    .load-more-available.loading {
+      background: url('module-loader.gif') no-repeat center center;
+      span.load-more-label{
+        visibility: hidden;
+      }
+    }
+  }
+}
+
+.social-message {
+  width: 100%;
+  float: left;
+  margin: 0 0 4px 0;
+
+  .emoji {
+    width: 24px;
+    height: 24px;
+    display: inline;
+  }
+
+  &:first-child {
+    padding-top: 10px;
+  }
+
+  .message-reshare.retweet {
+    color: $discreet-text-color;
+    font-size: 11px;
+
+    a {
+      float: none;
+      display: inline;
+      color: $discreet-text-color;
+      text-decoration:none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .retweet-icon {
+      background-image: url('icons/retweet.png');
+      width: 18px;
+      height: 12px;
+      float: left;
+      margin: 0 5px 0 25px;
+    }
+  }
+
+  .message-reshare {
+    float: left;
+    width: 100%;
+    margin: 0 0 6px 0;
+
+    .reshare-icon {
+      background: url($social-message-reshare-icon-url) no-repeat center center;
+      width: 18px;
+      height: 18px;
+      float: left;
+      margin: 0 5px 0 23px;
+    }
+
+    .reshare-wrap {
+      float: left;
+      width: calc(100% - 55px);
+      margin: 0 0 0 5px;
+    }
+
+    .shared-by {
+      font-size: 11px;
+      float: left;
+      margin: 2px 0 0 0;
+    }
+
+    .shared-by-name {
+      font-size: 11px;
+      margin: 2px 4px 0 2px;
+    }
+
+    .reshare-text {
+      display: inline;
+      font-size: 11px;
+    }
+
+    .profile-link {
+      width: auto;
+    }
+
+    time {
+      display: inline-block;
+      float: none;
+      margin: 2px 0 0 0;
+    }
+  }
+
+  .avatar-wrap {
+    width: 30px;
+    height: 30px;
+    float: left;
+    margin: 1px 10px 0 10px;
+    overflow: hidden;
+    border-radius: 2px;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  .message-wrap-inner {
+    float: left;
+    width: calc(100% - 55px);
+  }
+
+  .message-meta {
+    float: left;
+    width: 100%;
+    vertical-align: top;
+  }
+
+  .identity {
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 11px;
+    float: left;
+    .tw-name {
+      float: left;
+      width: auto;
+      margin-right: 5px;
+    }
+
+    .tw-handle {
+      float: left;
+      margin: 0 5px 0 0;
+    }
+  }
+
+  .profile-link {
+    color: $social-message-user-name-text-color;
+    float: left;
+    font-size: 11px;
+    font-weight: bold;
+
+    &:hover {
+      color: $social-message-user-name-hover-text-color;
+    }
+
+    &:active {
+      color: $social-message-user-name-active-text-color;
+    }
+  }
+
+  time {
+    float: left;
+    vertical-align: top;
+    color: $text-default-discreet-color;
+    font-size: 11px;
+    margin: 0 0 0 5px;
+
+    &.tw-timestamp {
+      display: inline;
+    }
+  }
+
+  hr {
+    width: 100%;
+    float: left;
+    margin: 4px 0 0 0;
+    border-bottom: 1px solid $social-message-divider-color;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+  }
+
+  .message-text {
+    word-break: break-word;
+    float: left;
+    width: 100%;
+    font-size: 12px;
+    line-height: 16px;
+    margin: 4px 0 0 0;
+
+    .tag {
+      font-size: 8px;
+      margin-top: 1px;
+      font-weight: 300;
+      margin-right: 3px;
+      line-height: normal;
+    }
+  }
+
+  .message-actions-compact {
+    //hidden by default, only show in compact mode
+    display: none;
+  }
+
+  .message-actions {
+    float: left;
+    width: 100%;
+    margin: 4px 0 0 -4px; //the first button
+    white-space: nowrap;
+  }
+
+  .social_action_btn {
+    color: $social-message-action-button-text-color;
+    float: left;
+    margin: 0 4px 0 0;
+    min-width: 50px;
+    display: inline;
+    padding: 2px 4px;
+    border-radius: 2px;
+    text-decoration: none;
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative; //for count to render on top right using position absolute
+    span {
+      float: left;
+    }
+
+    .share-icon {
+      background: url($social-message-reshare-icon-url) no-repeat center center;
+      width: 10px;
+      height: 10px;
+      float: left;
+      margin: 1px 3px 0 0;
+      background-size: contain;
+    }
+
+    .share-count {
+      position: absolute;
+      top: -1px;
+      left: 7px;
+      width: 10px;
+      height: 10px;
+      background-color: $social-message-share-count-background-color;
+      border-radius: 5px;
+      font-size: 8px;
+      color: $social-message-share-count-text-color;
+      text-align: center;
+      line-height: 10px;
+    }
+    .share-count.colum-2{
+      width: 14px;
+    }
+    .share-count.colum-3{
+      width: 18px;
+    }
+    .context-icon {
+      background: url($social-message-context-icon-url) no-repeat center center;
+      width: 10px;
+      height: 10px;
+      float: left;
+      margin: 1px 3px 0 0;
+      background-size: contain;
+    }
+
+    .delete-icon {
+      background: url($social-message-delete-icon-url) no-repeat center center;
+      background-size: contain;
+      width: 11px; //use 11px so that it aligns with the text
+      height: 11px;
+      float: left;
+      margin: 0px 3px 0 0;
+    }
+
+    &:hover{
+      color: $social-message-action-button-hover-text-color;
+
+      .share-icon {
+        background: url($social-message-reshare-icon-hover-url) no-repeat center center;
+        background-size: contain;
+      }
+
+      .context-icon {
+        background: url($social-message-context-icon-hover-url) no-repeat center center;
+        background-size: contain;
+      }
+
+      .delete-icon {
+        background: url($social-message-delete-icon-hover-url) no-repeat center center;
+        background-size: contain;
+      }
+    }
+
+    &:active{
+      color: $social-message-action-button-active-text-color;
+    }
+  }
+}
+
+.modal-share{
+    border-top: 1px solid $modal-content-separator-color;
+
+  .textarea-input .text-input-wrap {
+    @include input();
+    padding: 0 2px;
+    height: 25px;
+
+    &:hover {
+      background-color: $input-background-color;
+  }
+  }
+
+  .share-comment {
+    height: 50px;
+    position: relative;
+  }
+  p.columns, label{
+    margin: 0px;
+    padding: 0px;
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: $colorscheme-yellow;
+  }
+  .message{
+    border: 1px solid #1b1e24;
+    border-radius: 2px;
+    margin-bottom: 5px;
+  }
+  .action-group{
+    display: none;
+  }
+  .metadata{
+    display: none;
+  }
+  .reshare {
+    display: none;
+  }
+  hr {
+    display: none;
+  }
+  textarea{
+    word-wrap: break-word;
+    line-height: 18px;
+    color: white;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0 0 10px 0;
+    overflow-y: auto;
+    resize: none;
+  }
+
+  .rte-actions {
+    display: none; //this is a hack to support border radius on the text input (it wasnt originally built to handle that)
+  }
+  .social-message {
+    background: none;
+    border: 0 none;
+    float: left;
+    margin: 0 2px 10px 2px;
+
+    &:first-child {
+      padding-top: 2px;
+    }
+  }
+  .content-separator {
+    float: left;
+    margin: 10px 0 0 0;
+    height: 1px;
+    width: 100%;
+    background: $modal-content-separator-color;
+  }
+  .reshare-top {
+    width: 100%;
+    margin: 12px 0 0 0;
+    font-size: 12px;
+    float: left;
+  }
+  .reshare-icon {
+    width: 25px;
+    height: 25px;
+    background:  $social-message-reshare-icon-background-color url($social-message-reshare-icon-url) no-repeat center center;
+    float: left;
+    margin: 8px 0 0 19px;
+    border-radius: $social-message-reshare-icon-border-radius;
+  }
+  .title-wrap {
+    float: left;
+    margin: 14px 0 16px 9px;
+    font-weight: 500;
+    font-size: 11px;
+  }
+  .reshare-title {
+    color: $social-message-reshare-title-text-color;
+  }
+  .add-comment {
+    color: $link-text-color;
+    cursor: pointer;
+  }
+  .add-comment:hover {
+    color: lighten($add-comment-button, 5%);
+  }
+  .add-comment:active {
+    color: darken($add-comment-button, 5%);
+  }
+  .share-comment {
+    margin: 8px 0 6px 62px;
+    height: 29px;
+
+    &.textarea-input .text-input-wrap .text-input-text {
+      padding: 2px; //special exception...
+      border-radius: 2px;
+      height: 25px;
+    }
+
+  }
+}
+
+body.compact {
+  .modal-share{
+    .reshare-icon {
+      margin-left: 6px;
+    }
+  }
+  .social-message {
+    .message-text {
+      margin: 0;
+    }
+    .original-poster-avatar {
+      display: none;
+    }
+
+    .message-meta {
+      width:auto;
+
+      .profile-link {
+        margin-right: 5px;
+        width: auto;
+        //      since the user name will be on the same line with text, font-size should equal to text font size
+        font-size: 12px;
+      }
+
+      time {
+        display: none;
+      }
+
+      time.tw-timestamp {
+        display: inline-block;
+      }
+    }
+    .message-actions-compact {
+      display:inline;
+      font-size: 11px;
+      margin-left: 4px;
+      float: none;
+      white-space: nowrap;
+
+      .social_action_btn{
+        padding: 0;
+        min-width: 0px;
+        margin: 0px;
+        display: inline;
+        float: none;
+
+//        all icons can't float to left
+        div{
+          float: inherit;
+          display: inline-block;
+        }
+      }
+
+      time {
+        float: inherit;
+        margin: 0;
+      }
+
+      .social_action_btn.shared_by{
+        padding: 0;
+        min-width: 20px;
+        margin: 0 5px 0 0;
+      }
+    }
+
+    .message-reshare {
+      .reshare-icon{
+        display: none;
+      }
+    }
+    .message-reshare.retweet {
+      padding-left: 6px;
+      .retweet-icon {
+        display: none;
+      }
+    }
+    .message-wrap-inner {
+      width: 100%;
+      padding: 0 6px;
+
+      .message-actions {
+        display:none;
+      }
+    }
+  }
+}

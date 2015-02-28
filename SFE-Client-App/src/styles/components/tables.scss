@@ -1,0 +1,48 @@
+@import "theme.scss";
+
+table.symphony {
+  width: 100%;
+  border: 1px solid $table-border-color;
+  border-radius: 2px;
+  border-collapse: separate;
+
+  thead {
+    background-color: $table-header-background-color;
+
+    & > tr {
+      position: relative;
+      display: block;
+    }
+
+    th {
+      color: $table-header-text-color;
+    }
+  }
+
+  th {
+    text-align: left;
+    background-color: transparent;
+    color: $default-text-color;
+    font-size: 14px;
+  }
+
+  td, th {
+    padding: 5px;
+  }
+
+  td {
+    font-size: 12px;
+  }
+
+  tbody tr:nth-of-type(odd) {
+    background: $table-odd-background-color;
+  }
+
+  tbody {
+    display: block;
+    max-height: 300px;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+}

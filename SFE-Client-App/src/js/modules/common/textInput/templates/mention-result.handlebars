@@ -1,0 +1,14 @@
+<li>
+    <div class="person-row">
+        {{wrappedAvatar person}}
+        <div class="identity">
+            <h3>{{person.prettyName}}</h3>
+            <p>{{person.deptName}}{{#if person.location}}, {{person.location}}{{/if}}</p>
+        </div>
+        {{#if isRemovable}}
+        <div class="remove-button">
+            <a class="remove square-button">Remove</a>
+        </div>
+        {{/if}}
+    </div>
+</li>

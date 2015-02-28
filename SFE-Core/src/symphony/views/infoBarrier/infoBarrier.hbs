@@ -1,0 +1,21 @@
+<p>
+    {{#if isRoom}}
+    Information Barrier Violation: The action you are trying to perform involves individuals who are subject to a Compliance-defined information barrier that restricts communication.  Limited business-critical exceptions may be granted and will require business management and divisional Compliance approval. For questions regarding this Compliance-defined information barrier restriction, please contact your divisional Compliance officer.
+    {{else}}
+    Information Barrier Violation: The action you are trying to perform involves individuals who are subject to a Compliance-defined information barrier that restricts communication.  Limited business-critical exceptions may be granted and will require business management and divisional Compliance approval. If you would like to request an exception, please click <a class="compliance-info" href="http://home.gs.com/gsweb/gsc/freeFormPage?nodeID=266169">here</a>. For questions regarding this Compliance-defined information barrier restriction, please contact your divisional Compliance officer.
+    {{/if}}
+</p>
+{{#if isRoom}}
+    <div class="exception-request">
+        <p>Please provide business-critical justification for exception request or other relevant information:</p>
+        <textarea class="exception-text" placeholder="Enter exception request..."> </textarea>
+        <p class="status-box hidden"></p>
+    </div>
+{{/if}}
+
+<div class="buttons">
+    {{#if isRoom}}<button class="button submit positive">Submit</button>{{/if}}
+    <button class="button close negative">Close</button>
+    {{#if isRoom}}<div class="spinner hidden"></div>{{/if}}
+</div>
+

@@ -1,0 +1,41 @@
+<div class="chat-time">
+    <time class="time-standard">{{timestamp ingestionDate "hh:mm:ss a"}}</time>
+    <time class="time-twentyfour">{{timestamp ingestionDate "HH:mm:ss"}}</time>
+    {{#if showReadReceipt}}
+        {{parseReadReceipts this}}
+    {{/if}}
+</div>
+{{#if showName}}
+{{#if showPresence}}
+     {{#unless oneToOneUserId}}
+        <!--add an &nbsp; so that if user copy the whole message, there will be a space between timestamp and username-->
+        <span class="has-presence presence-indicator presence-unknown" data-userid="{{from.id}}">&nbsp;</span>
+     {{/unless}}
+{{/if}}
+{{/if}}
+<div {{#unless oneToOneUserId}} class="chat-not-time" {{else}} class="chat-not-time no-presence" {{/unless}}>
+    <p>
+        {{#if isChime}}
+            <p class="chat-text"><span class="msg-entity person has-hover-profile" data-userid="{{from.id}}" data-usertype="{{from.userType}}">{{from.prettyName}}</span> sent a chime.</p>
+        {{else}}
+            {{#if showName}}
+            <span class="chat-username has-hover-profile" data-userid="{{from.id}}">
+                <span class="display-id hidden">{{from.screenName}}</span>
+                {{#if isSender}}
+                    <span class="display-name sender-name">You</span>
+                {{else}}
+                    <span class="display-name colorable aliasable" data-userid="{{from.id}}">{{from.prettyName}}</span>
+                {{/if}}
+            </span>:
+            {{/if}}
+            <span class="chat-text">{{parseMessageText text entities media}}</span>
+            {{#if attachments}}
+                {{#each attachments}}
+                <span class="file-download">
+                    <a href="{{../apiUrl}}/attachment/download?fileid={{fileId}}&messageid={{urlEncoded ../messageId}}" class="attachment{{ifPreviewContent name}}" download="{{name}}">{{name}} ({{friendlyFileSize sizeInBytes}})</a>
+                </span>
+                {{/each}}
+            {{/if}}
+        {{/if}}
+    </p>
+</div>

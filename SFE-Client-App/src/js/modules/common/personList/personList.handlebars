@@ -1,0 +1,22 @@
+<div class="following-list-wrap">
+<div class="following-list">
+    {{#each result}}
+        <div class="person-result" userid="{{id}}">
+            {{wrappedAvatar this}}
+            <div class="name">
+                    <span class="profile-link" data-userid="{{id}}">{{prettyName}}</span><div class="tag symphony">SY</div><span class="has-presence presence-indicator presence-unknown" data-userid="{{id}}"></span>
+                    <span class="handle profile-link" data-userid="{{id}}">@{{screenName}}</span>
+            </div>
+        </div>
+    {{else}}
+     {{#if isEmpty}}
+        <div class="loading">No results to show.</div>
+        {{else}}
+        <div class="loading">Loading...</div>
+        {{/if}}
+    {{/each}}
+</div>
+    </div>
+<div class="buttons">
+    <button class="button close positive">Done</button>
+</div>

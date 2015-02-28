@@ -1,0 +1,76 @@
+<div class="appsettings-general">
+    <div class="row">
+        <h5>Time Format</h5>
+
+        <div class="field field-show-24-hr-time">
+            <span class="checkbox">
+                <input type="checkbox" {{#if show24HrTime}}checked{{/if}}>
+                <span></span>
+            </span>
+            <span>Use 24 hour time format.</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <h5>Left Navigational Panel</h5>
+        <div class="field field-sort-left-nav-by-unread">
+            <span class="checkbox">
+                <input type="checkbox" {{#if sortLeftNavByUnread}}checked{{/if}}>
+                <span></span>
+            </span>
+            <span>Place threads with new messages at the top of the navigation.</span>
+        </div>
+        <div class="field field-remove-inactive-im">
+            <span class="checkbox">
+                <input type="checkbox" {{#if removeInactiveIM}}checked{{/if}}>
+                <span></span>
+            </span>
+            <span>Remove inactive IM conversations from the navigation daily at <span class="time-standard">12:01am</span><span class="time-twentyfour">00:01</span>.</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <h5>Instant Messages</h5>
+        <div class="field field-hide-messages-im">
+            <span class="checkbox">
+                <input type="checkbox" {{#if hideMessagesIM}}checked{{/if}}>
+                <span></span>
+            </span>
+            <span>Hide IM conversation history daily at <span class="time-standard">12:01am</span><span class="time-twentyfour">00:01</span>.</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <h5>Social Posts</h5>
+
+        <div class="field field-show-compact-mode">
+            <span class="checkbox">
+                <input type="checkbox" {{#if showCompactMode}}checked{{/if}}>
+                <span></span>
+            </span>
+            Use compact mode
+        </div>
+    </div>
+
+    {{#if enableEmailNotifications}}
+        <div class="row">
+            <h5>Offline Notifications</h5>
+            <div class="field field-notify-mentions">
+                <span class="checkbox"><input id="settings-notify-mentions" type="checkbox" {{#if notifyMentions}}checked{{/if}}/><span></span></span>
+                When offline, notify me via e-mail when I am mentioned
+            </div>
+            <div class="field field-notify-ims">
+                <span class="checkbox"><input id="settings-notify-ims" type="checkbox" {{#if notifyIMs}}checked{{/if}}/><span></span></span>
+                When offline, notify me of new IMs via e-mail
+            </div>
+        </div>
+    {{/if}}
+
+    <div class="row">
+        <h5>Layout</h5>
+
+        <div class="field field-show-compact-mode">
+            <button class="button positive layout-reset">Reset Layout</button>
+        </div>
+    </div>
+</div>

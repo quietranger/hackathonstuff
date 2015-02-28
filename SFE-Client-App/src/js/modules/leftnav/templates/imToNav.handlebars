@@ -1,0 +1,12 @@
+<li data-streamId="{{threadId}}" data-module="im" class="navlink {{#if isPinned}}pinned{{/if}}" title="{{name}}">
+    <a class="presence">
+        <span class="nav-view-badge hide-badge">0</span>
+        {{#if oneToOneUserId}}
+        <span class="has-presence presence-indicator presence-unknown" data-userid="{{oneToOneUserId}}" />
+        <div class="nav-view-name one-to-one">{{name}}</div>
+        {{else}}
+        <div class="nav-view-name one-to-many">{{name}}</div>
+        {{/if}}
+        <span class="nav-close-im"></span>
+    </a>
+</li>

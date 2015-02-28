@@ -1,0 +1,413 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/mixins/buttons';
+@import '../../../../styles/mixins/triangles';
+@import "theme.scss";
+
+@keyframes flash{
+  0%{
+    background: $message-highlighted-background-color;
+  }
+  100%{
+    background: transparent;
+  }
+}
+
+body.avatars .chat-module .avatar {
+  display: block;
+}
+
+body.membership-update-enabled .chat-module .membership-update {
+  display: block;
+}
+
+.join-room.hide {
+  display:none;
+}
+
+.clickable-user-name {
+  cursor: pointer;
+}
+
+.chat-module {
+  width: 100%;
+  height: 100%;
+  font-weight: 500;
+
+  .alert-box {
+    position: absolute;
+    z-index: 100;
+    padding: 5px 10px;
+    right: 10px;
+    left: 5px;
+    top: 10px;
+    border-radius: 2px;
+    *{
+      font-size: 11px;
+    }
+  }
+  .alert-box.alert{
+    background: $warning-bright-color;
+  }
+
+  .room-info {
+    width: 15px;
+    height: 13px;
+    background: url('icons/room-info.png') no-repeat;
+    bottom: 2px;
+    cursor: pointer;
+  }
+
+  .module-options {
+    ul {
+      margin-right: 4px !important;
+
+      &.with-title {
+        margin-right: 8px !important;
+      }
+    }
+  }
+
+  a.participants {
+    background-image: url($chatroom-participants-icon-url);
+    background-repeat: no-repeat;
+    background-position: 3px center;
+    line-height: 13px;
+    width: auto;
+    overflow: visible;
+    text-indent: 0;
+    text-decoration: none;
+    font-size: 10px;
+    margin: -1px 0 0 4px;
+    padding: 0 3px 0 16px;
+    box-sizing: padding-box;
+  }
+
+  .membership-update {
+    display: none;
+  }
+
+  .new-message-indicator {
+    background-image: url('icons/backtoicon_bottom_wnote.png');
+    position: absolute;
+    width: 42px;
+    height: 21px;
+    right: 16px;
+    bottom: 10px;
+    cursor: pointer;
+    z-index: 1;
+    &:hover {
+      background-image: url('icons/backtoicon_bottom_wnote_hover.png');
+    }
+  }
+
+  .quick-move-button {
+    background-image: url('icons/backtoicon_bottom.png');
+    position: absolute;
+    width: 22px;
+    height: 21px;
+    right: 18px;
+    bottom: 10px;
+    cursor: pointer;
+    z-index: 1;
+    &:hover {
+      background-image: url('icons/backtoicon_bottom_hover.png');
+    }
+  }
+
+  .chatroom-msg-input-wrap {
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+
+  .typing-indicator {
+    padding-left: 25px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 9px;
+    height: 15px;
+    background: $module-inactive-background-color;
+
+    .typing-indicator-icon.hide {
+      display: none;
+    }
+
+    .typing-indicator-icon {
+      vertical-align: middle;
+    }
+
+    .typing-indicator-text {
+      margin-left: 5px;
+      color: $discreet-text-color;
+      font-size: 10px;
+      vertical-align: top;
+      display: inline-block;
+      padding-top: 3px;
+    }
+  }
+
+  .chatroom-messages {
+    position: absolute;
+    top: 0;
+    bottom: 39px;
+    left: 0;
+    right: 0;
+  }
+
+  @include button($chatroom-load-more-button);
+
+  .load-more, .gap-load-more {
+    width: 100%;
+    height: 30px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 20px;
+    border-top: 1px solid $chatroom-divider-color;
+    margin-top: 20px;
+
+    .load-more-available, .gap-load-more-available {
+      margin: 0 8px;
+      position: relative;
+      top: -10px;
+      height: 20px;
+      line-height: 20px;
+
+      i {
+        position: absolute;
+        left: 5px;
+        top: 4px;
+
+        &.icon-arrow-down {
+          @include css-triangle(3px, map-get($chatroom-load-more-button, text-color), top);
+        }
+
+        &.icon-arrow-up {
+          @include css-triangle(3px, map-get($chatroom-load-more-button, text-color), bottom);
+        }
+      }
+
+      span.load-more-label{
+        padding: 0px 4px 0 8px;
+      }
+    }
+    .load-more-available.loading, .gap-load-more-available.loading {
+      background: map-get($chatroom-load-more-button, background-color) url('module-loader.gif') no-repeat center center;
+      span.load-more-label, i{
+        visibility: hidden;
+      }
+    }
+    .load-more-unavailable{
+      color: $discreet-text-color;
+      font-size: 11px;
+      font-weight: 400;
+    }
+  }
+
+  .messages-scroll {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding-bottom: 18px;
+  }
+
+  .chatroom-compose {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0;
+
+
+  }
+
+  .date-group-header {
+    border-top: 1px solid $chatroom-date-group-divider-color;
+    font-size: 12px;
+    color: $chatroom-date-group-text-color;
+    margin-top: 11px;
+    height: 13px;
+    cursor: pointer;
+
+    .date-group-header-text {
+      margin-top: -11px;
+      background: $module-inactive-background-color;
+      padding: 3px 5px;
+      float: left;
+      cursor: pointer;
+    }
+  }
+
+  .msg-group.maestro-group {
+    border: none;
+    font-style: italic;
+    font-size: 12px;
+  }
+
+  .chat-message.maestro, .chat-message.chime {
+    &.unread .chat-text {
+      color: $discreet-text-color;
+    }
+
+    .chat-text {
+      color: $discreet-text-color;
+      font-style: italic;
+
+      .msg-entity.person {
+        color: inherit;
+      }
+    }
+
+    .msg-entity.person:hover {
+      color: $message-link-text-color;
+      cursor: pointer;
+    }
+  }
+
+  div.msg-group.maestro-group.more-than-one {
+    background-color: $chatroom-maestro-message-group-background-color;
+    border-top: 1px solid $chatroom-maestro-message-group-border;
+    border-bottom: 1px solid $chatroom-maestro-message-group-border;
+    margin-top: 3px;
+
+    div.msg-group-header.maestro {
+      margin-left: 84px;
+      cursor: pointer;
+    }
+
+    div.msg-group-header-text {
+      color: $chatroom-maestro-message-group-title-link-text-color;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+
+    div.msg-group-header-hint {
+      color: $chatroom-maestro-message-group-title-text-color;
+      display: inline-block;
+      font-size: smaller;
+    }
+  }
+
+  div.msg-group.maestro-group.more-than-one.expand {
+    background-color: $chatroom-maestro-message-group-expanded-background-color;
+
+    div.chat-message.maestro .chat-text{
+        color: $discreet-text-color;
+    }
+  }
+
+  .chat-message.unread {
+    .chat-text{
+      color: $message-highlighted-text-color;
+    }
+  }
+}
+
+.chat-message {
+  overflow: hidden;
+  width: 100%;
+  font-size: 14px;
+  color: $message-text-color;
+
+  &.highlighted {
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-name: flash;
+    transition-timing-function: ease-out;
+    -webkit-animation-duration: 2s;
+    -webkit-animation-iteration-count: 1;
+    -webkit-animation-name: flash;
+    -webkit-transition-timing-function: ease-out;
+
+    .chat-not-time p .chat-text{
+      color: $message-highlighted-text-color;
+    }
+  }
+
+  .emoji {
+    width: 16px;
+    height: 16px;
+  }
+
+  .presence-indicator{
+    width: 5px;
+    height: 5px;
+    margin-top: 6px;
+  }
+  .chat-time {
+    float: left;
+    color: $message-timestamp-text-color;
+    font-weight: 400;
+    font-size: 11px;
+    width: 70px;
+    cursor: pointer;
+    margin-top: 2px;
+    text-align: right;
+    padding-right: 4px;
+
+    &:hover {
+      color: $message-timestamp-hover-text-color;
+    }
+
+    &:active {
+      color: $message-timestamp-active-text-color;
+    }
+
+    .read-receipt {
+      color: $message-read-receipt-text-color;
+      font-size: 10px;
+    }
+  }
+
+  .chat-not-time {
+    margin-left: 84px;
+    word-break: break-word;
+    color: $message-text-color;
+
+    &.no-presence {
+      margin-left: 70px;
+    }
+
+    p {
+      line-height: 1.4;
+      font-size: 12px;
+      font-weight: 500;
+    }
+  }
+
+  .chat-username {
+    color: $message-username-text-color;
+    cursor: pointer;
+    font-weight: 500;
+
+    &:hover {
+      color: $message-username-hover-text-color;
+    }
+
+    &:active {
+      color: $message-username-active-text-color;
+    }
+
+    .sender-name, .sender-name:hover, .sender-name:active {
+      color: $discreet-text-color;
+    }
+
+  }
+
+  .chat-text {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+  }
+}
+
+.module.focus-active {
+  .date-group-header-text {
+    background: $module-active-background-color !important;
+  }
+
+  .typing-indicator {
+    background: $module-active-background-color !important;
+  }
+}

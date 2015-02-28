@@ -1,0 +1,60 @@
+@import "../../../../styles/variables.scss";
+
+.change-log {
+  &, .content, .module-scrollable {
+    height: 100%;
+  }
+
+  .content > div {
+    overflow-y: scroll;
+    padding: 0 10px;
+  }
+
+  time {
+    background: $colorscheme-yellow;
+    color: darken($colorscheme-yellow, 50%);
+    padding: 2px 3px;
+    border-radius: 2px;
+    display: inline-block;
+    font-size: 11px;
+  }
+
+  .version-details {
+    font-size: 11px;
+
+    p, label{
+      margin-top: 10px;
+      font-size: 12px;
+    }
+
+    p {
+      margin-bottom: 10px;
+    }
+
+    label{
+      margin-bottom: 5px;
+      color: $colorscheme-green;
+      display: block;
+    }
+
+    ul{
+      li{
+        font-size: 11px;
+        padding-left: 5px;
+        margin-bottom: 3px;
+
+        &:before{
+          content: "- ";
+        }
+      }
+    }
+
+  }
+
+  .version-title {
+    color: $colorscheme-yellow;
+    margin: 10px 0 0 0;
+    font-size: 14px;
+    font-weight: 500;
+  }
+}

@@ -1,0 +1,19 @@
+{{#each this}}
+{{#if items}}
+<li class="group {{#if isCollapsed}}collapsed{{/if}}">
+    <div class="group-name-wrap">
+        <a class="group-collapse-drag-handle group-circle-button">Collapse</a>
+        <a class="group-name" data-name="{{name}}">{{#if name}}{{name}}{{else}}Untitled group{{/if}}</a>
+        <span class="rightside-wrap">
+            <span class="nav-view-badge"></span>
+            <a class="edit-group group-square-button">Edit</a>
+        </span>
+    </div>
+    <ul>
+        {{>navItemCollection items}}
+    </ul>
+</li>
+{{else}}
+    {{>navItem this}}
+{{/if}}
+{{/each}}

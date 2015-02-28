@@ -1,0 +1,86 @@
+@import '../../../../styles/variables';
+@import "theme.scss";
+
+.modal-container {
+
+  .modal-content {
+    overflow: visible;
+
+    .room-list-container{
+      overflow: hidden;
+    }
+
+    .room-list-wrap {
+      border-top: 1px solid $modal-entity-list-border-color;
+      border-bottom: 1px solid $modal-entity-list-border-color;
+      padding: 10px 0;
+    }
+
+    div.room-list{
+      height: 400px;
+      overflow-y: auto;
+      border-radius: 2px;
+
+      .open-room {
+        margin-top: 7px;
+      }
+
+      .membership {
+        color: $section-item-header-text-color
+      }
+
+      .room_info{
+        float: left;
+        display: inline;
+        clear: left;
+        padding: 5px 5px 5px 0;
+        width: 100%;
+
+        & > div {
+          float: left;
+          display: inline;
+          clear: left;
+          margin: 2px 0px;
+          font-size: 11px;
+
+          &.name {
+            font-size: 15px;
+            font-weight: 700;
+            color: $modal-entity-list-header-text-color;
+            margin-top: 1px;
+
+            .tag {
+              position: relative;
+              bottom: -2px;
+          }
+          }
+
+          .tag{
+            clear: none;
+          }
+
+          span, a{
+            float: left;
+            display: inline;
+            margin-right: 4px;
+          }
+
+          &.room_actions{
+            float: right;
+            clear: none;
+              }
+            }
+
+      }
+    }
+        }
+
+  .loading{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    color: $discreet-text-color;
+    font-size: 11px;
+    font-weight: 400;
+  }
+}

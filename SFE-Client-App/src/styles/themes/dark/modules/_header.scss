@@ -1,0 +1,88 @@
+@import "../components/typography";
+
+$header-background-color: #1c1f26;
+$header-border-bottom-color: #181b21;
+$header-box-shadow: none;
+
+$header-search-background-color: #323741;
+$header-search-hover-background-color: #393f4a;
+$header-search-focus-background-color: #474d58;
+$header-search-border: 0;
+$header-search-box-shadow: 0 1px 2px rgba(black, 0.23);
+$header-search-placeholder-text-color: #757a84;
+$header-search-text-color: white;
+
+$header-button-background-color: #181b21;
+$header-button-hover-background-color: lighten($header-button-background-color, 5%);
+$header-button-active-background-color: darken($header-button-background-color, 5%);
+$header-button-text-color: #91bb4c;
+$header-button-hover-text-color: lighten($header-button-text-color, 5%);
+$header-button-active-text-color: darken($header-button-text-color, 5%);
+
+$header-create-new-icon-background-image: 'header/create-new.png';
+$header-create-new-icon-background-image-hover: 'header/create-new-hover.png';
+$header-easy-post-icon-background-image: 'header/compose.png';
+$header-easy-post-icon-background-image-hover: 'header/compose-hover.png';
+
+$header-easy-post-background-color: #2B303B;
+$header-easy-post-border-color: #1C1F26;
+$header-easy-post-header-color: #EBC875;
+
+$header-action-background-color: #1b1d24;
+$header-action-border-color: #181b21;
+
+$header-user-name-text-color: white;
+$header-user-name-hover-text-color: white;
+$header-user-name-active-text-color: darken(white, 5%);
+
+$header-account-text-color: #a7acbd;
+$header-account-hover-text-color: lighten($header-account-text-color, 5%);
+$header-account-active-text-color: darken($header-account-text-color, 5%);
+
+$header-search-icon-url: '';
+
+$options-icons: (
+  changelog (
+    icon-url 'header/changelog.png',
+    hover-icon-url 'header/changelog-hover.png'
+  ),
+  contact (
+    icon-url 'header/contact.png',
+    hover-icon-url 'header/contact-hover.png'
+  ),
+  help (
+    icon-url 'header/help.png',
+    hover-icon-url 'header/help-hover.png'
+  ),
+  settings (
+    icon-url 'header/settings.png',
+    hover-icon-url 'header/settings-hover.png'
+  ),
+  tour (
+    icon-url 'header/tour.png',
+    hover-icon-url 'header/tour-hover.png'
+  ),
+  log-out (
+    icon-url 'header/logout.png',
+    hover-icon-url 'header/logout-hover.png'
+  ),
+  update-avatar (
+    icon-url 'header/update-avatar.png',
+    hover-icon-url 'header/update-avatar-hover.png'
+  )
+);
+
+$header-button: (
+        name header,
+        background-color darken(adjust-hue(#272b34, 5%), 5%),
+        drop-shadow "0 1px 2px rgba(0, 0, 0, 0.23)",
+        text-color $section-header-text-color,
+        hover (
+                background-color #282d36,
+                text-color lighten(#58c6ff, 5%)
+        ),
+        active (
+                background-color darken(#242931, 10%),
+                text-color darken(#58c6ff, 5%)
+        )
+);

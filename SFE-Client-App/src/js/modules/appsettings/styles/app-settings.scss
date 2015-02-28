@@ -1,0 +1,269 @@
+@import "../../../../styles/variables.scss";
+@import "../../../../styles/mixins/inputs.scss";
+@import "theme.scss";
+
+@mixin icon($icon) {
+  background-image: url(map-get($icon, icon-url));
+
+  &:hover {
+    background-image: url(map-get($icon, hover-icon-url));
+  }
+}
+
+a.app-settings, a.show-ftue, a.show-change-log, a.show-help {
+  padding-left: 35px !important;
+  background-repeat: no-repeat;
+  background-position: 12px center;
+  font-size: 14px;
+  @include icon(map-get($options-icons, settings));
+}
+
+.popover.open li a {
+  background-repeat: no-repeat;
+
+  &.show-ftue {
+    background-position: 15px center;
+    @include icon(map-get($options-icons, help));
+  }
+
+  &.show-change-log {
+    background-position: 13px center;
+    @include icon(map-get($options-icons, changelog));
+  }
+  &.show-help {
+    background-position: 12px center;
+    @include icon(map-get($options-icons, contact));
+  }
+  &.start-tour {
+    background-position: 11px center;
+    padding-left: 35px;
+    @include icon(map-get($options-icons, tour));
+  }
+}
+
+.app-settings {
+  .tabs {
+    border-bottom: 1px solid $modal-content-separator-color;
+    margin-bottom: 10px;
+    text-align: center;
+
+    dd {
+      display: inline-block;
+      padding-bottom: 5px;
+      margin: 0 5px -2px 5px;
+
+      a {
+        color: $section-header-text-color;
+      }
+
+      a.disabled {
+        display: none;
+      }
+
+      &.active, &:hover {
+        border-bottom: 3px solid $link-text-color;
+
+        a {
+          color: $link-text-color;
+        }
+      }
+    }
+  }
+
+  .settings-stage {
+    padding-bottom: 10px;
+    border-bottom: 1px solid $modal-content-separator-color;
+
+    h4 {
+      font-size: 14px;
+      font-weight: normal;
+      color: $section-header-text-color;
+      margin-bottom: 10px;
+    }
+  }
+
+  .system-account {
+    .tt-dropdown-menu {
+      width: 150% !important;
+    }
+  }
+
+  .well {
+    border-radius: 2px;
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+
+  .alert-category {
+    display: block;
+    margin: 10px;
+
+    .exceptions li {
+      margin-right: 0;
+    }
+
+    .content {
+      padding: 10px;
+      background: $well-nested-background-color;
+    }
+
+    h5 {
+      color: $section-item-header-text-color;
+      margin-bottom: 10px;
+    }
+
+    .options-wrap {
+      overflow: hidden;
+      width: 100%;
+      margin-bottom: 5px;
+    }
+
+    .options {
+      width: 80%;
+      float: left;
+
+      label {
+        float: left;
+        width: 150px;
+        margin-bottom: 5px;
+      }
+    }
+
+    .color {
+      float: right;
+      width: 20%;
+      padding-top: 2px;
+
+      .sp-replacer {
+        @include input();
+        margin-top: -2px;
+        margin-right: 5px;
+
+        .sp-dd {
+          display: none;
+        }
+      }
+    }
+  }
+
+  label {
+    font-size: 12px;
+
+    &.heading {
+      color: $section-item-header-text-color;
+    }
+
+    .checkbox {
+      margin-bottom: -3px;
+    }
+  }
+
+  fieldset {
+    border: 1px solid $module-blue-border;
+    background: $modal-alt-background;
+
+    legend {
+      background: transparent;
+      font-size: 14px;
+      font-weight: 500;
+    }
+  }
+
+  .twitter-typeahead {
+    width: 100%;
+    margin-bottom: 10px;
+    @include input();
+
+    input {
+      border: 0;
+      padding: 3px;
+      font-weight: normal;
+    }
+  }
+
+  .delegates, .sys-acct-owner-list {
+    padding: 3px;
+    height: 186px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-bottom: 5px;
+
+    &.empty:before {
+      display: block;
+      content: 'Delegates will appear here.';
+      line-height: 50px;
+      color: $discreet-text-color;
+      font-size: 11px;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  .shared-accounts-wrap {
+    overflow: hidden;
+
+    label[for="add-owner"] {
+      float: left;
+    }
+
+    label[for="sys-acct-type"] {
+      float: right;
+    }
+
+    label {
+      margin-bottom: 5px;
+      width: 30%;
+    }
+
+    select, input {
+      @include input();
+    }
+  }
+
+  .person-tag {
+    float: left;
+    margin: 2px;
+    padding: 2px 3px;
+    background: $token-background-color;
+    color: $token-text-color;
+    font-size: 11px;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+
+    p {
+      margin-bottom: 0;
+      display: inline-block;
+      float: left;
+    }
+
+    span {
+      cursor: pointer;
+      background: url('icons/icon_close.png') no-repeat;
+      background-position: center;
+      width: 7px;
+      height: 7px;
+      margin: 4px 4px 2px 4px;
+      float: left;
+
+      &:hover {
+        background-image: url('icons/icon_close_active.png');
+      }
+      &:active {
+        background-image: url('icons/icon_close_active.png');
+      }
+    }
+  }
+
+  .settings_color {
+    margin: 4px 9px 0px -11px;
+  }
+}
+
+.sp-palette-container {
+  border: 0px;
+  background: #1d2028;
+}
+
+.sp-container {
+  border: 0px;
+}

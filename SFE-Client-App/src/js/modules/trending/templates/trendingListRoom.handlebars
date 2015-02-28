@@ -1,0 +1,41 @@
+<div class="row row-trending">
+    <div class="small-12 columns">
+        <div id="trending-item-table">
+            <div class="table-head room-trending">
+                <div class="name small-12 columns col-left">{{entityName}}</div>
+                <div class="data columns col-mid">{{entityUnit}}</div>
+                <div class="status columns col-right">Trend</div>
+                <div class="action columns col-actions">Action</div>
+            </div>
+            <div class="table-body room-trending">
+                {{#each trendingData}}
+                <div class="trending-item-row">
+                    <div class="name small-12 columns col-left">{{this.index}} - {{this.name}}</div>
+                    <div class="data columns col-mid">{{this.data}}</div>
+                    <div class="status columns col-right">
+                        <span class="tiny {{this.status.css}}-trending"><i
+                                class="fa fa-{{this.status.icon}}"></i></span>
+                        {{!-- {{#if this.status}}
+                        <span class="tiny up-trending"><i class="fa fa-arrow-up"></i></span>
+                        {{else}}
+                        <span class="tiny down-trending"><i class="fa fa-arrow-down"></i></span>
+                        {{/if}} --}}
+                    </div>
+                    <div class="action columns action_btns col-actions">
+                        {{#if this.isMember}}
+                        <a class="button lb-button open-room" href="#"
+                           data-threadid="{{this.threadId}}"><i
+                                class="fa fa-chevron-circle-right"></i> <span>Open</span></a>
+                        {{ else }}
+                        <a class="button lb-button join-room" href="#"
+                           data-threadid="{{this.threadId}}"><i
+                                class="fa fa-chevron-circle-right"></i> <span>Join</span></a>
+                        {{/if}}
+
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>

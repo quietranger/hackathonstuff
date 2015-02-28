@@ -1,0 +1,83 @@
+@import "../../../../../styles/variables.scss";
+@import "theme.scss";
+
+
+.room-description-popover {
+  background: $popover-background-color;
+  border: $popover-border-style;
+  border-radius: 2px;
+  font-style: normal;
+  min-height: 40px;
+  min-width: 300px;
+  max-width: 360px;
+  padding: 7px;
+
+  & > div {
+    margin-bottom: 5px;
+    }
+
+  .title {
+    h4 {
+      font-weight: 500;
+      font-size: 15px;
+      color: $section-item-header-text-color;
+    }
+
+    .tag {
+      margin-top: 1px;
+      display: inline-block;
+      float: none;
+    }
+  }
+
+  .meta-data {
+    p {
+      font-size: 12px;
+      color: $default-text-color;
+
+      span {
+        font-weight: 400;
+
+        &.members{
+          display: none;
+        }
+
+        &.owner {
+          color: $link-text-color;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+  .description {
+    p {
+      font-size: 12px;
+      color: $default-text-color;
+    }
+  }
+
+  .context {
+    height: 15px;
+    p {
+      font-size: 12px;
+      color: $default-text-color;
+      font-weight: 900;
+      button {
+        display: inline;
+        margin-right: 8px;
+        background: none;
+        border: 0px;
+        border-radius: 0px;
+        color: $colorscheme-blue;
+        cursor: pointer;
+        clear: none;
+        padding: 5px;
+        background-color: $module-blue-border;
+        font-size: 12px;
+        font-weight: 900;
+        padding-top: 2px;
+        padding-bottom: 2px;
+      }
+    }
+  }
+}

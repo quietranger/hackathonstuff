@@ -1,0 +1,10 @@
+<h3>
+    {{type}}
+    <a class="show-results">
+        {{#if hasMore}}
+        See All {{pluralize 'Result' count true}}
+        {{else}}
+        Only {{pluralize 'Result' count true}}
+        {{/if}}
+    </a>
+</h3>

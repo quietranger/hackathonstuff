@@ -1,0 +1,47 @@
+<header class="module-header gs-draggable">
+    <h2 class="text-selectable {{#if oneToOneUserId}}aliasable colorable{{/if}}" data-userid="{{oneToOneUserId}}">
+        {{#if oneToOneUserId}}
+            <a class="one-to-one-user-profile subalias" href="#">{{name}}</a>
+        {{else}}
+            {{name}}
+        {{/if}}
+    </h2>
+    {{#if isChatRoom}}
+        <span class="tag room-info has-hover-profile"></span>
+    {{/if}}
+    {{#if oneToOneUserId }}
+        <span class="has-presence presence-indicator presence-unknown" data-userid="{{oneToOneUserId}}" />
+    {{/if}}
+    {{#if isPrivate}}
+        <div class="tag private-room">Private</div>
+    {{/if}}
+    {{#if isPublic}}
+        <div class="tag public-room">Public</div>
+    {{/if}}
+    {{#if isChatRoom}}
+        <a class="tag participants" data-tooltip="Members in this Conversation" data-tooltip-position="top right">{{participants}}</a>
+    {{/if}}
+    {{#if isIM}}
+        <div class="tag im">IM</div>
+    {{/if}}
+    <div class="module-actions">
+        {{#unless symphony.widget}}
+            <a class="show-more square-button" data-tooltip="More" data-tooltip-position="top right">
+                More
+            </a>
+            <a class="pin-view square-button {{#if isPinned}}pinned{{/if}}" href="#" data-tooltip="{{#if isPinned}}Module Pinned{{else}}Pin Module to Grid{{/if}}" data-tooltip-position="top right">
+                Pin
+            </a>
+            <a class="remove square-button" href="#" data-tooltip="Close" data-tooltip-position="top right">
+                Close
+            </a>
+        {{/unless}}
+    </div>
+</header>
+<section class="module-content">
+    <div class="chatroom-msg-input-wrap">
+        <div class="chatroom-messages">
+        </div>
+        <div class="chatroom-compose textarea-input"></div>
+    </div>
+</section>

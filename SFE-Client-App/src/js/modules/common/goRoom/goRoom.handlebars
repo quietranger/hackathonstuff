@@ -1,0 +1,68 @@
+<input type="text" id="room-name" placeholder="Room Name" maxlength="50">
+<input type="text" id="room-description" placeholder="Room Description" maxlength="140" >
+<ul class="room-options">
+    <li class="selected">
+        <span class="checkbox">
+        <input type="radio" name="room-privacy" value="private" id="room-private" checked>
+        <span class="input"></span>
+       </span>
+        <label for="room-private">
+            <p class="title">Private</p>
+            <p>Members must be invited to the chatroom, and new members can only see messages posted after the time that they joined.</p>
+        </label>
+    </li>
+    <li>
+        <span class="checkbox">
+        <input type="radio" name="room-privacy" value="public" id="room-public">
+        <span class="input"></span>
+        </span>
+        <label for="room-public">
+            <p class="title">Public</p>
+            <p>Anyone can find and join this chatroom, and messages in the chatroom are searchable by all.</p>
+        </label>
+    </li>
+    <li class="options-border">
+        <span class="checkbox">
+        <input id="room-disable-copy" type="checkbox">
+        <span class="input"></span>
+        </span>
+        <label for="room-disable-copy">
+            <p class="title">Disable Copy</p>
+            <p>If checked, content in this room can't be copied (this option is not modifiable once the room is created)</p>
+        </label>
+    </li>
+    <li>
+        <span class="checkbox">
+        <input id="room-read-only" type="checkbox">
+        <span class="input"></span>
+        </span>
+        <label for="room-read-only">
+            <p class="title">Read Only</p>
+            <p>If checked, only owners can send messages (this option is not modifiable once the room is created)</p>
+        </label>
+    </li>
+    <li>
+        <span class="checkbox">
+        <input id="room-hide-name-search" type="checkbox">
+        <span class="input"></span>
+        </span>
+        <label for="room-hide-name-search">
+            <p class="title">Hide Name From Search</p>
+            <p>Hide this chatroom's name from appearing in any searches</p>
+        </label>
+    </li>
+    <li>
+        <span class="checkbox">
+        <input id="room-allow-invite" type="checkbox">
+        <span class="input"></span>
+        </span>
+        <label for="room-allow-invite">
+            <p class="title">Allow Members to Add Others</p>
+            <p>If checked, any member can add anyone else to the chatroom</p>
+        </label>
+    </li>
+</ul>
+<div class="buttons">
+    <a class="cancel button" href="#">Cancel</a>
+    <a class="positive submit button disabled">Start Room</a>
+</div>

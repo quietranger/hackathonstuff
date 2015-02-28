@@ -1,0 +1,34 @@
+<div id="button-wrapper">
+    <div class="create-button">
+        <div class="icon-create"></div>
+        Create
+    </div>
+    <div class="easy-post-button">
+        <div class="easy-post-button-clickable">
+            <div class="icon-post"></div>
+            Post
+        </div>
+    </div>
+</div>
+<div id="search-wrapper">
+    <input id="main-search-bar" type="text" placeholder="Search" class="mousetrap">
+</div>
+<div class="my-profile">
+    {{wrappedAvatar this}}
+    <a data-profile-id="{{userName}}" class="profile-link" href="#"><span class="user-name">{{prettyName}}</span> <span class="has-presence presence-indicator presence-unknown" data-userid="{{userName}}" /></a>
+    <a class="toggle-account show-more" data-dropdown="my-account">Settings</a>
+    <a class="toggle-account show-more small-screen" data-dropdown="my-account"><span class="caret"></span></a>
+    <ul id="my-account" class="popover">
+        <li><a class="app-settings" href="#">Application Settings</a></li>
+        {{#if enableSelfServe}}
+            <li><a class="update-avatar" href="#">Update Profile Picture</a></li>
+        {{/if}}
+        <li><a class="show-ftue" href="#">Help</a></li>
+        <li><a class="show-change-log" href="#">Change Log</a></li>
+        <li><a class="start-tour" href="#">Take Tour</a></li>
+        <li><a class="log-out" href="#">Log Out</a></li>
+        <!--<li><a class="reset-tour-flag" href="#">Reset Flag</a></li>-->
+        <!--<li><a class="new-features" href="#">New Features</a></li>-->
+    </ul>
+</div>
+<input id="header-upload-avatar" type="file" accept="image/*"/>

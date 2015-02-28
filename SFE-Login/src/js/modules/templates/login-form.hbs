@@ -1,0 +1,8 @@
+{{#if isSSO}}
+    <a class="button" id="begin-sso" href="{{redirectUrl}}">Sign In via SSO</a>
+{{else}}
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <input type="submit" value="Sign In" id="signin-btn" />
+    <a class="forgot-password small" href="#forgot">Forgot password?</a>
+{{/if}}

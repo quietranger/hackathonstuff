@@ -1,0 +1,28 @@
+@import "../components/typography";
+@import "../components/buttons";
+
+$profile-button: (
+    name profile,
+    background-color #ddd,
+    drop-shadow "none",
+    text-color #6f97cb,
+    hover (
+        background-color lighten(#ddd, 5%),
+        text-color lighten(#6f97cb, 5%)
+    ),
+    active (
+        background-color darken(#ddd, 5%),
+        text-color darken(#6f97cb, 5%)
+    ),
+);
+
+$profile-alias-color-picker-background-color: #3c424d;
+$profile-messages-border-color: darken($module-active-background-color, 8%);
+$profile-messages-background-color: darken($module-active-background-color, 2%);
+
+$profile-info-text-color: #5d5d5d;
+
+$alias-color-code-picker-save-text-color: #91bb4c;
+$alias-color-code-picker-save-hover-text-color: #a7e83c;
+$alias-color-code-picker-save-active-text-color: #85ab46;
+$alias-color-code-picker-save-disabled-text-color: #626469;

@@ -1,0 +1,31 @@
+<div id="filter-settings">
+    <input placeholder="Filter Name" id="filter-name" type="text" name="name" class="mousetrap" {{isEditable editable}} />
+
+    <div class="operator">
+        <div class="select-wrap">
+            <select class="mousetrap" name="operator" id="filter-operator" {{isEditable editable}}>
+            <option value="ANY" {{selectItem ruleGroup.operator 'ANY'}}>Any</option>
+            <option value="ALL" {{selectItem ruleGroup.operator 'ALL'}}>All</option>
+            </select>
+        </div>
+        <label for="filter-operator">of your keywords with the following rules:</label>
+    </div>
+
+    <ul>
+        {{#each ruleGroup.rules}}
+        {{> filter-rule }}
+        {{/each}}
+    </ul>
+
+    {{#if editable}}
+    <a class="add-rule" href="#">Add Another Rule</a>
+    {{/if}}
+</div>
+<div class="buttons">
+    {{#if editable}}
+    <a class="cancel button" href="#">Cancel</a>
+    <a class="positive button submit {{#if createNew}}disabled{{/if}}" href="#">Save</a>
+    {{else}}
+    <a class="button cancel" href="#">Close</a>
+    {{/if}}
+</div>

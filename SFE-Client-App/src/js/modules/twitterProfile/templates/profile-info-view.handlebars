@@ -1,0 +1,19 @@
+<div class="border-wrap">
+    <div class="person-wrap">
+        <div class="avatar-wrap">
+            <img src="{{person.imageUrl}}" />
+        </div>
+        <div class="infosection">
+            <div class="profile-row">@{{screenName}}</div>
+            <div class="tag twitter"></div>
+            <div class="profile-row">Followers: {{followerCount}}</div>
+        </div>
+    </div>
+    <div class="actions">
+        {{#if requestorFollowingUser}}
+            <div class="button profile unfollowbutton">Unfollow</div>
+        {{else}}
+            <div class="button profile followbutton">Follow</div>
+        {{/if}}
+    </div>
+</div>

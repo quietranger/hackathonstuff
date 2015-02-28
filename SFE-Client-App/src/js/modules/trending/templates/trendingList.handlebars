@@ -1,0 +1,47 @@
+<div class="row row-trending">
+    <div class="small-12 columns">
+        <div id="trending-item-table">
+            <div class="table-head keyword-trending">
+                <div class="name small-12 columns col-left">{{entityName}}</div>
+                <div class="data columns col-mid">{{entityUnit}}</div>
+                <div class="status columns col-right">Trend</div>
+            </div>
+            <div class="table-body keyword-trending">
+                {{#each trendingData}}
+                <div class="trending-item-row">
+                    <div class="name columns col-left">{{this.index}} - {{this.name}}</div>
+                    <div class="data columns col-mid">{{this.data}}</div>
+                    <div class="status columns col-right">
+                        {{#if this.status}}
+                        <span class="tiny up-trending"><i class="fa fa-arrow-up"></i></span>
+                        {{else}}
+                        <span class="tiny down-trending"><i class="fa fa-arrow-down"></i></span>
+                        {{/if}}
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
+
+{{!-- <table class="trending-table">
+<tr class="table-head">
+  <th>{{entityName}}</th>
+  <th>{{entityUnit}}</th>     
+  <th>Trend</th>
+</tr>
+{{#each trendingData}}
+<tr class="trending-item-row">
+    <td class="col-flexible name">{{this.index}} - {{this.name}}</td>
+    <td class="col-fix data">{{this.data}}</td>
+    <td class="col-fix status">
+        {{#if this.status}}
+        <span class="tiny up-trending"><i class="fa fa-arrow-up"></i></span>
+        {{else}}
+        <span class="tiny down-trending"><i class="fa fa-arrow-down"></i></span>
+        {{/if}}
+    </td>
+</tr>
+{{/each}}
+</table> --}}

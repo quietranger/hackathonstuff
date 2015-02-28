@@ -1,0 +1,24 @@
+@import "./typography";
+
+$message-username-text-color: darken(saturate(#ebab58, 5%), 15%);
+$message-username-hover-text-color: lighten($message-username-text-color, 5%);
+$message-username-active-text-color: darken($message-username-text-color, 5%);
+
+$message-text-color: $default-text-color;
+
+$message-link-text-color: $link-text-color;
+$message-link-hover-text-color: lighten($message-link-text-color, 5%);
+$message-link-active-text-color: darken($message-link-text-color, 5%);
+
+$message-timestamp-text-color: #8c919a;
+$message-timestamp-hover-text-color: lighten($message-timestamp-text-color, 5%);
+$message-timestamp-active-text-color: darken($message-timestamp-text-color, 5%);
+
+$contextual-message-text-color: #aaa;
+
+$contextual-message-border-color: #dadada;
+
+$message-read-receipt-text-color: $discreet-text-color;
+
+$message-highlighted-text-color: inherit;
+$message-highlighted-background-color: #f2efc3;

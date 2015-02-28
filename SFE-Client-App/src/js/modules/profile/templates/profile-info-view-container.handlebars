@@ -1,0 +1,54 @@
+<div class="border-wrap">
+    <div class="person-wrap">
+        <p class="followsyou">{{#if userFollowingRequestor}}Follows You{{/if}}</p>
+        {{wrappedAvatar person}}
+        <div class="infosection">
+            <div class="profile-row">{{person.prettyName}}, (@{{person.username}}) <span class="alias-color-button user-selected-color-{{colorCode}}"></span></div>
+            <div class="profile-row">{{person.title}}{{#if person.title}}{{#if person.deptName}},{{/if}}{{/if}}
+                {{person.deptName}}
+
+                {{#if person.deptCode}}
+                    ({{person.deptCode}})
+                {{/if}}
+            </div>
+            <div class="profile-row">
+
+                {{#if person.location}}
+                <div class="profile-location">{{person.location}}</div>
+                {{/if}}
+                <span class="has-presence presence-indicator presence-unknown" data-userid="{{person.id}}"></span>
+                <span class="has-presence presence-text presence-unknown" data-userid="{{person.id}}">Locating...</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="actions">
+        <div class="button profile action_btn_following">
+            <div>Following</div>
+            <span>{{followees followeeCount}}</span>
+        </div>
+        <div class="button profile action_btn_followers"> Followers <span>{{followerCount}}</span></div>
+        <div class="button profile action_btn_rooms"> Rooms <span>{{roomCount}}</span></div>
+        {{#if showShowDeptSearch}}
+        <div class="button profile action_btn_dept"> Search Department</div>
+        {{/if}}
+        {{#if shouldShowIm }}
+        <div class="button profile action_btn_im"> IM</div>
+        {{/if}}
+        {{#if canCall}}
+        <div class="button profile action_btn_call"> Call</div>
+        {{/if}}
+        <div class="action_btn_clear">
+            {{#if requestorAuthorizedDelegate}}
+            <div class="button profile action_btn_pobo"> Post On Behalf Of</div>
+            {{/if}}
+            {{#if shouldShowIm }}
+            {{#if requestorFollowingUser}}
+            <div class="button profile action_btn_unfollow"> Unfollow</div>
+            {{else}}
+            <div class="button profile action_btn_follow"> Follow</div>
+            {{/if}}
+            {{/if}}
+        </div>
+    </div>
+</div>

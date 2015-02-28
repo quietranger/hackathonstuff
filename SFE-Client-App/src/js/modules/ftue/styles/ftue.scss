@@ -1,0 +1,81 @@
+@import "../../../../styles/variables.scss";
+@import "theme.scss";
+
+.ftue {
+  &, .content, .content > div {
+    height: 100%;
+  }
+
+  $background: $nav-background-color;
+
+  .ftue-tabs {
+    float: left;
+    width: 150px;
+    background: $background;
+    height: 100%;
+    border-right: 1px darken($background, 3%) solid;
+
+    li {
+      display: block;
+
+      a {
+        color: $colorscheme-blue;
+        text-decoration: none;
+        padding: 12px 8px;
+        display: block;
+        font-size: 12px;
+        border-bottom: 1px solid darken($background, 3%);
+      }
+
+      a:hover{
+        background: lighten($background, 10%);
+      }
+
+      a:active{
+        background: lighten($background, 5%);
+      }
+
+      &.active a {
+        background: lighten($background, 5%);
+        color: $colorscheme-green;
+      }
+
+      &:first-child a {
+        border-top: 0;
+      }
+    }
+  }
+
+  .ftue-tabs + .content {
+    margin-left: 151px;
+    padding: 10px;
+    overflow-y: auto;
+
+    .tab-content {
+      display: none;
+
+      .ftue-content-img {
+        display: block;
+        border: 1px rgba(255,255,255, 0.2) solid;
+        border-radius: 2px;
+      }
+
+      &.active {
+        display: block;
+      }
+
+      h4 {
+        margin-bottom: 5px;
+        font-size: 15px;
+        font-weight: 500;
+        color: $section-header-text-color;
+      }
+
+      p {
+        margin-bottom: 1em;
+        font-size: 12px;
+        line-height: 1.2;
+      }
+    }
+  }
+}

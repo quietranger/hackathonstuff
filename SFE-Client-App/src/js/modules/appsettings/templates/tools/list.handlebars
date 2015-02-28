@@ -1,0 +1,15 @@
+<ul class="tools-list well">
+  {{#if header}}
+    <li class="list-header">{{header}}</li>
+  {{/if}}
+  {{#each items}}
+    <li class="list-item" data-id="{{this.id}}">
+      <span class="value">
+        {{this.value}}
+      </span>
+      {{#if this.canDelete}}
+        <i class="fa fa-trash-o delete"></i>
+      {{/if}}
+    </li>
+  {{/each}}
+</ul>

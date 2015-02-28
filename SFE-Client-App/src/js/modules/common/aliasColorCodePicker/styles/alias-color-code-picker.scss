@@ -1,0 +1,211 @@
+@import "../../../../../styles/variables.scss";
+@import "../../../../../styles/user-colors.scss";
+@import "../../../../../styles/mixins/inputs.scss";
+@import "theme.scss";
+
+.alias-color-code-picker {
+  width: 227px;
+  padding-top: 8px;
+
+  .content {
+  padding: 8px;
+  position: relative;
+  }
+
+  &:after {
+    display: block;
+    content: ' ';
+    border: 10px solid transparent;
+    border-bottom-color: $popover-background-color;
+    bottom: 100%;
+    left: 0;
+    position: absolute;
+  }
+
+  label {
+    color: $discreet-text-color;
+    width: 37px;
+    display: block;
+    float: left;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 24px;
+  }
+
+  .fields {
+    margin-bottom: 6px;
+    float: left;
+  }
+
+  .colors .input {
+    padding-top: 5px;
+  }
+
+  .alias {
+    .input {
+      height: 26px;
+      width: 174px;
+      float: left;
+      margin-top: -24px; //hack
+      @include input();
+
+      &.resettable {
+        input {
+          width: 147px;
+        }
+
+        a.save {
+          display: none;
+        }
+
+        a.reset {
+          display: block;
+        }
+      }
+
+      input {
+        padding: 4px 3px;
+        float: left;
+        width: 132px;
+        height: 24px;
+        border: 0;
+        font-size: 12px;
+        color: $input-text-color;
+        background: transparent;
+
+        &:focus {
+          box-shadow: none;
+        }
+      }
+
+      a {
+        float: right;
+        line-height: 24px;
+        height: 24px;
+        background-color: transparent;
+        background-position: center center;
+        background-repeat: no-repeat;
+        cursor: pointer;
+      }
+
+      a.save {
+        width: 38px;
+        color: $alias-color-code-picker-save-text-color;
+        font-size: 12px;
+        text-decoration: none;
+        text-align: center;
+
+        &.disabled {
+          color: $alias-color-code-picker-save-disabled-text-color;
+
+          &:hover {
+            color: $alias-color-code-picker-save-disabled-text-color;
+          }
+        }
+
+        &:hover {
+          color: $alias-color-code-picker-save-hover-text-color;
+        }
+
+        &:active {
+          color: $alias-color-code-picker-save-active-text-color;
+        }
+      }
+
+      a.reset {
+        display: none;
+        text-indent: -9999px;
+        background-image: url('icons/tag_input_discard.png');
+        width: 23px;
+
+        &:hover {
+          background-image: url('icons/tag_input_discard_hover.png');
+        }
+
+        &:active {
+          background-image: url('icons/tag_input_discard_active.png;');
+        }
+      }
+    }
+  }
+
+  input[type="radio"] {
+    $width: 14px;
+    $height: $width;
+
+    width: $width;
+    height: $height;
+    margin: 0;
+    padding: 0;
+    opacity: 0;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+
+    & + span {
+      $i: 0;
+      @each $color in $colors {
+        &.user-selected-color-#{$i} {
+          background-color: $color;
+        }
+        $i: $i + 1;
+      }
+
+      &.default-color {
+        background-color: white;
+        background-image: url('icons/no_color_line.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+      }
+
+      display: inline-block;
+      margin-left: -19px;
+      border-radius: $width;
+      width: $width;
+      height: $height;
+      box-shadow: 0 0 1px rgba(0,0,0,0.5);
+      box-sizing: border-box;
+    }
+
+    &:checked + span {
+      $i: 0;
+      @each $color in $colors {
+        &.user-selected-color-#{$i} {
+          border: 2px solid darken($color, 30%);
+        }
+        $i: $i + 1;
+      }
+
+      &.default-color {
+        border: 2px solid #d03333;
+      }
+    }
+  }
+
+  .input {
+    margin-left: 40px;
+    width: auto;
+
+    label {
+      display: inline-block;
+      width: auto;
+      float: none;
+      margin: 0;
+      font-size: 13px;
+      color: $discreet-text-color;
+    }
+  }
+
+  .background {
+    margin-bottom: 0;
+
+    label {
+      font-weight: 400;
+      font-size: 12px;
+    }
+
+    .checkbox {
+      margin-bottom: -3px;
+    }
+  }
+}

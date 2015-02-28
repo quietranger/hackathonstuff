@@ -1,0 +1,32 @@
+<li class="navlink" data-streamid="{{streamId}}" data-module="{{moduleName}}" title="{{#if textName}}{{textName}}{{else}}{{name}}{{/if}}"{{#if appId}}data-appid="{{appId}}"{{/if}}>
+    {{#if isFilter}}
+    <a title="{{name}}" href="#" class="{{icon name}}">
+        <span class="nav-view-badge hide-badge">0</span>
+        <div class="nav-view-name">{{name}}</div>
+    </a>
+    {{/if}}
+    {{#if isIm}}
+    <a class="presence">
+        <span class="nav-view-badge hide-badge">0</span>
+        {{#if oneToOneUserId}}
+        <span class="has-presence presence-indicator presence-unknown" data-userid="{{oneToOneUserId}}" />
+        <div class="nav-view-name one-to-one aliasable colorable" data-userid="{{oneToOneUserId}}">{{name}}</div>
+        {{else}}
+        <div class="nav-view-name one-to-many">{{name}}</div>
+        {{/if}}
+        <span class="nav-close-im"></span>
+    </a>
+    {{/if}}
+    {{#if isChatroom}}
+    <a>
+        <span class="nav-view-badge hide-badge">0</span>
+        <div class="nav-view-name">{{name}}</div>
+    </a>
+    {{/if}}
+    {{#if isApp}}
+    <a>
+        <span class="nav-view-badge hide-badge">0</span>
+        <div class="nav-view-name">{{name}}</div>
+    </a>
+    {{/if}}
+</li>

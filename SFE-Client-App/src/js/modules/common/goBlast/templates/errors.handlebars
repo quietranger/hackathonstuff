@@ -1,0 +1,31 @@
+<div class="errors">
+    <h3><a class="close-errors" href="#"></a></h3>
+
+    {{#if vulgarity}}
+    <p>You have a vulgar word in your message. Please remove it and try again.</p>
+    {{/if}}
+
+    {{#if staticMessage}}
+    <p>{{staticMessage}}</p>
+    {{/if}}
+
+    <div class="scroll-wrap">
+        {{#if errors.length}}
+        <h4><a class="collapse" href="#"></a>{{ pluralize 'messages' errors.length }} failed to send:</h4>
+        <ul>
+            {{#each errors}}
+            <li>{{name}} - <span class="message">{{message}}</span></li>
+            {{/each}}
+        </ul>
+        {{/if}}
+
+        {{#if successes.length}}
+        <h4><a class="collapse" href="#"></a>{{ pluralize 'messages' successes.length }} successfully sent:</h4>
+        <ul>
+            {{#each successes}}
+            <li>{{name}}</li>
+            {{/each}}
+        </ul>
+        {{/if}}
+    </div>
+</div>

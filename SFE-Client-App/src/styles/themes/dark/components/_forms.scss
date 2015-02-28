@@ -1,0 +1,19 @@
+$input-background-color: #323741;
+$input-border-color: transparent;
+$input-drop-shadow: 0 1px 2px rgba(black, 0.23);
+$input-hover-background-color: #393f4a;
+$input-focus-background-color: #474d58;
+$input-placeholder-text-color: #757a84;
+$input-text-color: #cacaca;
+$input-label-text-color: #757a84;
+
+$calendar-button-background-color: #323741;
+$calendar-button-background-hover-color: lighten($calendar-button-background-color, 5%);
+$calendar-button-background-active-color: darken($calendar-button-background-color, 5%);
+
+
+$dropdown-menu-triangle-background-color: #cacaca;
+
+$checked-status-background-color: #91bb4c;
+$checkbox-icon-url: 'check.png';
+$checkbox-hover-icon-url: 'check-hover.png';

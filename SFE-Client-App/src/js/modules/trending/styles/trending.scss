@@ -1,0 +1,47 @@
+@import "../../../../styles/variables.scss";
+.trending-module {
+  background: #2E3139 !important;
+  dl.tabs {
+    border-bottom: 0px;
+    display: flex;
+    text-align: center;
+    background: #1b1d24;
+
+    dd {
+      width: 50%;
+      background: #181b21;
+      margin: 10px 20px;
+      cursor: pointer;
+      a {
+//        background: $module-blue-border;
+        font-weight: 500;
+        font-size: 15px;
+        line-height: 40px;
+      }
+      &.active{
+        background: #2E3139;
+      }
+      &:hover{
+        color: lighten($colorscheme-blue, 7%);
+      }
+    }
+  }
+  dl {
+    dt {
+      display: inline-block;
+      color: $text-default-discreet-color;
+      float: left;
+      width: 80px;
+      margin-bottom: 3px;
+      font-weight: 300;
+    }
+    dd {
+      font-weight: 500;
+    }
+  }
+
+  .description {
+    margin: 10px;
+    text-align: center;
+  }
+}

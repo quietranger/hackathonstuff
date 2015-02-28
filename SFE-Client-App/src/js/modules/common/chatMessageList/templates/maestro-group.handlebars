@@ -1,0 +1,14 @@
+<div class="msg-group maestro-group {{#if moreThanOne}}more-than-one{{/if}}">
+    <div class="maestro-msg-group-border"></div>
+    <div class="msg-group-header maestro {{#unless moreThanOne}}hide{{/unless}}">
+        <div class="msg-group-header-text">
+            <span>{{msgCount}}</span> people joined and/or left the room
+        </div>
+        <div class="msg-group-header-hint">
+            <span>Click to Expand</span>
+        </div>
+    </div>
+    <div class="msg-group-content {{#if moreThanOne}}hide{{/if}}">
+    </div>
+    <div class="maestro-msg-group-border"></div>
+</div>

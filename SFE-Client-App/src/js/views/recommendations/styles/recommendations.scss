@@ -1,0 +1,302 @@
+@import "theme.scss";
+
+$recommendations-modal-background-color: #324e73;
+$recommendations-title-text-color: #ffffff;
+$recommendations-subtitle-text-color: #1a2739;
+$recommendations-cell-background-color: #263b58;
+$recommendations-see-more-link-text-color: #5f7ca1;
+$recommendations-selected-cell-border-color: #5eb964;
+$recommendations-selected-cell-background-color: #425b7f;
+$recommendations-footer-background-color: #ffffff;
+$recommendations-continue-button-background-color: #6cc072;
+$recommendations-step-inactive-text-color: #aeaeae;
+$recommendations-step-inactive-border-color: #d9d9d9;
+$recommendations-step-active-text-color: #727272;
+$recommendations-step-active-border-color: #8ec48e;
+$recommendations-error-cell-border-color: #da626a;
+$recommendations-keyword-group-background-color: #21344D;
+
+.modal-sheet.recommendations {
+    background: $recommendations-modal-background-color;
+
+    .modal-container, .modal-content {
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      margin: 0;
+      padding: 0;
+      width: auto;
+    }
+
+    .modal-container > header {
+        display: none;
+    }
+
+    .modal-content {
+        position: absolute;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+}
+
+#recommendations {
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+
+    .logo {
+        width: 103px;
+        height: 103px;
+        margin: 53px auto 40px auto;
+        overflow: hidden;
+        text-indent: -9999px;
+        background: url('icons/logo.png') no-repeat center center;
+    }
+
+    h3 {
+        color: $recommendations-title-text-color;
+    }
+
+    h4 {
+        color: $recommendations-subtitle-text-color;
+        font-weight: 400;
+    }
+
+    header {
+        text-align: center;
+        margin-bottom: 40px;
+        flex: 0 1 auto;
+    }
+
+    .spinner {
+        margin-top: 100px;
+    }
+
+    & > section {
+        flex: 1;
+        min-height: 400px;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar-track {
+            background-color: $recommendations-modal-background-color;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(255,255,255,0.25);
+        }
+    }
+
+    & > section > div {
+        flex: 1;
+        align-self: center;
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .users {
+        max-width: 800px;
+        float: left;
+        margin: 0 auto;
+
+        li {
+            display: block;
+            width: 185px;
+            margin-bottom: 10px;
+            background: $recommendations-cell-background-color;
+            padding: 10px;
+            font-size: 12px;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-right: 10px;
+            float: left;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+
+            &:nth-of-type(4n) {
+                margin-right: 0;
+            }
+
+            .portrait {
+                display: inline-block;
+                border-radius: 100px;
+                height: 44px;
+                overflow: hidden;
+                float: left;
+                margin-right: 10px;
+
+                img {
+
+                }
+            }
+
+            .label {
+                display: inline;
+                line-height: 44px;
+            }
+
+            &.selected {
+                border: 3px solid $recommendations-selected-cell-border-color;
+                background: $recommendations-selected-cell-background-color;
+                padding: 7px;
+            }
+
+            &.see-more {
+                text-align: center;
+                color: $recommendations-see-more-link-text-color;
+                display: none;
+            }
+
+            &.error, &.active.error {
+                border: 3px solid $recommendations-error-cell-border-color;
+                background: $recommendations-cell-background-color;
+                padding: 7px;
+            }
+        }
+    }
+
+    .keyword-groups {
+        width: 760px;
+        margin: 0 auto;
+
+        ul {
+            padding-top: 40px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            flex-wrap: wrap;
+
+            li {
+                cursor: pointer;
+                background: $recommendations-keyword-group-background-color;
+                border-radius: 120px;
+                width: 120px;
+                height: 120px;
+                flex: 0 0 120px;
+                text-align: center;
+                padding: 10px;
+                display: flex;
+                line-height: 1.2;
+                align-items: center;
+                justify-content: center;
+                float: left;
+                margin-right: 40px;
+                margin-bottom: 40px;
+
+                &:nth-child(5n) {
+                    margin-right: 0;
+                }
+
+                &.selected {
+                    border: 3px solid lighten($recommendations-keyword-group-background-color, 20%);
+                }
+
+                &.error, &.selected.error {
+                    border: 3px solid $recommendations-error-cell-border-color;
+                }
+            }
+        }
+    }
+
+    footer {
+        background: $recommendations-footer-background-color;
+        flex: 0 0 72px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        .actions-wrap {
+            align-self: center;
+            width: 700px;
+            margin: 0 auto;
+
+            ol {
+                float: left;
+                padding-top: 7px;
+                margin-left: 4px;
+
+                li {
+                    border-top: 3px solid $recommendations-step-inactive-border-color;
+                    display: inline-block;
+                    position: relative;
+                    padding-top: 15px;
+                    color: $recommendations-step-inactive-text-color;
+                    width: 80px;
+                    margin-left: -4px;
+
+                    span {
+                        display: block;
+                        position: absolute;
+                        font-size: 13px;
+                    }
+
+                    &:first-child {
+                        border-top: 0;
+                        width: 18px;
+
+                        span {
+                            left: -12px;
+                        }
+                    }
+
+                    &:nth-of-type(2n) {
+                        span {
+                            right: -6px;
+                        }
+                    }
+
+                    &:last-child {
+                        span {
+                            right: -6px;
+                        }
+                    }
+
+                    &:after {
+                        width: 18px;
+                        height: 18px;
+                        position: absolute;
+                        border-radius: 18px;
+                        background-color: $recommendations-step-inactive-border-color;
+                        content: '';
+                        top: -10px;
+                        right: 0;
+                    }
+
+                    &.active {
+                        border-top-color: $recommendations-step-active-border-color;
+                        color: $recommendations-step-active-text-color;
+
+                        &:after {
+                            background-color: $recommendations-step-active-border-color;
+                        }
+                    }
+                }
+            }
+
+            button {
+                width: 112px;
+                font-size: 13px;
+                padding: 10px 0;
+                border-radius: 2px;
+                border: 0;
+                display: block;
+                text-align: center;
+                float: right;
+                color: white;
+                background-color: #ccc;
+
+                &.continue {
+                    background: $recommendations-continue-button-background-color;
+                }
+            }
+        }
+    }
+}

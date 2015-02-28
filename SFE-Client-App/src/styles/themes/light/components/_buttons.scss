@@ -1,0 +1,69 @@
+@import "sass-list-maps";
+
+$cancel-button-text-color: #82888a;
+$cancel-button-hover-text-color: #cb6f6f;
+$cancel-button-active-text-color: #a44a4a;
+
+$positive-button: (
+    name positive,
+    background-color #6f97cb,
+    drop-shadow "none",
+    text-color white,
+    hover (
+        background-color #89aede,
+        text-color white
+    )
+    active (
+        background-color #5d84b6,
+        text-color white
+    )
+);
+
+$negative-button: (
+    name negative,
+    background-color #cb6f6f,
+    drop-shadow "none",
+    text-color white,
+    hover (
+        background-color #da8282,
+        text-color white
+    ),
+    active (
+        background-color #b75d5d,
+        text-color white
+    )
+);
+
+$action-button: (
+    name action,
+    background-color #ddd,
+    drop-shadow "none",
+    text-color #6f97cb,
+    hover (
+        background-color lighten(#ddd, 5%),
+        text-color lighten(#6f97cb, 5%)
+    ),
+    active (
+        background-color darken(#ddd, 5%),
+        text-color darken(#6f97cb, 5%)
+    ),
+);
+
+$main-action-button: (
+    name main-action,
+    background-color #ddd,
+    drop-shadow "none",
+    text-color #6f97cb,
+    hover (
+        background-color lighten(#ddd, 5%),
+        text-color lighten(#6f97cb, 5%)
+    ),
+    active (
+        background-color darken(#ddd, 5%),
+        text-color darken(#6f97cb, 5%)
+    ),
+);
+
+$disabled-button-background-color: #ddd;
+$disabled-button-text-color: #a5a5a5;
+$disabled-button-drop-shadow: none;

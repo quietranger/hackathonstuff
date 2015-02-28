@@ -1,0 +1,36 @@
+<div id="go-blast">
+    <input type="text" class="mousetrap" placeholder="To..." id="recipients" />
+    <div class="message textarea-input"></div>
+
+    <div class="buttons">
+        <a class="cancel button" href="#">Cancel</a>
+        <a class="send button disabled" href="#">Send</a>
+        <div class="sending"></div>
+        <span class="sending-text">Sending...</span>
+    </div>
+
+    <h3 class="conversations-header">Select Conversations</h3>
+    {{#if conversations}}
+    <div class="conversations-wrap">
+        <div class="overlay"></div>
+        <div class="conversations">
+            {{#if conversations.ims}}
+            <h4>Instant Messages</h4>
+            <ul class="ims">
+                {{> conversationCollection conversations.ims}}
+            </ul>
+
+            {{/if}}
+            {{#if conversations.rooms}}
+            <h4>Chat Rooms</h4>
+            <ul class="rooms">
+                {{> conversationCollection conversations.rooms}}
+            </ul>
+            {{/if}}
+        </div>
+        <div class="overlay"></div>
+    </div>
+    {{else}}
+    <p class="empty">You have no conversations to choose from. This list will fill with people as you use Symphony.</p>
+    {{/if}}
+</div>

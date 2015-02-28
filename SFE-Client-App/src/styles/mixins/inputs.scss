@@ -1,0 +1,31 @@
+@import "theme.scss";
+
+@mixin input() {
+    background-color: $input-background-color;
+    border: 1px solid $input-border-color;
+    box-shadow: $input-drop-shadow;
+    color: $input-text-color;
+    border-radius: 2px;
+    padding-left: 2px;
+
+    &:hover {
+        background-color: $input-hover-background-color;
+    }
+
+    &:focus {
+        background-color: $input-focus-background-color;
+    }
+
+    &::-webkit-placeholder {
+        color: $input-placeholder-text-color;
+    }
+}
+
+@mixin full-width-input($width: 100%) {
+    @include input();
+
+    width: $width;
+    font-size: 12px;
+    display: block;
+    height: 32px;
+}

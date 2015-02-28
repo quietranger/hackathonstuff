@@ -1,0 +1,50 @@
+@import "../components/typography";
+
+$filter-rule-button: (
+    name filter-rule,
+    background-color #1d212a,
+    drop-shadow "none",
+    text-color $discreet-text-color,
+    hover (
+        background-color #1d212a,
+        text-color $discreet-text-color
+    ),
+    active (
+        background-color #1d212a,
+        text-color $discreet-text-color
+    )
+);
+
+$filter-edit-button: (
+    name filter-edit,
+    background-color #393e49,
+    drop-shadow "none",
+    text-color $discreet-text-color,
+    hover (
+        background-color #393e49,
+        text-color $discreet-text-color
+    ),
+    active (
+        background-color #393e49,
+        text-color $discreet-text-color
+    )
+);
+
+$filter-edit-button-subtext-text-color: #757a84;
+
+$filter-edit-button-icon-url: 'edit-grey.png';
+$filter-edit-button-hover-icon-url: 'edit-hover.png';
+$filter-edit-button-active-icon-url: 'edit-active.png';
+
+$filter-hide-rules-button-background-color: rgba(#323741, 0.80);
+$filter-hide-rules-button-hover-background-color: rgba(#383e49, 0.80);
+$filter-hide-rules-button-active-background-color: darken($filter-hide-rules-button-hover-background-color, 5%);
+$filter-hide-rules-button-drop-shadow: 0 1px 2px rgba(0,0,0,0.07);
+
+$filter-hide-rules-caret-background-color: #8b94a2;
+$filter-hide-rules-caret-hover-background-color: lighten($filter-hide-rules-caret-background-color, 5%);
+$filter-hide-rules-caret-active-background-color: darken($filter-hide-rules-caret-background-color, 5%);
+
+$edit-filter-remove-rule-icon-url: 'nav/close.png';
+$edit-filter-remove-rule-hover-icon-url: 'nav/close-hover.png';
+$edit-filter-remove-rule-active-icon-url: 'nav/close-active.png';

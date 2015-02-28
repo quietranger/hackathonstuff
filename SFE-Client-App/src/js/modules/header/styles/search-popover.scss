@@ -1,0 +1,107 @@
+@import '../../../../styles/variables';
+@import '../../../../styles/user-colors';
+@import "../../../../styles/mixins/buttons";
+@import "theme.scss";
+
+//@include button($header-button);
+
+#header {
+    .button {
+      display: inline-block;
+      margin: auto 5px 10px 7px;
+      font-size: 11px;
+      height: 25px;
+      line-height: 25px;
+      font-weight: 500;
+    }
+
+    .tt-dropdown-menu {
+        background: $search-popover-background-color;
+        box-shadow: $search-popover-drop-shadow;
+        font-size: 13px;
+        padding: 4px;
+        width: 500px;
+
+        & > div {
+            border: 1px solid $search-popover-resultset-border-color;
+            background: $search-popover-resultset-background-color;
+            margin-bottom: 10px;
+            border-bottom: 0;
+        }
+
+        $result-padding: 8px 10px;
+
+        h3 {
+            padding: 10px;
+            font-size: 14px;
+            overflow: hidden;
+            font-weight: 500;
+
+            a {
+                float: right;
+            }
+        }
+
+        .name {
+            color: $section-item-header-text-color !important;
+        }
+
+        .tt-cursor, .person:hover, .room:hover, .message:hover {
+            background-color: $search-popover-cursor-background-color;
+
+            *:not(.start-chat) {
+                color: $search-popover-cursor-text-color !important;
+            }
+        }
+
+        .person, .room, .message {
+            overflow: hidden;
+            width: 100%;
+            padding: $result-padding;
+            border-bottom: 1px solid $search-popover-resultset-border-color;
+            cursor: pointer;
+        }
+
+        .person {
+            .avatar-wrap {
+                margin-right: 10px;
+                width: 30px;
+                height: 30px;
+                float: left;
+            }
+
+            span  span {
+                color: $discreet-text-color;
+            }
+        }
+
+        .details {
+            margin-top: 3px;
+            display: block;
+        }
+
+        .button {
+            margin-bottom: 0;
+        }
+
+        .room {
+            h4 {
+                margin-bottom: 5px;
+
+                .tag {
+                    float: none;
+                }
+            }
+
+            p {
+                color: $discreet-text-color;
+                font-size: 12px;
+            }
+        }
+
+        .message {
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+    }
+}

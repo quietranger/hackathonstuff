@@ -1,0 +1,584 @@
+@import "../../../../styles/mixins/inputs.scss";
+@import "../../../../styles/variables.scss";
+
+
+$shadow: 0px 1px 0px #222222;
+$classes: messages users rooms;
+
+.advanced-search.module {
+  height: 100%;
+
+  .calendar-wrap {
+    margin-right: 5px;
+  }
+
+  .module-content {
+    padding: 6px 10px;
+    overflow-y: scroll;
+
+    .content, & > .content > div, .search-wrap {
+      height: 100%;
+    }
+
+    .search-wrap {
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .results-wrap {
+      display: flex;
+      flex: 1;
+    }
+  }
+
+  div[role='group'] {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    .simple-search-fields {
+      display: flex;
+      flex-flow: row nowrap;
+    }
+
+    button, *:not(.token-input) > input {
+      @include input();
+    }
+
+    .dropdown-menu {
+      flex: 0 0 100px;
+      margin-left: 10px;
+      height: 25px;
+
+      button {
+        width: 100px;
+      }
+
+      select {
+        z-index: 1;
+      }
+    }
+
+    button {
+      height: 25px;
+      padding: 0 15px 0 8px;
+      font-size: 12px;
+      margin: 0 6px 0 0;
+      position: relative;
+      line-height: 1px; //this centers the text. I don't know why.
+
+      small {
+        color: $input-placeholder-text-color;
+        font-size: inherit;
+      }
+
+      [data-value='lc'], [data-value='tw'] {
+        background-color: transparent;
+        text-indent: -999px;
+        display: inline-block;
+        background-repeat: no-repeat;
+        background-position: 3px center;
+        width: 16px;
+        height: 16px;
+        position: absolute;
+        top: 3px;
+      }
+
+      [data-value='lc'] {
+        background-image: url('icons/symphony_icon_mini.png');
+      }
+
+      [data-value='tw'] {
+        background-image: url('icons/twitter_blue.png')
+      }
+
+      &:focus {
+        border: 0;
+        outline: 0;
+      }
+    }
+
+    select  {
+      cursor: pointer;
+
+      &:hover + button {
+        background-color: $input-hover-background-color;
+      }
+
+      &:active + button {
+        background-color: $input-focus-background-color;
+      }
+    }
+
+    a.toggle-search-type {
+      text-decoration: none;
+      font-size: 11px;
+      flex: 0 0 100px;
+      text-align: center;
+      padding-top: 0px;
+      line-height: 1.1;
+      color: $link-text-color;
+      align-self: center;
+    }
+  }
+
+  .token-input {
+    box-shadow: $input-drop-shadow;
+    min-height: 25px;
+    flex: 1 1 auto;
+
+    ul li {
+      height: 21px;
+      line-height: 21px;
+      font-size: 11px;
+    }
+
+    [data-type="keyword"] {
+      color: $link-text-color;
+    }
+
+    input[type="text"]{
+      height: 20px;
+    }
+  }
+
+  .results {
+    align-self: stretch;
+    display: flex;
+    flex-flow: row nowrap;
+    flex: 1 0 auto;
+
+    h3 {
+      font-size: 13px;
+      font-weight: 500;
+      color: $section-header-text-color;
+      margin-bottom: 10px;
+    }
+
+    .left-results {
+      align-self: stretch;
+      flex: 1 1 auto;
+      margin-right: 8px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .result-wrap {
+      position: relative;
+      flex: 1 1 auto;
+      min-height: 200px;
+    }
+
+    .right-results {
+      align-self: stretch;
+      display: flex;
+      flex: 0 1 300px;
+      flex-direction: column;
+
+      .result-wrap {
+        flex: 1 1 300px;
+      }
+
+      .content{
+        padding: 5px;
+
+        .chat{
+          margin-right: 5px;
+        }
+      }
+    }
+
+    section {
+      display: flex;
+      align-self: stretch;
+      flex-direction: column;
+      position: absolute;
+      top: 20px;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin-bottom: 10px;
+
+      &.messages {
+        padding: 0;
+      }
+
+      .content, &:empty {
+        border: 1px solid $well-border-color;
+        background: $well-background-color;
+        overflow-y: scroll;
+      }
+
+      .content {
+        flex: 1 1 auto;
+        margin-bottom: 10px;
+      }
+
+      .pagination-centered {
+        flex: 0 0 30px;
+      }
+
+      &:empty:after {
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 5px;
+        height: 20px;
+        line-height: 20px;
+        color: $discreet-text-color;
+        content: 'No results found.';
+        text-align: center;
+        font-size: 11px;
+      }
+    }
+  }
+
+  .actions a {
+    font-size: 12px;
+    color: $discreet-text-color;
+  }
+
+  .room-result {
+    margin-bottom: 7px;
+
+    h4 a {
+      color: inherit;
+    }
+
+    .tag {
+      display: inline-block;
+      float: none;
+    }
+
+    p {
+      font-weight: 500;
+    }
+  }
+
+  .user-result {
+    float: left;
+    width: 100%;
+    margin-bottom: 7px;
+
+    .avatar-wrap {
+      float: left;
+      margin-right: 5px;
+    }
+
+    span.has-presence {
+      display: inline-block;
+      float: none;
+      margin-left: 2px;
+      margin-top: 3px;
+      vertical-align: top;
+    }
+  }
+
+  &.showing-advanced-search-fields {
+    .advanced-search-fields {
+      display: flex;
+
+      .wrap {
+        flex: 0 1 auto;
+        margin-bottom: 5px;
+      }
+
+      input {
+        min-width: 100px;
+        height: 25px;
+        font-size: 12px;
+        line-height: 19px;
+      }
+
+      .in {
+        width: 200px;
+      }
+    }
+
+    .results {
+      top: 74px;
+    }
+  }
+
+  @each $class in $classes {
+    &.#{$class} {
+      .result-wrap:not(.#{$class}) {
+        display: none;
+      }
+
+      @if $class == messages {
+        .right-results {
+          display: none;
+        }
+      } @else {
+        .left-results {
+          display: none;
+        }
+
+        .right-results {
+          flex: 1 1 auto;
+        }
+      }
+    }
+  }
+
+  .advanced-search-fields {
+    margin-top: 6px;
+    display: none;
+
+    .calendar {
+      min-width: 130px;
+
+      &:after {
+        background: transparent url($calendar-icon-url) no-repeat center center;
+        position: absolute;
+        top: 50%;
+        margin-top: -7px;
+        right: 8px;
+        content: '';
+        display: block;
+        width: 14px;
+        height: 14px;
+      }
+
+      span:empty:after {
+        color: $input-placeholder-text-color;
+        display: inline;
+        content: 'Enter Date';
+      }
+
+      &.has-value {
+        &:after {
+          display: none;
+        }
+
+        .clear {
+          display: block;
+          position: absolute;
+          top: 50%;
+          right: 8px;
+          width: 10px;
+          height: 10px;
+          margin-top: -6px;
+          background: transparent url('icons/icon_close.png') no-repeat center center;
+
+          &:hover {
+            background-image: url('icons/icon_close_active.png')
+          }
+        }
+      }
+    }
+  }
+
+  h4 {
+    font-size: 13px;
+    font-weight: 400;
+
+    &, a {
+      color: $section-item-header-text-color;
+    }
+
+    a.chat {
+      margin-right: 0 !important;
+    }
+  }
+
+  .social-message {
+    background: transparent;
+
+    a.profile-link {
+      color: $section-item-header-text-color;
+    }
+  }
+
+  p {
+    font-size: 11px;
+  }
+
+  .contextual-search-chat-message {
+    padding: 6px 10px 0 10px;
+
+    .border-wrap {
+      border-bottom: 1px solid $contextual-message-border-color;
+      padding-bottom: 7px;
+    }
+
+    .show-context {
+      color: $link-text-color;
+      font-size: 11px;
+      text-decoration: none;
+      margin-left: 50px;
+    }
+
+    h4 {
+      margin-bottom: 5px;
+      margin-left: 50px;
+      float: left;
+    }
+
+    time.match-time {
+      float: right;
+      font-size: 11px;
+      color: #6b7079;
+      font-weight: 400;
+    }
+
+    .chat-message {
+      &:not(.highlighted) {
+        background: transparent;
+
+        * {
+          color: $contextual-message-text-color !important;
+        }
+      }
+
+      .chat-time {
+        width: 48px;
+      }
+
+      .chat-not-time {
+        margin-left: 50px;
+      }
+
+      &.highlighted {
+        background: transparent;
+        animation-name: NoAnim;
+        -webkit-animation-name: NoAnim;
+
+        p, a {
+          font-size: 12px;
+        }
+
+        .chat-text {
+          color: $default-text-color;
+        }
+
+        .sender-name {
+          color: $section-header-text-color;
+        }
+      }
+    }
+  }
+}
+
+.standard-time .advanced-search.module .contextual-search-chat-message {
+  h4 {
+    margin-left: 70px;
+  }
+
+  .show-context {
+    margin-left: 70px;
+  }
+
+  .chat-time {
+    width: 70px;
+  }
+
+  .chat-not-time {
+    margin-left: 70px;
+  }
+}
+
+.simple-jack-tiny, .simple-jack-small, .simple-jack-medium {
+  .advanced-search.module {
+    button {
+      width: 100% !important;
+    }
+
+    div[role="group"] {
+      .simple-search-fields {
+        flex-flow: row wrap;
+        margin-bottom: 10px;
+
+        .token-input {
+          flex: 1 1 100%;
+          margin-bottom: 10px;
+        }
+
+        .dropdown-menu {
+          flex: 1 0 25%;
+          margin: 0 5px 0 0;
+        }
+
+        a.toggle-search-type {
+          flex: 1 1 auto;
+        }
+      }
+
+      .advanced-search-fields {
+        flex-flow: row wrap;
+        margin-bottom: 10px;
+
+        .wrap {
+          flex: 0 1 50%;
+          margin: 0;
+
+          &:first-child {
+            padding-right: 10px;
+          }
+
+          .calendar {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+
+    .results {
+      flex-flow: column;
+
+      .results-wrap {
+        height: 100%;
+        display: flex;
+        flex-flow: column;
+        flex: 1;
+      }
+
+      .left-results {
+        flex: 1 1 33%;
+        min-height: 200px;
+        margin: 0;
+      }
+
+      .right-results {
+        flex: 1 1 66%;
+        height: 66%;
+        min-height: 400px;
+
+        .result-wrap {
+          flex: 1;
+        }
+      }
+    }
+
+    &.rooms, &.users {
+      .right-results {
+        flex: 1 0 100%;
+      }
+    }
+
+    &.messages {
+      .left-results {
+        flex: 1 0 100%;
+      }
+    }
+
+    &.showing-advanced-search-fields .results {
+      top: 145px;
+    }
+  }
+}
+
+
+.simple-jack-tiny .advanced-search.module {
+  .dropdown-menu {
+    margin-bottom: 12px !important;
+  }
+}

@@ -1,0 +1,33 @@
+@import "./typography";
+
+$social-message-user-name-text-color: #e59333;
+$social-message-user-name-hover-text-color: lighten($social-message-user-name-text-color, 5%);
+$social-message-user-name-active-text-color: darken($social-message-user-name-text-color, 5%);
+
+$social-message-dept-tag-background-color: #6f97cb;
+$social-message-dept-tag-text-color: white;
+
+$social-message-body-text-color: #1b1b1b;
+
+$social-message-body-link-color: $link-text-color;
+$social-message-body-link-hover-text-color: lighten($social-message-body-link-color, 5%);
+$social-message-body-link-active-text-color: darken($social-message-body-link-color, 5%);
+
+$social-message-action-button-text-color: #aaa;
+$social-message-action-button-hover-text-color: #58c6ff;
+$social-message-action-button-active-text-color: darken($social-message-action-button-text-color, 5%);
+
+$social-message-reshare-icon-background-color: #6fcb6f;
+$social-message-reshare-icon-border-radius: 2px;
+$social-message-reshare-icon-url: 'share-icon.png';
+$social-message-reshare-icon-hover-url: 'share-icon-hover.png';
+$social-message-share-count-background-color: #8cc58c;
+$social-message-share-count-text-color: #fff;
+$social-message-context-icon-url: 'location-icon.png';
+$social-message-context-icon-hover-url: 'location-icon-hover.png';
+$social-message-delete-icon-url: 'delete-social-msg-icon.png';
+$social-message-delete-icon-hover-url: 'delete-social-msg-icon-hover.png';
+
+$social-message-reshare-title-text-color: #757a84;
+
+$social-message-divider-color: #dadada;

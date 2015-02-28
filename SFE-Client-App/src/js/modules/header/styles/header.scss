@@ -1,0 +1,451 @@
+@import "../../../../styles/variables.scss";
+@import "../../../../styles/mixins/inputs.scss";
+@import "theme.scss";
+
+#header-upload-avatar {
+  display: none;
+}
+
+@mixin icon($icon) {
+  background-image: url(map-get($icon, icon-url));
+
+  &:hover {
+    background-image: url(map-get($icon, hover-icon-url));
+  }
+}
+
+a.app-settings, a.update-avatar, a.show-ftue, a.show-change-log, a.show-help, a.log-out {
+  padding-left: 35px !important;
+  background-repeat: no-repeat;
+  font-size: 14px;
+  @include icon(map-get($options-icons, settings));
+}
+
+.popover.open li a {
+  background-repeat: no-repeat;
+
+  &.app-settings {
+    background-position: 10px center;
+  }
+
+  &.show-ftue {
+    background-position: 12px center;
+    @include icon(map-get($options-icons, help));
+  }
+
+  &.show-change-log {
+    background-position: 11px center;
+    @include icon(map-get($options-icons, changelog));
+  }
+  &.show-help {
+    background-position: 10px center;
+    @include icon(map-get($options-icons, contact));
+  }
+  &.start-tour {
+    background-position: 11px center;
+    padding-left: 35px;
+    @include icon(map-get($options-icons, tour));
+  }
+  &.log-out {
+    background-position: 10px center;
+    @include icon(map-get($options-icons, log-out));
+  }
+  &.update-avatar {
+    background-position: 12px center;
+    @include icon(map-get($options-icons, update-avatar));
+  }
+}
+
+#header {
+  height: 51px;
+  background: $header-background-color;
+  border-bottom: 1px solid $header-border-bottom-color;
+  box-shadow: $header-box-shadow;
+  cursor: default;
+  width: 100%;
+  overflow: visible;
+
+  .avatar-wrap {
+    float: left;
+  }
+
+  #button-wrapper, #search-wrapper {
+    padding: 7px;
+    padding-bottom: 6px;
+    height: 50px;
+    float: left;
+  }
+
+  #button-wrapper {
+    background: $header-action-background-color;
+    width: 242px;
+    border-right: 1px solid $header-action-border-color;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: stretch;
+  }
+
+  .create-button, .easy-post-button {
+    flex: 1 1 50%;
+    background: $header-button-background-color;
+    color: $header-button-text-color;
+    font-size: 13px;
+    font-weight: 500;
+    text-align: center;
+  }
+
+  .create-button, .easy-post-button, .easy-post-button-clickable {
+    cursor: pointer;
+    border-radius: 2px;
+    height: 100%;
+    position: relative;
+
+    [class^=icon]:not(.icon-status) {
+      margin-right: 8px;
+      background-position: center;
+      background-size: 16px;
+      width: 16px;
+      height: 16px;
+    }
+
+    .icon-create {
+      background-image: url($header-create-new-icon-background-image);
+    }
+
+    .icon-post {
+      background-image: url($header-easy-post-icon-background-image);
+    }
+
+    &:not(.active):hover, &.active {
+      background: $header-button-hover-background-color;
+      color: $header-button-hover-text-color;
+
+      .icon-create {
+        background-image: url($header-create-new-icon-background-image-hover);
+      }
+
+      .icon-post {
+        background-image: url($header-easy-post-icon-background-image-hover);
+      }
+    }
+
+    &:not(.active):active {
+      background: $header-button-active-background-color;
+      color: $header-button-active-text-color;
+    }
+
+    &.active {
+      cursor: auto;
+    }
+
+  }
+
+  .create-button, .easy-post-button-clickable {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .create-button {
+    margin-right: 7px;
+  }
+
+  #search-wrapper {
+    width: 500px;
+    position: relative;
+
+    .twitter-typeahead {
+      width: 100%;
+      height: 100%;
+      
+      .tt-hint {
+        background: $header-search-background-color !important;
+      }
+    }
+
+    input {
+      width: 100%;
+      height: 100%;
+      padding: 0 5px;
+      border-radius: 2px;
+      background: $header-search-background-color;
+      border: $header-search-border;
+      margin: 0;
+      box-shadow: $header-search-box-shadow;
+      color: $header-search-text-color;
+      font-size: 13px;
+
+      &:hover {
+        background: $header-search-hover-background-color;
+      }
+
+      &:focus {
+        background: $header-search-focus-background-color;
+      }
+    }
+
+    &:after {
+      position: absolute;
+      background: transparent url($header-search-icon-url) center center;
+      width: 14px;
+      height: 15px;
+      margin-top: -7px;
+      right: 20px;
+      top: 50%;
+      content: ' ';
+      z-index: 20;
+    }
+
+    div.presence-container {
+      right: 0;
+      position: absolute;
+      margin-right: 25px;
+      margin-top: 5px;
+      white-space: nowrap;
+    }
+
+    &.shepherd-enabled {
+      position: relative;
+    }
+  }
+
+  .person .avatar-wrap {
+    &.radaja, &.petrli, &.slippm, &.scalea, &.guojun, &.lamjeff, &.stecjo, &.adavid, &.leik, &.kriela, &.whinea, &.duprat {
+      -webkit-animation-name: spin;
+      -webkit-animation-duration: 4000ms;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+    }
+
+    &.adavid {
+      -webkit-animation-duration: 100ms;
+    }
+
+    @keyframes spin {
+      from {
+        -webkit-transform: rotate(0deg);
+      }
+      to {
+        -webkit-transform: rotate(360deg);
+      }
+    }
+  }
+    
+  .my-profile {
+    float: right;
+    width: 250px;
+    height: 50px;
+    padding-top: 3px;
+    background: $header-action-background-color;
+    padding-left: 4px;
+    border-left: 1px solid $header-action-border-color;
+
+    .profile-link, .toggle-account {
+      display: block;
+      margin-left: 55px;
+      text-decoration: none;
+      font-size: 14px;
+      overflow: visible;
+    }
+    
+    a.profile-link {
+      color: $header-user-name-text-color;
+
+      span.user-name {
+        max-width: 150px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+      
+      &:hover {
+        color: $header-user-name-hover-text-color;
+      }
+      
+      &:active {
+        color: $header-user-name-active-text-color;
+      }
+    }
+    
+    a.toggle-account {
+      color: $header-account-text-color;
+      font-weight: 400;
+      font-size: 13px;
+      width: 70px;
+
+      &:hover {
+        color: $header-account-hover-text-color;
+
+        .caret, &:after {
+          border-top-color: $header-account-hover-text-color;
+        }
+      }
+
+      &:active {
+        color: $header-account-active-text-color;
+
+        .caret, &:after {
+          border-top-color: $header-account-active-text-color;
+        }
+      }
+
+      &:after, .caret {
+        width: 0px;
+        height: 0px;
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 4px solid $header-account-text-color;
+        position: absolute;
+        content: "";
+        margin-left: 4px;
+        margin-top: 6px;
+      }
+
+      &.small-screen {
+        display: none;
+        height: 45px;
+        width: 12px;
+        position: absolute;
+        right: 7px;
+      }
+    }
+
+    .avatar-wrap {
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    .has-presence {
+      margin-top: 8px;
+      margin-left: 0;
+    }
+
+    .profile-link {
+      font-weight: 500;
+      margin-bottom: 3px;
+      margin-top: 9px;
+
+      span {
+        float: left;
+        display: inline;
+
+        &.presence-indicator {
+          margin: 4px 0px 0px 4px;
+        }
+      }
+    }
+  }
+
+  .popover {
+    margin-top: 60px;
+    margin-right: 40px;
+    width: 150px;
+    display: none;
+    top: 0;
+    right: 0;
+
+    &.open {
+      display: block;
+    }
+
+    &.open:before {
+      border: 8px solid transparent;
+      content: " ";
+      height: 10px;
+      width: 10px;
+      position: absolute;
+      border-bottom-color: $popover-border-style;
+      margin-left: 64px;
+      top: -17px;
+      left: 20px;
+    }
+
+    &.open:after {
+      border: none;
+    }
+
+  }
+}
+
+@media (max-width: 991px) {
+  #header {
+    #search-wrapper {
+      width: auto;
+      right: 249px;
+      left: 242px;
+      position: absolute;
+      min-width: 250px;
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  #header {
+    .popover.open {
+      margin-top: 40px;
+      margin-right: 40px;
+      width: 40px !important;
+      right: 47px;
+      left: auto !important;
+      top: 50px !important;
+
+      a {
+        color: transparent;
+        height: 35px;
+        padding: 0px;
+        background-position: 12px 10px;
+      }
+    }
+    #search-wrapper {
+      .presence-text {
+        display: none !important;
+      }
+      div.presence-container {
+        margin: 4px 0px 0 0 !important;
+      }
+      &.shepherd-enabled {
+        position: absolute;
+      }
+    }
+    .send-time {
+      display: none;
+    }
+    .my-profile {
+      width: 70px;
+      .large-avatar {
+        margin-left: 18px;
+      }
+      a.profile-link {
+        display: none;
+      }
+      a.toggle-account {
+        width: 0px;
+        overflow: hidden;
+        display: none;
+
+        &:after {
+          display: none;
+        }
+        &.small-screen {
+          display: block;
+
+          .caret {
+            margin-top: 21px;
+          }
+        }
+      }
+      ul#my-account {
+        right: -2px;
+        min-width: 40px;
+        margin-top: 8px;
+        position: fixed;
+        &:before {
+          left: -52px;
+        }
+        a {
+          width: 38px;
+        }
+      }
+    }
+  }
+}

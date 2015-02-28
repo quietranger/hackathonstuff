@@ -1,0 +1,25 @@
+@import "theme.scss";
+
+ul.pagination {
+    li {
+        a {
+            color: $link-text-color;
+            text-decoration: none;
+            font-size: 12px;
+            padding: 3px 5px;
+        }
+
+        .current {
+            a {
+                background-color: $pagination-current-page-background-color;
+                box-shadow: $pagination-current-page-box-shadow;
+            }
+        }
+
+        li:hover{
+            a {
+                background-color: $pagination-link-hover-background-color;
+            }
+        }
+    }
+}

@@ -1,0 +1,11 @@
+@import "theme.scss";
+
+.well {
+    background-color: $well-background-color;
+    border: 1px solid $well-border-color;
+    box-shadow: $well-drop-shadow;
+
+    .well {
+        background-color: $well-nested-background-color;
+    }
+}

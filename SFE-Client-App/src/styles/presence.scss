@@ -1,0 +1,60 @@
+@import "node-inserted.scss";
+@import "theme.scss";
+
+span.has-presence.presence-indicator, span.presence-position-placeholder {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  margin-left: 5px;
+  display: block;
+  float: left;
+  margin-right: 3px;
+  margin-top: 6px;
+
+  &.presence-unknown, &.presence-offline {
+    background-color: $presence-offline-background-color;
+  }
+
+  &.presence-available {
+    background-color: $presence-available-background-color;
+  }
+
+  &.presence-away {
+    background-color: $presence-away-background-color;
+  }
+
+  &.presence-busy {
+    background-color: $presence-busy-background-color;
+  }
+}
+
+span.has-presence.presence-text {
+  &.presence-unknown, &.presence-offline {
+    color: $presence-offline-background-color;
+  }
+
+  &.presence-available {
+    color: $presence-available-background-color;
+  }
+
+  &.presence-away {
+    color: $presence-away-background-color;
+  }
+
+  &.presence-busy {
+    color: $presence-busy-background-color;
+  }
+}
+
+span.has-presence {
+  animation-duration: 0.01s;
+  -o-animation-duration: 0.01s;
+  -ms-animation-duration: 0.01s;
+  -moz-animation-duration: 0.01s;
+  -webkit-animation-duration: 0.01s;
+  animation-name: nodeInserted;
+  -o-animation-name: nodeInserted;
+  -ms-animation-name: nodeInserted;
+  -moz-animation-name: nodeInserted;
+  -webkit-animation-name: nodeInserted;
+}

@@ -1,0 +1,105 @@
+$rte-button-background-color: #23272f;
+$rte-button-hover-background-color: #282d37;
+$rte-button-active-background-color: #1f2229;
+$rte-button-disabled-background-color: #2a2f38;
+
+$snap-button: (
+    class-name 'screen-clip',
+    background-image 'rte/snap.png',
+    hover (
+        background-image 'rte/snap-hover.png'
+    ),
+    active (
+        background-image 'rte/snap-active.png'
+    ),
+    disabled (
+        background-image 'rte/snap-disabled.png'
+    )
+);
+
+$attachment-button: (
+    class-name 'attach',
+    background-image 'rte/attachment.png',
+    hover (
+        background-image 'rte/attachment-hover.png'
+    ),
+    active (
+        background-image 'rte/attachment-active.png'
+    ),
+    disabled (
+        background-image 'rte/attachment-disabled.png'
+    )
+);
+
+$file-button: (
+    class-name 'file-upload',
+    background-image 'rte/file.png',
+    hover (
+        background-image 'rte/file-hover.png'
+    ),
+    active (
+        background-image 'rte/file-active.png'
+    ),
+    disabled (
+        background-image 'rte/file-disabled.png'
+    )
+);
+
+$emoji-button: (
+    class-name 'emoticons',
+    background-image 'rte/emoji.png',
+    hover (
+        background-image 'rte/emoji-hover.png'
+    ),
+    active (
+        background-image 'rte/emoji-active.png'
+    ),
+    disabled (
+        background-image 'rte/emoji-disabled.png'
+    )
+);
+
+$chime-button: (
+    class-name 'chime',
+    background-image 'rte/chime.png',
+    hover (
+        background-image 'rte/chime-hover.png'
+    ),
+    active (
+        background-image 'rte/chime-active.png'
+    ),
+    disabled (
+        background-image 'rte/chime-disabled.png'
+    )
+);
+
+$disable-button: (
+    class-name 'disable',
+    background-image 'rte/disable.png',
+    hover (
+        background-image 'rte/disable-hover.png'
+    ),
+    active (
+        background-image 'rte/disable-active.png'
+    ),
+    disabled (
+        background-image 'rte/disable-disabled.png',
+        background-color #b5616a
+    )
+);
+
+$expand-button: (
+    class-name 'expand',
+    background-image 'rte/expand.png',
+    hover (
+        background-image 'rte/expand-hover.png'
+    ),
+    active (
+        background-image 'rte/expand-active.png'
+    ),
+    disabled (
+        background-image 'rte/expand-disabled.png'
+    )
+);
+
+$rte-buttons: $snap-button $attachment-button $file-button $emoji-button $chime-button $disable-button $expand-button;

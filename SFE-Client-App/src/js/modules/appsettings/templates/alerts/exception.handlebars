@@ -1,0 +1,62 @@
+<div class="alerts-exception well" data-category="{{category}}" data-id="{{id}}">
+    <h6>{{name}}</h6>
+
+    <div class="row alerts-exception-selectors">
+        {{#if isDesktopClient}}
+        <div>
+            <div class="field field-show-notification" data-path-name="showNotification">
+                <span class="checkbox">
+                    <input type="checkbox" {{#if showNotification}}checked{{/if}}>
+                    <span></span>
+                </span>
+                Desktop alerts
+            </div>
+            <div class="field field-persist" data-path-name="persist">
+                <span class="checkbox">
+                    <input type="checkbox" {{#if persist}}checked{{/if}}>
+                    <span></span>
+                </span>
+                Persist Desktop alerts
+            </div>
+            <div class="field field-blink" data-path-name="blink">
+                <span class="checkbox">
+                    <input type="checkbox" {{#if blink}}checked{{/if}}>
+                    <span></span>
+                </span>
+                Blink Desktop alerts
+            </div>
+        </div>
+        {{/if}}
+        <div>
+            <div class="field field-show-stream-alerts" data-path-name="showStreamAlerts">
+                <span class="checkbox">
+                    <input type="checkbox" {{#if showStreamAlerts}}checked{{/if}}>
+                    <span></span>
+                </span>
+                Blink Sidebar Alerts
+            </div>
+            <div class="field field-play-sound" data-path-name="playSound">
+                <span class="checkbox">
+                    <input type="checkbox" {{#if playSound}}checked{{/if}}>
+                    <span></span>
+                </span>
+                Play Sounds
+            </div>
+        </div>
+        <div>
+            <div class="field field-notification-color">
+                <input type="text">
+            </div>
+        </div>
+    </div>
+    <div class="row alerts-exception-buttons">
+        {{#if isDesktopClient}}
+        <div class="field field-show-example">
+            <button class="button positive">Show Example</button>
+        </div>
+        {{/if}}
+        <div class="field field-remove-exception">
+            <button class="button negative">Remove Exception</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+{{wrappedAvatar this}}
+<div class="identity">
+    <h4>
+        <a class="profile-link">{{prettyName}}</a>
+        <span class="has-presence presence-indicator presence-unknown" data-userid="{{id}}" />
+    </h4>
+    <p>
+        {{#if title}}
+        <span>{{title}}</span>
+        {{#if deptName}}<span>,</span>{{/if}}
+        {{/if}}
+        {{#if deptName}}
+        <span>{{deptName}}</span>
+        {{#if location}}<span>,</span>{{/if}}
+        {{/if}}
+        {{#if location}}
+        <span>{{location}}</span>
+        {{/if}}
+    </p>
+    <div class="actions">
+        {{#if canCall}}
+        <a class="call" href="#">Call</a>
+        {{/if}}
+        <a class="chat">Chat</a>
+        {{#if requestorFollowingUser}}
+        <a following="false" class="unfollow" type="button">Unfollow</a>
+        {{else}}
+        <a following="false" class="follow" type="button">Follow</a>
+        {{/if}}
+    </div>
+</div>

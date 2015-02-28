@@ -1,0 +1,394 @@
+@import "../../../../styles/variables.scss";
+@import "theme.scss";
+
+.shepherd-element {
+  //Instead of the line below you could use @include box-sizing($bs)
+  box-sizing: border-box;
+  position: absolute;
+  display: none;
+  &:after {
+    //Instead of the line below you could use @include box-sizing($bs)
+    box-sizing: border-box;
+  }
+  &:before {
+    //Instead of the line below you could use @include box-sizing($bs)
+    box-sizing: border-box;
+  }
+  * {
+    //Instead of the line below you could use @include box-sizing($bs)
+    box-sizing: border-box;
+    &:after {
+      //Instead of the line below you could use @include box-sizing($bs)
+      box-sizing: border-box;
+    }
+    &:before {
+      //Instead of the line below you could use @include box-sizing($bs)
+      box-sizing: border-box;
+    }
+  }
+  &.shepherd-open {
+    display: block;
+    z-index: 3;
+  }
+  &.shepherd-theme-arrows {
+    max-width: 490px;
+    max-height: 100%;
+    .shepherd-content {
+      border-radius: 1px;
+      position: relative;
+      font-family:inherit;
+      font-size: 14px;
+      line-height: 1.5em;
+      padding: 10px;
+      &:before {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-width: 10px;
+        border-style: solid;
+      }
+      * {
+        font-size: inherit;
+      }
+      header {
+        *zoom: 1;
+        //Instead of the line below you could use @include border-radius($radius, $vertical-radius)
+//        border-radius: 5px 5px 0 0;
+        &:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+        h3 {
+          margin: 0;
+          line-height: 1;
+          font-weight: 100;
+          font-size: 40px;
+          color: $modal-header-text-color;
+        }
+          }
+      .shepherd-text {
+        margin-top: 10px;
+        padding-top: 15px;
+        margin-left: 14px;
+        padding-bottom: 15px;
+        margin-bottom: 20px;
+        p {
+          margin: 0 0 0.5em 0;
+          line-height: 1.3em;
+          color: $white;
+          font-size: 13px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+      footer {
+//        padding: 0 1em 1em;
+        .shepherd-buttons {
+          text-align: right;
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          li {
+            display: inline;
+            padding: 0;
+            margin: 0;
+
+            .button {
+              padding: 5px;
+              margin-left: 5px;
+              }
+            }
+            }
+          }
+        }
+    &.shepherd-element-attached-bottom {
+      &.shepherd-element-attached-left {
+        &.shepherd-target-attached-top .shepherd-content {
+          margin-bottom: 16px;
+          &:before {
+            top: 100%;
+            left: 16px;
+            border-top-color: $popover-background-color;
+          }
+        }
+        &.shepherd-target-attached-right .shepherd-content {
+          margin-left: 16px;
+          &:before {
+            bottom: 16px;
+            right: 100%;
+            border-right-color: $popover-background-color;
+          }
+        }
+      }
+      &.shepherd-element-attached-right {
+        &.shepherd-target-attached-top .shepherd-content {
+          margin-bottom: 16px;
+          &:before {
+            top: 100%;
+            right: 16px;
+            border-top-color: $popover-background-color;
+          }
+        }
+        &.shepherd-target-attached-left .shepherd-content {
+          margin-right: 16px;
+          &:before {
+            bottom: 16px;
+            left: 100%;
+            border-left-color: $popover-background-color;
+          }
+        }
+      }
+      &.shepherd-element-attached-center .shepherd-content {
+        margin-bottom: 16px;
+        &:before {
+          top: 100%;
+          left: 50%;
+          margin-left: -16px;
+          border-top-color: $popover-background-color;
+        }
+      }
+    }
+    &.shepherd-element-attached-top {
+      &.shepherd-element-attached-center {
+        .shepherd-content {
+          margin-top: 16px;
+          &:before {
+            bottom: 100%;
+            left: 50%;
+            margin-left: -16px;
+            border-bottom-color: $popover-background-color;
+          }
+        }
+        &.shepherd-has-title .shepherd-content:before {
+          border-bottom-color: $popover-background-color;
+        }
+      }
+      &.shepherd-element-attached-left {
+        &.shepherd-target-attached-bottom {
+          .shepherd-content {
+            margin-top: 16px;
+            &:before {
+              bottom: 100%;
+              left: 16px;
+              border-bottom-color: $popover-background-color;
+            }
+          }
+          &.shepherd-has-title .shepherd-content:before {
+            border-bottom-color: $popover-background-color;
+          }
+        }
+        &.shepherd-target-attached-right .shepherd-content {
+          margin-left: 16px;
+          &:before {
+            top: 16px;
+            right: 100%;
+            border-right-color: $popover-background-color;
+          }
+        }
+      }
+      &.shepherd-element-attached-right {
+        &.shepherd-target-attached-bottom {
+          .shepherd-content {
+            margin-top: 16px;
+            &:before {
+              bottom: 100%;
+              right: 16px;
+              border-bottom-color: $popover-background-color;
+            }
+          }
+          &.shepherd-has-title .shepherd-content:before {
+            border-bottom-color: $popover-background-color;
+          }
+        }
+        &.shepherd-target-attached-left .shepherd-content {
+          margin-right: 16px;
+          &:before {
+            top: 16px;
+            left: 100%;
+            border-left-color: $popover-background-color;
+          }
+        }
+      }
+    }
+    &.shepherd-element-attached-right.shepherd-element-attached-middle .shepherd-content {
+      margin-right: 16px;
+      &:before {
+        left: 100%;
+        top: 50%;
+        margin-top: -16px;
+        border-left-color: $popover-background-color;
+      }
+    }
+    &.shepherd-element-attached-left.shepherd-element-attached-middle .shepherd-content {
+      margin-left: 16px;
+      &:before {
+        right: 100%;
+        top: 50%;
+        margin-top: -16px;
+        border-right-color: $popover-background-color;
+      }
+    }
+    &.shepherd-element-attached-right.shepherd-attached-middle .shepherd-content {
+      margin-right: 16px;
+      &:before {
+        left: 100%;
+        top: 50%;
+        margin-top: -16px;
+        border-left-color: $popover-background-color;
+      }
+    }
+    &.shepherd-element-attached-left.shepherd-attached-middle .shepherd-content {
+      margin-left: 16px;
+      &:before {
+        right: 100%;
+        top: 50%;
+        margin-top: -16px;
+        border-right-color: $popover-background-color;
+      }
+    }
+    &.shepherd-has-title .shepherd-content header {
+//      background: $popover-background-color;
+//      padding: 1em;
+      margin-left: 12px;
+//      font-weight: 700;
+      a.shepherd-cancel-link {
+        padding: 0;
+        margin-bottom: 0;
+      }
+    }
+    &.shepherd-has-cancel-link .shepherd-content header h3 {
+      float: left;
+    }
+  }
+}
+
+.shepherd-target.shepherd-enabled {
+  z-index: 2;
+  position: absolute;
+  animation: opacity-animation 0.4s;
+  -webkit-animation: opacity-animation 0.4s;
+  -o-animation: opacity-animation 0.4s;
+  -moz-animation: opacity-animation 0.4s;
+}
+@keyframes opacity-animation {
+  0% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+@-webkit-keyframes opacity-animation {
+  0% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+@-o-keyframes opacity-animation {
+  0% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+@-moz-keyframes opacity-animation {
+  0% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+//.shepherd-active > * {
+//  opacity: 0.4;
+//}
+
+.blur {
+  width: 100%;
+  height: 100%;
+  background-color: #111418;
+  z-index: 50;
+  position: absolute;
+  opacity: 0.80;
+  transition: opacity 0.4s;
+  -webkit-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  -moz-transition: opacity 0.4s;
+}
+.unclickable {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  z-index: 52;
+  position: absolute;
+}
+
+.shepherd-enabled {
+  z-index: 51 !important;
+}
+
+.shepherd-step {
+  z-index: 53 !important;
+}
+
+.tour-create-button {
+  .shepherd-content {
+    top: -5px;
+    &:before {
+      top: 37px !important;
+    }
+  }
+}
+.tour-nav-bar {
+  .shepherd-content {
+    &:before {
+      top: 21% !important;
+    }
+  }
+}
+.tour-search-bar {
+  .shepherd-content {
+    h3 {
+      text-align: center;
+    }
+  }
+}
+.tour-my-profile {
+  .shepherd-content {
+    top: 57px;
+    &:before {
+      top: 36px !important;
+    }
+  }
+}
+.tour-filters {
+  .shepherd-content {
+    top: 60px;
+    &:before {
+      top: 36px !important;
+    }
+  }
+}
+.tour-pin-modules {
+  .shepherd-content {
+    top: 41px;
+    &:before {
+      top: 21% !important;
+    }
+  }
+}
+
+@media (max-width: 740px) {
+  .shepherd-element {
+    &.shepherd-theme-arrows {
+      max-width: 300px;
+    }
+  }
+  .tour-my-profile {
+    .shepherd-content {
+      top: 64px;
+    }
+  }
+  .tour-filters {
+    .shepherd-content {
+      top: 75px;
+    }
+  }
+  .tour-pin-modules {
+    .shepherd-content {
+      top: 30px;
+    }
+  }
+}

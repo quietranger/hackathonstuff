@@ -1,0 +1,103 @@
+@import "../../../../styles/variables.scss";
+@import "theme.scss";
+
+#go-module {
+  width: 600px;
+  margin-left: -60px;
+
+  h2 {
+    color: $create-new-green;
+  }
+
+  .module-content {
+    position: static;
+  }
+
+  p {
+    text-align: center;
+
+    a {
+      color: #494c52;
+      font-size: 14px;
+      text-decoration: none;
+
+      &:hover {
+        color: #b5616a;
+      }
+
+      &:active {
+        color: darken(#b5616a, 10%);
+      }
+    }
+  }
+}
+
+#go-actions {
+  padding: 5px;
+  text-align: center;
+  margin-bottom: 20px;
+
+  li {
+    display: inline-block;
+
+    button {
+      font-family: 'Roboto', 'Arial', sans-serif;
+      color: $go-action-text-color;
+      text-decoration: none;
+      border-radius: 3px;
+      width: 95px;
+      height: 75px;
+      background-position: center 18px;
+      background-repeat: no-repeat;
+      display: block;
+      text-align: center;
+      overflow: hidden;
+      padding: 62px 0 40px 0;
+      font-size: 20px;
+      font-weight: 300;
+      background-color: $go-action-background-color;
+      border: 0;
+
+      &:hover {
+        background-color: $go-action-hover-background-color;
+        color: $go-action-hover-text-color;
+
+        &.filter {
+          background-image: url($go-filter-hover-icon-url);
+        }
+
+        &.im {
+          background-image: url($go-im-hover-icon-url);
+      }
+
+        &.room {
+          background-image: url($go-room-hover-icon-url);
+        }
+
+        &.blast {
+          background-image: url($go-blast-hover-icon-url);
+        }
+
+        &.post {
+          background-image: url($go-post-hover-icon-url);
+        }
+      }
+
+      &.filter {
+        background-image: url($go-filter-icon-url);
+      }
+
+      &.im {
+        background-image: url($go-im-icon-url);
+      }
+
+      &.room {
+        background-image: url($go-room-icon-url);
+      }
+
+      &.blast {
+        background-image: url($go-blast-icon-url);
+      }
+    }
+  }
+}

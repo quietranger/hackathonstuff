@@ -1,0 +1,84 @@
+<div id="simple_nav"></div>
+<div id="simple_nav_placeholder"></div>
+<div class="simple_nav_guide simple_nav_guide_minimize"></div>
+<div class="simple_nav_guide simple_nav_guide_normal"></div>
+<div id="nav-items-container">
+    <section class="nav-section {{#if collapse.main.isCollapsed}}collapsed{{/if}}" data-section="main">
+        <div class="main-header nav-header">
+            <p class="navheading">MAIN</p>
+            <div class="section-collapse"></div>
+            <span class="nav-view-badge"></span>
+        </div>
+        <ul class="main-nav nav-options">
+            <li class="navlink" data-streamid="my-profile" data-module="profile" title="My Profile">
+                <a href="#" class="icon show-my-profile profile"><div class="nav-view-name">My Profile</div></a>
+            </li>
+            {{> navItemCollection lists.main }}
+            <li class="navlink" data-module="hello-world" title="Hello World">
+                <a href="#" class="icon show-hello-world"><div class="nav-view-name">Hello World</div></a>
+            </li>
+        </ul>
+    </section>
+    {{#if enableApplications}}
+        <section class="nav-section {{#if collapse.app.isCollapsed}}collapsed{{/if}}" data-section="app">
+            <div class="app-header nav-header">
+                <p class="navheading">APPS</p>
+                <div class="section-collapse"></div>
+                <span class="nav-view-badge"></span>
+            </div>
+            <ul class="app-nav ui-sortable nav-options">
+                <li class="navlink" data-streamid="app-store" data-module="appStore" title="App Store">
+                    <a href="#" class="show-app-store"><div class="nav-view-name">App Store</div></a>
+                </li>
+                {{> navItemCollection lists.apps }}
+            </ul>
+        </section>
+    {{/if}}
+    {{#if lists.channels}}
+        <section class="nav-section {{#if collapse.channel.isCollapsed}}collapsed{{/if}}" data-section="channel">
+            <div class="main-header nav-header">
+                <p class="navheading">CHANNELS</p>
+                <div class="section-collapse"></div>
+                <span class="nav-view-badge"></span>
+            </div>
+            <ul class="channel-nav nav-options">
+                {{> navItemCollection lists.channels }}
+            </ul>
+        </section>
+    {{/if}}
+    <section class="nav-section {{#if collapse.filter.isCollapsed}}collapsed{{/if}}" data-section="filter">
+        <div class="left-nav-tab filter-header nav-header">
+            <p class="navheading">FILTERS</p>
+            <div class="section-collapse"></div>
+            <span class="add-shortcut-btn add-filter-shortcut">+</span>
+            <span class="nav-view-badge"></span>
+        </div>
+        <ul class="filter-nav ui-sortable nav-options">
+            {{> navItemCollection lists.filters }}
+        </ul>
+    </section>
+    <section class="nav-section {{#if collapse.im.isCollapsed}}collapsed{{/if}}" data-section="im">
+        <div class="im-header nav-header">
+            <p class="navheading">IM</p>
+            <div class="section-collapse"></div>
+            <span class="add-shortcut-btn add-im-shortcut">+</span>
+            <span class="nav-view-badge"></span>
+        </div>
+        <ul class="im-nav ui-sortable nav-options">
+            {{> navItemCollection lists.ims }}
+        </ul>
+    </section>
+    <section class="nav-section {{#if collapse.room.isCollapsed}}collapsed{{/if}}" data-section="room">
+        <div class="room-header nav-header">
+            <p class="navheading">ROOMS</p>
+            <div class="section-collapse"></div>
+            <span class="add-shortcut-btn add-room-shortcut">+</span>
+            <span class="nav-view-badge"></span>
+        </div>
+        <ul class="ui-sortable room-nav nav-options">
+            {{> navItemCollection lists.rooms }}
+        </ul>
+    </section>
+</div>
+
+<div class="nav_expander"></div>

@@ -1,0 +1,154 @@
+@import "theme.scss";
+
+$input-height : 35px;
+$input-font-size: 13px;
+$input-padding: 6px 5px 6px 5px;
+
+.modal-sheet.quick-action{
+  background: none;
+
+  header{
+    display:none;
+  }
+
+  .modal-container {
+    box-shadow: none;
+    position: absolute;
+    top: 45%;
+    padding: 0;
+    width: 60%;
+    left: 40%;
+    margin-left: -20%;
+    .modal-content {
+      background: transparent;
+      padding: 0;
+      border: 0;
+
+    }
+  }
+}
+
+#quickAction-module {
+  .alert-box.alert {
+    margin-bottom: 0px;
+    width: 100%;
+  }
+
+  .text-input-wrap {
+    padding: 10px;
+    background-color: $quick-action-background-background-color;
+    border-radius: 2px;
+    width: 100%;
+  }
+
+  .token-input {
+    padding: 0;
+    background-color: $quick-action-input-background-color;
+    color: $quick-action-input-text-color;
+    font-size: $input-font-size;
+    font-weight: 400;
+    height: auto;
+    line-height: 18px;
+    box-shadow: $quick-action-input-box-shadow;
+    border-color: $quick-action-input-border-color;
+    border-radius: $quick-action-background-border-radius;
+
+    ul{
+      /* need this to render tokenInput's border radius*/
+      border-radius: 2px;
+      li{
+        z-index: 1;
+        background-color: transparent;
+        height:$input-height; //equal to the input height
+        line-height: $input-height;
+        padding: 0px;
+        color: $quick-action-input-text-color;
+
+        div{
+          font-size: $input-font-size;
+          font-weight: 400;
+          height: $input-height;
+          line-height: 23px;
+          padding: 6px 0px 6px 5px;
+          color: $quick-action-input-text-color;
+
+          .avatar {
+            float: left;
+            width: 15px;
+            height: 19px;
+            margin: 2px 0 0 4px;
+          }
+        }
+      }
+    }
+    .twitter-typeahead {
+      height: 100%;
+
+      .tt-dropdown-menu {
+        border: 0;
+        background-color: $quick-action-dropmenu-item-background;
+        border-color: $quick-action-input-border-color;
+        color: $quick-action-dropmenu-text-color;
+        .tt-suggestions {
+          .tt-suggestion {
+            border: 0;
+            background-color: inherit;
+            padding: 5px;
+            color: $quick-action-dropmenu-text-color;
+            p{
+              margin: 0px;
+              display: inline-block;
+              line-height: 28px;
+              color: $quick-action-dropmenu-text-color;
+            }
+
+            p.command.search{
+              color: $quick-action-dropmenu-search-option-text-color;
+              font-style: italic;
+              strong{
+                font-weight: 400;
+                color: inherit;
+              }
+            }
+          }
+
+          .view-type {
+            font-size: 10px;
+            font-style: italic;
+            display: inline-block;
+            width: 30px;
+            margin-left: 5px;
+            color: $quick-action-dropmenu-search-option-text-color;
+          }
+
+          .tt-suggestion.tt-cursor {
+            color: $quick-action-dropmenu-item-selected-text-color;
+            background-color: $quick-action-dropmenu-item-selected-background;
+          }
+
+          strong {
+            color: $quick-action-dropmenu-text-color;
+            font-weight: $quick-action-dropmenu-item-selected-letter-font-weight;
+          }
+        }
+      }
+
+    }
+
+    .text-input-text.quick-action {
+      height: $input-height;
+      line-height: 23px;
+      font-size: $input-font-size;
+      padding: $input-padding;
+      width: 300px;
+      word-wrap: break-word;
+      background: $quick-action-input-background-color;
+      color: $quick-action-input-text-color;
+      border-radius: $quick-action-background-border-radius;
+      margin: 0;
+      overflow-y: auto;
+      resize: none;
+      outline: 0 none;
+    }
+  }
+}

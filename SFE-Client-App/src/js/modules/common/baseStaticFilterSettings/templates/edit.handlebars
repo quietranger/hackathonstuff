@@ -1,0 +1,62 @@
+<div id="general-static-filter-settings">
+    <div class="add-entity">
+            <span>Add</span>
+            <span class="prefix {{#if isKeywords}}keywords{{/if}}">
+            {{#if isKeywords}}
+                <span class="select-wrap">
+                <select name="keyword-prefix" id="entity-prefix">
+                    <option value="#">#</option>
+                    <option value="$">$</option>
+                    <option value="all">All</option>
+                </select>
+                </span>
+            {{else}}
+                <span class="user">@</span>
+            {{/if}}
+            <input id="entity-input" type="text" placeholder="{{#if isKeywords}}Keyword{{else}}User{{/if}}"/>
+            </span>
+            <span>on</span>
+            <span class="select-wrap">
+            <select name="connector-id" id="connector-id">
+                {{#each connectors}}
+                <option value="{{id}}" {{selectItem id 'lc' }}>{{name}}</option>
+                {{/each}}
+                {{#if isKeywords}}
+                    {{#compare connectors.length 1 operator=">"}}
+                    <option value="all">All</option>
+                    {{/compare}}
+                {{/if}}
+            </select>
+            </span>
+        <a class="button positive add" href="#">Add</a>
+            <input id="entity-id" type="hidden"/>
+        </div>
+
+    <div class="rules">
+                <h4 class="lc">Symphony</h4>
+                {{#if lcEntities}}
+        <ul class="lc well">
+                    {{#each lcEntities}}
+                    {{>entity}}
+                    {{/each}}
+                </ul>
+                {{else}}
+                <p class="empty">You aren't following any{{#if isKeywords}}thing{{else}}one{{/if}} on Symphony yet.</p>
+                {{/if}}
+
+                <h4 class="tw">Twitter</h4>
+                {{#if twEntities}}
+        <ul class="tw well">
+                    {{#each twEntities}}
+                    {{>entity}}
+                    {{/each}}
+                </ul>
+                {{else}}
+                <p class="empty">You aren't following any{{#if isKeywords}}thing{{else}}one{{/if}} on Twitter yet.</p>
+                {{/if}}
+            </div>
+        </div>
+
+<div class="buttons">
+    <a class="button positive close" href="#">Done</a>
+</div>

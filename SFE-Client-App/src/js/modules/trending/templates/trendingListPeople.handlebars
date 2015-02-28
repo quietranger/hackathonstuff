@@ -1,0 +1,35 @@
+<div class="row row-trending">
+    <div class="small-12 columns">
+        <div id="trending-item-table">
+            <div class="table-head people-trending">
+                <div class="name small-12 columns col-left">{{entityName}}</div>
+                <div class="data columns col-mid">{{entityUnit}}</div>
+                <div class="status columns col-right">Trend</div>
+                {{!-- <div class="status columns col-actions">Action</div> --}}
+            </div>
+            <div class="table-body people-trending">
+                {{#each trendingData}}
+                <div class="trending-item-row">
+                    <div class="name small-12 columns col-left">{{this.index}} - <span class="msg-entity person has-hover-profile" data-userid="{{this.userId}}" data-usertype="lc">
+                        {{this.prettyName}}
+                        </span>
+                    </div>
+                    <div class="data columns col-mid">{{this.messageCount}}</div>
+                    <div class="status columns col-right">
+                        <span class="tiny {{this.status.css}}-trending"><i class="fa fa-{{this.status.icon}}"></i></span>
+{{!--                         {{#if this.status}}
+                        <span class="tiny up-trending"><i class="fa fa-arrow-up"></i></span>
+                        {{else}}
+                        <span class="tiny down-trending"><i class="fa fa-arrow-down"></i></span>
+                        {{/if}} --}}
+                    </div>
+{{!--                     <div class="action columns action_btns col-actions">
+                        <a class="button left-btn lb-button do-im" href="#" data-threadid=""><i class="fa fa-comments-o"></i> IM</a>
+                        <a class="button lb-button do-follow" href="#" data-threadid=""><i class="fa fa-star"></i> Follow</a>
+                    </div> --}}
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>

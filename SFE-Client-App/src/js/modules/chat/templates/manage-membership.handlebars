@@ -1,0 +1,23 @@
+{{#unless context.unpriveleged}}
+<p>Enter someone's name or Kerberos in the box below to add them to a room.</p>
+<input id="add-new-member" type="text" class="mousetrap" placeholder="Enter a name or Kerberos ID to add" />
+{{/unless}}
+
+<div class="membership-filters">
+    <select id="members-per-page">
+        <option value="10" {{selectItem context.perPage 10 }}>10</option>
+        <option value="25" {{selectItem context.perPage 25 }}>25</option>
+        <option value="50" {{selectItem context.perPage 50 }}>50</option>
+        <option value="100" {{selectItem context.perPage 100 }}>100</option>
+    </select>
+    <label  for="members-per-page" class="inline">
+        members per page
+    </label>
+    <input id="members-query" type="text" placeholder="Search existing members" value="{{context.membersQuery}}" />
+</div>
+<div id="member-list">
+    {{>memberList}}
+</div>
+<div class="buttons">
+    <a class="button submit positive" href="#">Done</a>
+</div>

@@ -1,0 +1,25 @@
+<ul class="with-title">
+    {{#if isNormalFilter}}
+        <li><a class="show-deactivation-confirmation" href="#">Delete</a></li>
+    {{/if}}
+    <li class="float_pop_out"><a href="#" class="float-view">Pop-Out</a></li>
+    <li class="float_pop_in"><a href="#" class="unfloat-view">Pop-In</a></li>
+    {{#if showEditButton}}
+        <li><a href="#" class="edit-rules">Edit</a></li>
+    {{/if}}
+    <li><a href="#" class="show-settings">Settings</a></li>
+</ul>
+<ul class="without-title">
+    {{#if isNormalFilter}}
+        <li><a class="show-deactivation-confirmation" href="#" data-tooltip="Delete"
+               data-tooltip-position="bottom right"></a></li>
+    {{/if}}
+    <li class="float_pop_out"><a href="#" class="float-view" data-tooltip="Pop-Out"
+                                 data-tooltip-position="bottom right"></a></li>
+    <li class="float_pop_in"><a href="#" class="unfloat-view" data-tooltip="Pop-In"
+                                data-tooltip-position="bottom right"></a></li>
+    {{#if showEditButton}}
+        <li><a href="#" class="edit" data-tooltip="Edit" data-tooltip-position="bottom right"></a></li>
+    {{/if}}
+    <li><a href="#" class="show-settings" data-tooltip="Settings" data-tooltip-position="bottom right"></a></li>
+</ul>

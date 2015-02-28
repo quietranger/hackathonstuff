@@ -1,0 +1,25 @@
+<div class="appsettings-themes">
+    <h5>Themes Available</h5>
+    <ul class="themes-list">
+        {{#each themes}}
+        <li data-id="{{this.key}}">
+            <div class="theme-icon" style="background-image: url({{this.iconUrl}});"></div>
+            <div class="theme-info">
+                <h6 class="theme-info-name">{{this.name}}</h6>
+
+                <div class="theme-info-description">{{this.description}}</div>
+                <div class="theme-info-version">Version {{this.version}}</div>
+            </div>
+            <div class="theme-buttons">
+                <div class="field field-activate">
+                    {{#ifEqual arg1=../activeTheme arg2=this.key}}
+                    <span class="in-use">In Use</span>
+                    {{else}}
+                    <button class="button positive activate">Activate</button>
+                    {{/ifEqual}}
+                </div>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+</div>

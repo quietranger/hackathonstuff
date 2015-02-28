@@ -1,0 +1,95 @@
+@import "theme.scss";
+
+.token-entity {
+  display: flex;
+  border: 1px solid $token-border-color;
+  float: left;
+  background: $token-background-color;
+  border-radius: 2px;
+
+  p.token-heading {
+    font-size: 11px;
+    margin-bottom: 0;
+    padding: 1px 0px 2px 0px;
+    display: inline-block;
+    float: left;
+    color: #fff;
+    max-width: 100px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  span.table-icon {
+    padding: 3px;
+    background: url('../../images/dark/icon_unstructured_table.png');
+    background-position: center;
+    vertical-align: middle;
+    width: 13px;
+    height: 13px;
+    margin: auto;
+    margin-left: 2px;
+    margin-right: 2px;
+    float: left;
+  }
+
+  span.delete {
+    cursor: pointer;
+    background: url('src\js\lib\symphony\plugins\excelRCP\images\dark\icon_unstructured_close.png') no-repeat;
+    background-position: center;
+    width: 7px;
+    height: 7px;
+    margin: 4px 4px 2px 4px;
+    float: left;
+
+    &:hover {
+      background-image: url('src\js\lib\symphony\plugins\excelRCP\images\dark\icon_unstructured_close_hover.png');
+    }
+    &:active {
+      background-image: url('src\js\lib\symphony\plugins\excelRCP\images\dark\icon_unstructured_close_active.png');
+    }
+  }
+
+  span.open {
+    cursor: pointer;
+    background: url('src\js\lib\symphony\plugins\excelRCP\images\dark\icon_unstructured_open.png') no-repeat;
+    background-position: center;
+    width: 7px;
+    height: 7px;
+    margin: 4px 4px 2px 4px;
+    float: left;
+
+    &:hover {
+      background-image: url('src\js\lib\symphony\plugins\excelRCP\images\dark\icon_unstructured_open_hover.png');
+    }
+    &:active {
+      background-image: url('src\js\lib\symphony\plugins\excelRCP\images\dark\icon_unstructured_open_active.png');
+    }
+  }
+}
+
+.chat-text, .message-text {
+  .richToken {
+    .token-entity {
+      span.delete {
+        display: none;
+      }
+    }
+  }
+}
+
+.text-input-text {
+  .token-entity {
+    span.open {
+      display: none;
+    }
+  }
+}
+
+.excel-table-token {
+  display: flex;
+}
+
+.table-token {
+  display: inline-flex;
+}

@@ -1,0 +1,25 @@
+<div class="appsettings-applications">
+    {{#if applications}}
+    <h5>My Applications</h5>
+    <ul class="applications-list">
+        {{#each applications}}
+        <li data-id="{{this.appId}}">
+            <div class="application-icon" style="background-image: url({{this.iconUrl}});"></div>
+            <div class="application-info">
+                <h6 class="application-info-name">{{this.name}}</h6>
+
+                <div class="application-info-description">{{this.description}}</div>
+                <div class="application-info-version">Version {{this.version}}</div>
+            </div>
+            <div class="application-buttons">
+                <div class="field field-remove">
+                    <button class="button positive">Remove</button>
+                </div>
+            </div>
+        </li>
+        {{/each}}
+    </ul>
+    {{else}}
+    <h5>You don't have any applications installed</h5>
+    {{/if}}
+</div>

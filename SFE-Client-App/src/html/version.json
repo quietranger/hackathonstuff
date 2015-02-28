@@ -1,0 +1,898 @@
+{
+    "currentVersion": "1.11.0",
+    "versionHistory": [
+        {
+            "version": "1.9.0",
+            "description": "We've added many new features to help keep your left navigation under control! We also wrote an engine which will allow us to handle various data formats- such as tables!",
+            "date": 1418437026564,
+            "changeLog": {
+                "bug": [
+                    {
+                        "description": "An option to reset the layout is available from App Wide Settings."
+                    },
+                    {
+                        "description": "Fixed a bug where a user cannot chime if an entity is in the text input."
+                    },
+                    {
+                        "description": "Fixed a bug where two clicks were required to close an image preview modal."
+                    },
+                    {
+                        "description": "The timestamp for social messages now updates in real time."
+                    }
+                ],
+                "feature": [
+                    {
+                        "description": "The left navigation sections (such as \"ROOMS\" and \"CHANNELS\") can be collapsed."
+                    },
+                    {
+                        "description": "The sections on the left navigation can be rearranged by clicking and dragging."
+                    },
+                    {
+                        "description": "A new \"compact\" mode option for social messages which reduces the amount of whitespace."
+                    },
+                    {
+                        "description": "Added an option to remove inactive conversations from the left navigation nightly. If an IM has no unread count, is not open in the layout, and is not in a group it will be cleared form the left navigation."
+                    },
+                    {
+                        "description": "Added an option to hide the conversation history from an IM nightly."
+                    },
+                    {
+                        "description": "Messages that contain copy & pasted tables will render as a table in the message view area."
+                    },
+                    {
+                        "description": "Added an option to add both hashtags and cashtags simultaneously to a users keywords."
+                    },
+                    {
+                        "description": "Added an option where the left navigation will sort by most recently received message in real time."
+                    }
+                ]
+            }
+        },{
+            "version": "1.8.1",
+            "description": "It's now much simpler to add or remove people from an IM. Please be aware each set of people has a unique thread and therefore conversation history. If you add or remove people you will see history from that updated set of people.",
+            "date": 1417198622047,
+            "changeLog": {
+                "bug": [
+                    {
+                        "description": "Attachments within shared wall posts now open correctly."
+                    },
+                    {
+                        "description": "Attachments within shared wall posts now open in content preview if they are images."
+                    },
+                    {
+                        "description": "Fixed copy and paste bug where new lines were added before and after copied content."
+                    },
+                    {
+                        "description": "Fixed blinking alerts on the left hand navigation."
+                    },
+                    {
+                        "description": "Fixed the \"new message\" glow in both themes"
+                    },
+                    {
+                        "description": "Fixed disable input icon in the light theme."
+                    },
+                    {
+                        "description": "Fixed \"x\" (close) button next to IMs in the light theme"
+                    },
+                    {
+                        "description": "Increased text contrast for the light theme."
+                    },
+                    {
+                        "description": "Fixed a rendering issues with groups that have long names."
+                    }
+                ],
+                "feature": [
+                    {
+                        "description": "Made it easy to add or more users from a multiparty IM from the from the drop down panel option called \"Manage Membership.\""
+                    },
+                    {
+                        "description": "Clicking on an image in content preview will now open the link in chrome. Note for attachments, this will only open the save target as link in chrome."
+                    }
+                ]
+            }
+        }, {
+            "version": "1.8.0",
+            "description": "We've added a bunch of new features including the often requested light theme for this release! It can be enabled from the app wide settings menu.",
+            "date": 1415997180966,
+            "changeLog": {
+                "bug": [
+                    {
+                        "description": "The character counter of social posts will only count the length of the kerberos rather than the users full name."
+                    },
+                    {
+                        "description": "Fixed a bug where the user can not dismiss errors from the room membership view."
+                    },
+                    {
+                        "description": "Members who cannot add new members to a particular room will no longer see the option to add members."
+                    },
+                    {
+                        "description": "Fixed a bug where closing and reopening a view would break user @ mentions for a message that had not yet been sent."
+                    },
+                    {
+                        "description": "Fixed a bug where disabling the external social posts feed would clear out the users internal feed over time."
+                    },
+                    {
+                        "description": "Users can now follow non-english characters."
+                    }
+                ],
+                "feature": [
+                    {
+                        "description": "Added a quick post from the header with a non blocking UI so you can reference other parts of the screen while composing a post."
+                    },
+                    {
+                        "description": "Redesigned the settings UI for a more intuitive experience."
+                    },
+                    {
+                        "description": "Added a light theme."
+                    },
+                    {
+                        "description": "The App Store allows users to install applications. Applications can be uninstalled from the settings modal."
+                    },
+                    {
+                        "description": "Redesigned social posts (from internal and external sources) for a more compact view."
+                    },
+                    {
+                        "description": "Added a button to start a chat from the header quick search."
+                    },
+                    {
+                        "description": "Added widget/embedded chatroom or IM capability. Developers can now embed an iFrame with a particular chatroom or IM running."
+                    },
+                    {
+                        "description": "Added a Trending app, which is available for install via the App Store."
+                    },
+                    {
+                        "description": "Your voices have been heard! There is now a Leave Room button from the chat room drop down menu."
+                    },
+                    {
+                        "description": "When clicking on members your name will appear at the top of the list."
+                    },
+                    {
+                        "description": "Preview attachments, png's, gif's, jpg's, jpeg's, and bmp's in the new preview modal by clicking on image links."
+                    },
+                    {
+                        "description": "When adding a new filter rule the previous source and type will be automatically selected."
+                    }
+                ]
+            }
+        }, {
+            "version": "1.7.4",
+            "description": "This release brings a massive under the hood change to convert all users to a numeric user ID.",
+            "date": 1415401646094,
+            "changeLog": {
+                "bug": [
+                    {
+                        "description": "Fixed a bug where alias/background colors were rendered inconsistently."
+                    },
+                    {
+                        "description": "Fixed a bug where the following renders new messages incorrectly."
+                    }
+                ],
+                "feature": [
+
+                ]
+            }
+        }, {
+            "version": "1.7.3",
+            "description": "Added a frequently requested Projito emoji!",
+            "date": 1414797019000,
+            "changeLog": {
+                "bug": [
+                    {
+                        "description": "Fixed a bug where the character counter is mispositioned."
+                    }
+                ],
+                "feature": [
+                    {
+                        "description": "Added a Projito emoji, which can be activated with :projito: or :lime:"
+                    }
+                ]
+            }
+        },{
+            "version": "1.7.2",
+            "description": "All grid issues should now be resolved!",
+            "date": 1414192219000,
+            "changeLog": {
+                "bug": [
+                    {
+                        "description": "Fixed a bug where the layout can render incorrectly."
+                    }
+                ],
+                "feature": [
+
+                ]
+            }
+        }, {
+            "version": "1.7.1",
+            "description": "A multitude of bug fixes will make your Symphony client substantially more stable and improve usability.",
+            "date": 1413571127968,
+            "changeLog": {
+                "bug": [
+                    {
+                        "description": "Fixed a bug where the character counter covers the text area."
+                    },
+                    {
+                        "description": "Fixed a bug where a hashtag could be rendered erroneously in text areas."
+                    },
+                    {
+                        "description": "Fixed a bug where clicking to close a hashtag or mention failed to remove the entity in text areas."
+                    },
+                    {
+                        "description": "Fixed a bug so modules properly render error messages."
+                    },
+                    {
+                        "description": "Improved application performance by reducing the number of server requests."
+                    },
+                    {
+                        "description": "Improved the reliability of copy/paste functionality."
+                    },
+                    {
+                        "description": "Fixed the following modal copy when a user is not following anyone."
+                    },
+                    {
+                        "description": "Fixed a bug that prevent users from creating new groups in the navigation."
+                    },
+                    {
+                        "description": "Reduced the sensitivity of the drag and drop when grouping in the navigation."
+                    },
+                    {
+                        "description": "Fixed a bug regarding vulgarity filters in pop out windows."
+                    },
+                    {
+                        "description": "Fixed a bug where clicking a mention takes you to the sender's profile."
+                    },
+                    {
+                        "description": "Fixed a bug where the wrong name was displayed in the blast message window."
+                    }
+                ],
+                "feature": [
+
+                ]
+            }
+        },{
+            "version": "1.7.0",
+            "description": "The new chime feature is a great way to grab someones attention.",
+            "date": 1412980037459,
+            "changeLog": {
+                "bug": [
+                    {
+                        "description": "Fixed a bug where the quick action input may not be automatically focused."
+                    },
+                    {
+                        "description": "Fixed a bug where typing immediately after sending a previous message may not fully remove the old text."
+                    },
+                    {
+                        "description": "Fixed a bug that prevented users from sharing messages from search results."
+                    },
+                    {
+                        "description": "Fixed a display bug for users with long names."
+                    },
+                    {
+                        "description": "Clicking anywhere inside a panel will focus the text input."
+                    },
+                    {
+                        "description": "When creating a new room the first text input will be focused automatically."
+                    },
+                    {
+                        "description": "The read only room attribute can no longer be changed."
+                    },
+                    {
+                        "description": "The mentions type ahead popup is now properly positioned."
+                    },
+                    {
+                        "description": "Fixed a display issue with the profile text input area."
+                    }
+                ],
+                "feature": [
+                    {
+                        "description": "Added chime functionality which allows you to play a short sound on the recipients computer."
+                    },
+                    {
+                        "description": "Desktop alerts will now show the number of attachments."
+                    }
+                ]
+            }
+        },
+        {
+            "version": "1.6.0",
+            "description": "Try pressing ALT+SHIFT to access Quick Actions! Then type \"open following\" to jump right to that view. Try sharing images in conversations and in public posts!",
+            "date": 1411769879528,
+            "changeLog": {
+                "bug": [
+                    {
+                        "description": "Fixed a bug where clicking the name of someone who joined or left a room didn't take you to their profile."
+                    },
+                    {
+                        "description": "Fixed a bug where users may have seen a white screen during a Symphony deployment."
+                    },
+                    {
+                        "description": "Fixed a bug where mentions see in search results weren't actionable with a hover or a click."
+                    },
+                    {
+                        "description": "Fixed a bug where clicking on a user's name in a search result didn't launch their profile."
+                    },
+                    {
+                        "description": "Fixed a bug where it was possible to send a blast twice by clicking in rapid succession."
+                    },
+                    {
+                        "description": "Fixed a bug with deactivated rooms remaining pinned."
+                    },
+                    {
+                        "description": "Fixed a bug where modals didn't scroll when their content was larger than the available space."
+                    },
+                    {
+                        "description": "Fixed a bug where following or un-following someone wasn't reflected across all places in the app."
+                    },
+                    {
+                        "description": "Fixed a bug where the character count covered the message draft."
+                    },
+                    {
+                        "description": "Improved the speed of the hover profile loading."
+                    },
+                    {
+                        "description": "Improved the send feedback link."
+                    },
+                    {
+                        "description": "Renamed the Account button to Options."
+                    },
+                    {
+                        "description": "Fixed a bug with the default view configurations where settings weren't being persisted."
+                    },
+                    {
+                        "description": "Fixed a bug where users could search contents from sources they weren't mapped to i.e. Twitter."
+                    },
+                    {
+                        "description": "Fixed a bug where the profile module wasn't resizing properly."
+                    },
+                    {
+                        "description": "Fixed a bug where the text input size would not persist after being resized."
+                    }
+                ],
+                "feature": [
+                    {
+                        "description": "See presence when viewing the list of members of a room."
+                    },
+                    {
+                        "description": "Added Quick Actions. Press ALT+SHIFT in order to access this feature and speed up your usage of Symphony!"
+                    },
+                    {
+                        "description": "Added image sharing for conversations and public posts. Includes a screen snipping tool to help you quickly capture a portion of your screen and add annotations."
+                    }
+                ]
+            }
+        },
+        {
+            "version": "1.5.0",
+            "description": "The new blast message feature allows you to quickly send a message to multiple conversations at the same time!",
+            "date": 1411163177270,
+            "changeLog": {
+                "bug": [
+                    {
+                        "description": "Fixed a bug that made it difficult to copy and paste emoticons."
+                    },
+                    {
+                        "description": "Fixed a bug where users could see Twitter as a source option in search even if they weren't entitled to Twitter streaming."
+                    },
+                    {
+                        "description": "Fixed a bug where users saw a blank screen on startup."
+                    }
+                ],
+                "feature": [
+                    {
+                        "description": "Use blast message to share an important message in many of your conversations at once."
+                    }
+                ]
+            }
+        },
+        {
+            "version": "1.4.0",
+            "description": "Baby twins were born! Dave and Seiko, congratulations, we're so happy for the birth of Kenzo and Jin.",
+            "date": 1410559605757,
+            "changeLog": {
+                "bug": [
+                    {
+                        "description": "Fixed a display issue with profiles."
+                    },
+                    {
+                        "description": "You can now follow system accounts."
+                    },
+                    {
+                        "description": "Fixed a bug with grouping of items in the left nav."
+                    },
+                    {
+                        "description": "Fixed a bug where modifying filter rules in a certain way could cause the entire filter to be unmodifiable."
+                    },
+                    {
+                        "description": "Fixed a bug where the source dropdown menu in filters wouldn't automatically close."
+                    },
+                    {
+                        "description": "Fixed a bug where a room name change wasn't reflected in the room properly."
+                    },
+                    {
+                        "description": "Fixed a bug where emoticons weren't being displayed inside shared messages."
+                    },
+                    {
+                        "description": "Fixed a bug where you could select an end date earlier than a start date in advanced search."
+                    },
+                    {
+                        "description": "Fixed a bug where you couldn't open a room directly from search results."
+                    },
+                    {
+                        "description": "Fixed a bug where resizing the text input area while you're scrolling in a conversation automatically scrolls you to the bottom."
+                    },
+                    {
+                        "description": "Fixed a bug where the character count popup wasn't visible when composing a post."
+                    },
+                    {
+                        "description": "Fixed a bug where tooltips were causing other items in the UI to shift position."
+                    }
+                ],
+                "feature": [
+                    {
+                        "description": "You can call someone from the hover profile."
+                    },
+                    {
+                        "description": "When on a user's profile, you can see if they follow you."
+                    },
+                    {
+                        "description": "You can include your own comments when you share a post."
+                    },
+                    {
+                        "description": "Improved look and feel of modals and wizards."
+                    },
+                    {
+                        "description": "The first result is automatically selected when choosing members of a new IM conversation."
+                    }
+                ]
+            }
+        },
+        {
+            "version": "1.3.0",
+            "description": "",
+            "date": 1409347714065,
+            "changeLog": {
+                "bug": [
+                    {
+                        "description": "Clicking links with the mouse wheel now correctly opens in the default browser."
+                    },
+                    {
+                        "description": "You can no longer see a button to begin an IM with yourself."
+                    },
+                    {
+                        "description": "Fixed a bug that prevented you from clicking \"Show Context\" to scroll to a message in a room you had already scrolled in."
+                    },
+                    {
+                        "description": "Fixed a bug where the share count of a message you authored wasn't shown when you posted it while your profile was open."
+                    },
+                    {
+                        "description": "Fixed spacing of content in filters."
+                    },
+                    {
+                        "description": "Fixed a bug where the welcome tour could crash when no other modules were opened while running it."
+                    },
+                    {
+                        "description": "Fixed a bug where tooltips were causing scrollbars to appear."
+                    },
+                    {
+                        "description": "Fixed a bug where the visual effect of rich entities like keywords and mentions weren't applied to the content in the input text box when posting on behalf of another user or account."
+                    },
+                    {
+                        "description": "Fixed a bug where focus wasn't given to modules after clicking on them in the left sidebar if they were located off screen. "
+                    },
+                    {
+                        "description": "Fixed presence in Following and Followers list in profiles."
+                    },
+                    {
+                        "description": "Fixed bug where the app displayed \"Keyword already exists\" error when editing keywords."
+                    }
+                ],
+                "feature": [
+                    {
+                        "description": "Create a new public post at any time by clicking \"Create New\" and then choosing \"Post\""
+                    },
+                    {
+                        "description": "Jump directly to a user's profile from their name in the room member list."
+                    },
+                    {
+                        "description": "Filter view headers can now be collapsed to leave more space for content."
+                    },
+                    {
+                        "description": "Search has been improved by allowing you to search by additional criteria like date and author."
+                    },
+                    {
+                        "description": "The size of the text input area has been reduced to improve information density."
+                    },
+                    {
+                        "description": "Added :picard_facepalm:"
+                    }
+                ]
+            }
+        },
+        {
+            "version": "1.2.0",
+            "description": "While preparing for this release, a member of the team had a healthy baby boy - congratulations John and Lindsay! We constructed a tour to help guide new users around the app, fixed many bugs, tightened up parts of the UI, added a new emoticon, and are conducting reviews necessary to release features like image sharing and blast messaging.",
+            "date": 1408134810562,
+            "changeLog": {
+                "bug": [
+                    {
+                        "description": "Fixed an issue with the dropdown for mentions suggestions not displaying correctly when the window was not full screen."
+                    },
+                    {
+                        "description": "Fixed an issue with the relative times shown not updating."
+                    },
+                    {
+                        "description": "Fixed a bug with hashtags being counted as using more characters than they really were."
+                    },
+                    {
+                        "description": "Fixed a bug where you couldn't add anything to an empty group."
+                    },
+                    {
+                        "description": "Fixed a bug where you could see your own messages as unread."
+                    },
+                    {
+                        "description": "After taking an action from within a hover profile, the profile now closes automatically."
+                    },
+                    {
+                        "description": "Fixed a bug that didn't allow for hashtags like #napa14 to be entered."
+                    },
+                    {
+                        "description": "Fixed a bug that caused the client to constantly reconnect."
+                    },
+                    {
+                        "description": "Fixed a bug where emtoicons were not properly rendered in a shared message."
+                    },
+                    {
+                        "description": "Improved the information density in filters."
+                    },
+                    {
+                        "description": "Fixed a bug where a user could see the same IM listed twice in their left navigation bar."
+                    },
+                    {
+                        "description": "Fixed an issue where the typing indicator could overlap the read receipt indicator."
+                    }
+                ],
+                "feature": [
+                    {
+                        "description": "Added a tour for first-time users of the application. The tour points out the main features inside Symphony. Existing users can take the tour by selecting it from the Account dropdown."
+                    },
+                    {
+                        "description": "Removed presence from being shown next to the message in IM's with only 2 members. Instead, presence is shown only in the module header."
+                    },
+                    {
+                        "description": "Added a descriptive error message when information barriers reject a user's action, and provided steps to request an exception to the policy."
+                    },
+                    {
+                        "description": "Added a facepalm emoticon. Use it by typing :facepalm:"
+                    }
+                ]
+            }
+        },
+        {
+            "version": "1.1.0",
+            "description": "We fixed many bugs, made improvements to the user experience, and are working on some big features for the next release.",
+            "date": 1406900910278,
+            "changeLog": {
+                "bug": [
+                    {
+                        "description": "Removed the button to IM yourself."
+                    },
+                    {
+                        "description": "Fixed issue where seeing a popup sample would refresh the application."
+                    },
+                    {
+                        "description": "Fixed issue with certain characters causing URL's to not be pasted properly."
+                    },
+                    {
+                        "description": "Fixed an issue where the remaining character counts weren't aligning properly."
+                    }
+                ],
+                "feature": [
+                    {
+                        "description": "Filter UI redesigned."
+                    },
+                    {
+                        "description": "Redesigned the profile you see when hovering on a person's name."
+                    }
+                ]
+            }
+        },
+        {
+            "version": "1.0.4",
+            "description": "The team is incredibly excited about this release. We sped up message delivery, added the ability to create groups for IM's and Chatrooms (try dragging/dropping them on top of each other!), we fixed tons of bugs, made it easier to find common actions in modules, and improved the contextual view of historical messages.",
+            "date": 1405695871985,
+            "changeLog": {
+                "bug": [
+                    {
+                        "description": "Fixed the scrollbar jumping to the top in a conversation after the user sent a message and the load-more was triggered."
+                    },
+                    {
+                        "description": "Fixed modules not receiving pop up desktop alerts when they were last active but the app was minimized."
+                    },
+                    {
+                        "description": "Fixed user is typing messages notifications that stuck around long after the user stopped typing."
+                    },
+                    {
+                        "description": "Fixed issue with closing pop-out windows that didn't remove the selected status in the left-hand navigation bar."
+                    },
+                    {
+                        "description": "Fixed NaN characters left from appearing in a text input area."
+                    },
+                    {
+                        "description": "Grid layout preferences restore in real-time after resizing the window."
+                    },
+                    {
+                        "description": "Fixed scrollbars from appearing when totally unneeded."
+                    },
+                    {
+                        "description": "Fixed issues with filter creation and editing."
+                    },
+                    {
+                        "description": "Fixed bug that let users follow arbitrary usernames."
+                    },
+                    {
+                        "description": "Fixed issue with consecutive messages being displayed with wrong sender name when sent at almost the same time."
+                    }
+                ],
+                "feature": [
+                    {
+                        "description": "Added quick profile view for users inside Maestro messages when hovering over them with the mouse pointer."
+                    },
+                    {
+                        "description": "Greatly improved the view when looking at historical messages in context. This awesome change lets you scroll infinitely forwards and backwards from any point in a conversation!"
+                    },
+                    {
+                        "description": "Significantly decreased the time messages take to reach users."
+                    },
+                    {
+                        "description": "Added the ability to group IM's and Chatrooms. Name groups whatever you'd like, and easily expand/collapse them to save space."
+                    },
+                    {
+                        "description": "Added the ability to customize the way other users are displayed to you. Give them aliases to rename them, and even choose the color of their name and of their text background. This customization is only for your view of Symphony and won't be shown to others."
+                    }
+                ]
+            }
+        },
+        {
+            "version": "1.0.3",
+            "description": "In this version, we released a new version of the desktop client application which brings significant performance improvements. We also released many bugfixes and usability improvements.",
+            "date": 1404322820878,
+            "changeLog": {
+                "bug": [
+                    {
+                        "description": "HTML tooltips no longer appear outside of the client application."
+                    },
+                    {
+                        "description": "The cursor is now once again displayed in the message composition area."
+                    },
+                    {
+                        "description": "Tooltips now show inside the changelog module."
+                    },
+                    {
+                        "description": "Tooltip-style profiles now are shown within filter modules."
+                    },
+                    {
+                        "description": "The following filter didn't automatically load historical messages on startup. Now it does."
+                    },
+                    {
+                        "description": "Clicking a Twitter profile didn't launch the Twitter profile module. Now it does"
+                    },
+                    {
+                        "description": "The relative time ago on message results in the search dropdown was incorrect."
+                    },
+                    {
+                        "description": "Presence became stale and didn't always automatically refresh."
+                    },
+                    {
+                        "description": "The is-typing indicator covered message text."
+                    },
+                    {
+                        "description": "The is-typing indicator wouldn't always go away on its own."
+                    },
+                    {
+                        "description": "Mentions at the beginning of Tweets weren't appearing."
+                    },
+                    {
+                        "description": "Unread message count was showing unread messages for the history of the thread instead of just from the last time you looked at it."
+                    },
+                    {
+                        "description": "Users couldn't sample notifications while notification muting was on."
+                    },
+                    {
+                        "description": "Module menu couldn't be opened until the module had focus. This meant that sometimes it took two clicks to open a menu."
+                    },
+                    {
+                        "description": "Twitter mentions were undefined in notifications."
+                    },
+                    {
+                        "description": "When the max number of columns in the grid layout were reached, users couldn't reorder them."
+                    }
+                ],
+                "feature": [
+                    {
+                        "description": "The new version of the desktop application uses the Chromium Embedded Framework version 3, and this offers noticeably large improvements to performance."
+                    },
+                    {
+                        "description": "An improvement to the grid layout allow improves ease of use and performs faster."
+                    },
+                    {
+                        "description": "Retweet information is displayed."
+                    },
+                    {
+                        "description": "#hashtag and $cashtag entities are shown in the message composition area."
+                    }
+                ]
+            }
+        },
+        {
+            "version": "1.0.2",
+            "description": "In this version, the team improved rich entities, made it easier to get to your profile and write messages, and provided a link to give feedback.",
+            "date": 1403120224403,
+            "changeLog": {
+                "bug": [
+                    {
+                        "description": "Improve the grouping of messages in conversations by the same author."
+                    },
+                    {
+                        "description": "Links in messages no longer appear underlined until you mouseover."
+                    },
+                    {
+                        "description": "Improved editing of the following filter."
+                    },
+                    {
+                        "description": "Removed old feedback and help sections that were no longer relevant."
+                    }
+                ],
+                "feature": [
+                    {
+                        "description": "See mentioned entities as real tags in the text editor while composing a message. "
+                    },
+                    {
+                        "description": "Mouseover names to see a user's profile displayed as another hovering section."
+                    },
+                    {
+                        "description": "Leave feedback for Symphony on a public JIRA instance via an option in the account dropdown."
+                    },
+                    {
+                        "description": "Added \"Me\" to the left sidebar."
+                    },
+                    {
+                        "description": "Buttons now have tooltips to describe what they do."
+                    }
+                ]
+            }
+        },
+        {
+            "version": "1.0.1",
+            "description": "Focus on bug fixes and improvements in the layout.",
+            "date": 1402519507881,
+            "changeLog": {
+                "bug": [
+                    {
+                        "description": "Scrolling to the bottom of the list of messages happens automatically."
+                    },
+                    {
+                        "description": "Some bug happened here"
+                    },
+                    {
+                        "description": "Don't allow a deleted post to be shared."
+                    },
+                    {
+                        "description": "Toggling social streams on and off in filters are now persisted."
+                    },
+                    {
+                        "description": "When someone becomes an owner of a read only room, they can now immediately compose a message."
+                    },
+                    {
+                        "description": "Fixed issue where typing indicator continued to show after a message failed to send for reasons such as a profanity violation."
+                    },
+                    {
+                        "description": "Fixed the issue where mention suggestions continued to show even after a person had been selected."
+                    },
+                    {
+                        "description": "Fixed an issue where modals didn't have a max-height set that caused them to stretch off the screen."
+                    },
+                    {
+                        "description": "Fixed an issue with emoticons unexpected behavior."
+                    },
+                    {
+                        "description": "Updating a room's attributes will no longer look like it affected all rooms."
+                    },
+                    {
+                        "description": "Fixed being able to delete something you've shared."
+                    },
+                    {
+                        "description": "Fixed XSS vulnerability."
+                    },
+                    {
+                        "description": "Fixed location of opening new module in the place of existing unpinned module."
+                    },
+                    {
+                        "description": "Fixed saving locations of all pinned modules when the app restarts."
+                    },
+                    {
+                        "description": "No longer highlight your own messages as yellow for unread."
+                    },
+                    {
+                        "description": "Fixed allowing pop-out child windows to be popped back in to the main window."
+                    },
+                    {
+                        "description": "Fixed draft message from disappearing when switching between conversations. Now it is still in your composition area when you come back to that view."
+                    },
+                    {
+                        "description": "Fixed problem with arrow keys not working to scroll through message history."
+                    },
+                    {
+                        "description": "New rooms should be added to the top of the room list, and this should persist even after a restart."
+                    },
+                    {
+                        "description": "Auto-scroll to bottom of message list after resize."
+                    },
+                    {
+                        "description": "Fixed handling of re-size event in the grid when left sidebar width is changed by user."
+                    },
+                    {
+                        "description": "Fixed automatic scrolling for when you open a user's profile within a conversation view."
+                    },
+                    {
+                        "description": "Prevent double posting from your profile."
+                    },
+                    {
+                        "description": "When scrolling within one view, don't allow the entire grid layout to scroll if you've reached the top or the bottom."
+                    }
+                ],
+                "feature": [
+                    {
+                        "description": "Added a change log within the app. (You're looking at it!)"
+                    },
+                    {
+                        "description": "Added a first time user experience module."
+                    },
+                    {
+                        "description": "Added intuitive keyboard commands to settings modals."
+                    },
+                    {
+                        "description": "Show presence within drop-down search results when adding someone to an IM."
+                    },
+                    {
+                        "description": "Added keyboard commands for navigating the filter creation and modification wizard."
+                    },
+                    {
+                        "description": "Automatically disable options in settings if another setting that overrides them has been set."
+                    },
+                    {
+                        "description": "Made easier to see the scrollbar when scrolling by introducing dynamic styling to increase contrast."
+                    },
+                    {
+                        "description": "Show full URL of a link within a message on mouseover."
+                    },
+                    {
+                        "description": "Added tooltip for header icons."
+                    }
+                ]
+            }
+        },
+        {
+            "version": "1.0.0",
+            "description": "The first release of Symphony.",
+            "date": 1402511111111,
+            "changeLog": {
+                "feature": [
+                    {
+                        "description": "Modern UI with grid layout."
+                    },
+                    {
+                        "description": "Pop out window capability."
+                    },
+                    {
+                        "description": "See who's typing."
+                    },
+                    {
+                        "description": "Message read receipts."
+                    },
+                    {
+                        "description": "Persistent desktop notifications."
+                    }
+                ]
+            }
+        }
+    ]
+}

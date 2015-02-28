@@ -1,0 +1,16 @@
+<li {{#if items}}class="group"{{/if}}>
+<span class="checkbox">
+        <input {{#if items}}class="group-checkbox"{{else}}data-id="{{id}}"{{/if}} type="checkbox" data-type="{{type}}" />
+        <span></span>
+</span>
+{{#if items}}
+        <span class="group-name">
+            {{name}}
+        </span>
+<ul>
+    {{> conversationCollection items}}
+</ul>
+{{else}}
+{{name}}
+{{/if}}
+</li>
